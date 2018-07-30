@@ -14,20 +14,96 @@
   url = {http://dx.doi.org/10.1002/andp.19063240204}
 }
 
+%optical design
+
+@article{LivshitsQA2013,
+author = {Livshits, I. and Vasilyev, V.},
+title = {Q and A tutorial on optical design},
+journal = {Advanced Optical Technologies},
+volume = {2},
+number = {1},
+pages = {31-39},
+year = {2013},
+doi = {10.1515/aot-2012-0077},
+URL = {https://doi.org/10.1515/aot-2012-0077},
+eprint = {}
+}
+
+@article{DilworthSP2012,
+author = { Donald C. Dilworth},
+title = {Novel global optimization algorithms: binary construction and the saddle-point method},
+journal = {Proc.SPIE},
+volume = {8486},
+number = {},
+pages = {8486 - 8486 - 10},
+abstract = {This paper describes our experience with global lens optimization using algorithms that can modify an existing lens
+construction in an optimal way or create an entirely new construction. The binary-search method assembles lens
+elements according to the bits in a binary number, ensuring that all combinations of power are tested, while the saddlepoint
+method can either add elements to a starting lens or start from scratch. The latter algorithm also naturally leads to a
+method of removing an element in an optimum way, which can sometimes simplify a lens with no loss of quality.},
+year = {2012},
+doi = {10.1117/12.929156},
+URL = {https://doi.org/10.1117/12.929156},
+eprint = {}
+}
+
+
+
 
 %SPC related
-@proceeding{PascalTriplet2009,
+@article{PascalTriplet2009,
 author = {van Grol, P and Bociort, F and van Turnhout, M},
 title = {Finding order in the design landscape of simple optical systems},
 journal = {Proc.SPIE},
 volume = {7428},
 number = {},
-pages = {7428 - 7428 - 11},
+pages = {11},
 year = {2009},
 doi = {10.1117/12.825495},
 URL = {https://doi.org/10.1117/12.825495},
 eprint = {}
 }
+
+@article{BociortThinLens2004,
+author = { Florian  Bociort and Alexander  Serebriakov and Maarten  van Turnhout},
+title = {Saddle points in the merit function landscape of systems of thin lenses in contact},
+journal = {Proc.SPIE},
+volume = {5523},
+number = {},
+pages = {11},
+year = {2004},
+doi = {10.1117/12.559638},
+URL = {https://doi.org/10.1117/12.559638},
+eprint = {}
+}
+
+@article{BociortToyModel2010,
+author = { F.  Bociort},
+title = {Why are there so many system shapes in lens design?},
+journal = {Proc.SPIE},
+volume = {7849},
+number = {},
+pages = {13},
+year = {2010},
+doi = {10.1117/12.873880},
+URL = {https://doi.org/10.1117/12.873880},
+eprint = {}
+note = {This paper introduces the simplified toy model to explain the fundamental triplet network, and shows the increasing number of local minima in lens design.}
+}
+
+@article{BociortTripletExplained2010,
+author = { F.  Bociort and P.  van Grol},
+title = {Systematics of the design shapes in the optical merit function landscape},
+journal = {Proc.SPIE},
+volume = {7717},
+number = {},
+pages = {14},
+year = {2010},
+doi = {10.1117/12.853924},
+URL = {https://doi.org/10.1117/12.853924},
+eprint = {}
+}
+
 
 @article{MVTurnhoutSPC15,
 author = {Maarten van Turnhout and Pascal van Grol and Florian Bociort and H. Paul Urbach},
@@ -45,16 +121,156 @@ doi = {10.1364/OE.23.006679},
 abstract = {We show that in the lens design landscape saddle points exist that are closely related to local minima of simpler problems. On the basis of this new theoretical insight we develop a systematic and efficient saddle-point method that uses a-priori knowledge for obtaining new local minima. In contrast with earlier saddle-point methods, the present method can create both positive and negative lenses. As an example, by successively using the method a good-quality local minimum is obtained from a poor-quality one. The method could also be applicable in other global optimization problems that satisfy the requirements discussed in this paper.},
 }
 
+
+@article{LivshitsSP2014,
+author = { Irina  Livshits and Zhe  Hou and Pascal  van Grol and Yifeng  Shao and Maarten  van Turnhout and Paul  Urbach and Florian  Bociort},
+title = {Using saddle points for challenging optical design tasks},
+journal = {Proc.SPIE},
+volume = {9192},
+number = {},
+pages = {8},
+abstract = {The present research is part of an effort to develop tools that make the lens design process more systematic. In typical optical design tasks, the presence of many local minima in the optical merit function landscape makes design non-trivial. With the method of Saddle Point Construction (SPC) which was developed recently ([F. Bociort and M. van Turnhout, Opt. Engineering 48, 063001 (2009)]) new local minima are obtained efficiently from known ones by adding and removing lenses in a systematic way. To illustrate how SPC and special properties of the lens design landscape can be used, we will present the step-by-step design of a wide-angle pinhole lens and the automatic design of a 9-lens system which, after further development with traditional techniques, is capable of good performance. We also give an example that shows how to visualize the saddle point that can be constructed at any surface of any design of an imaging system that is a local minimum.},
+year = {2014},
+doi = {10.1117/12.2061975},
+URL = {https://doi.org/10.1117/12.2061975},
+eprint = {}
+}
+
+
+
+@article{HouSimple16,
+author = {Zhe Hou and Irina Livshits and Florian Bociort},
+journal = {Appl. Opt.},
+keywords = {Mathematical methods (general); Geometric optical design ; Lens system design},
+number = {36},
+pages = {10449--10456},
+publisher = {OSA},
+title = {One-dimensional searches for finding new lens design solutions efficiently},
+volume = {55},
+month = {Dec},
+year = {2016},
+url = {http://ao.osa.org/abstract.cfm?URI=ao-55-36-10449},
+doi = {10.1364/AO.55.010449},
+abstract = {A special structure is present in the lens design landscape that makes it different from a general global optimization problem: many local minimums are closely related to minimums of simpler problems and can therefore be found by decomposing the search for them in simple steps. We show here that in the design landscape of a wide-angle pinhole lens and in closely related optimization landscapes, all good local minimums found by other methods can be obtained easily with a succession of one-dimensional searches starting from simpler systems. By replacing high-dimensional searches with a succession of one-dimensional searches, the design efficiency can be increased significantly. By combining this method with conventional design methods, the wide-angle pinhole lens can be designed starting from a single lens.},
+}
+
+@article{HouProc2015,
+author = { Zhe  Hou and Florian  Bociort},
+title = {Reducible complexity in lens design},
+journal = {Proc.SPIE},
+volume = {9626},
+number = {},
+pages = {8},
+year = {2015},
+doi = {10.1117/12.2191364},
+URL = {https://doi.org/10.1117/12.2191364},
+eprint = {}
+}
+
+
+@article{MarinescuSPD07,
+author = {Oana Marinescu and Florian Bociort},
+journal = {Appl. Opt.},
+keywords = {Optical design and fabrication; Geometric optical design ; Lens system design; Lithography; Systems design ; Extreme ultraviolet; Extreme ultraviolet lithography; Genetic algorithms; Optical design; Optical design software; Packet switched networks},
+number = {35},
+pages = {8385--8393},
+publisher = {OSA},
+title = {Network search method in the design of extreme ultraviolet lithographic objectives},
+volume = {46},
+month = {Dec},
+year = {2007},
+url = {http://ao.osa.org/abstract.cfm?URI=ao-46-35-8385},
+doi = {10.1364/AO.46.008385},
+abstract = {The merit function space of mirror system for extreme ultraviolet (EUV) lithography is studied. Local minima situated in the multidimensional optical merit function space are connected via links that contain saddle points and form a network. We present networks for EUV lithographic objective designs and discuss how these networks change when control parameters, such as aperture and field, are varied, and constraints are used to limit the variation domain of the variables. A good solution in a network, obtained with a limited number of variables, has been locally optimized with all variables to meet practical requirements.},
+}
+
+@article{MarinescuSP2008,
+author = { Oana  Marinescu and Florian  Bociort},
+title = {Saddle-point construction in the design of lithographic objectives, part 1: method},
+journal = {Optical Engineering},
+volume = {47},
+number = {},
+pages = {6},
+abstract = {The multidimensional merit function space of complex optical systems contains a large number of local minima. We illustrate a method to find new local minima by constructing saddle points, with examples of deep and extreme UV objectives. The central idea of the method is that, at certain positions in a system with N surfaces that is a local minimum, a thin meniscus lens or two mirror surfaces can be introduced to construct a system with N+2 surfaces that is a saddle point. When optimization rolls down on the two sides of the saddle point, two minima are obtained. Often one of these two minima can also be reached from several other saddle points constructed in the same way. With saddle-point construction we can obtain new design shapes from existing ones in a simple, efficient, and systematic manner that is suitable for complex designs such as those for lithographic objectives.},
+year = {2008},
+doi = {10.1117/1.2981512},
+URL = {https://doi.org/10.1117/1.2981512},
+eprint = {}
+}
+
+
+
 %SMS related
-@proceeding{LinWang2011,
+@article{LinWang2011,
 author = { Wang Lin and Pablo Benítez and J. C. Miñano and José Infante and Guillermo Biot},
 title = {Progress in the SMS design method for imaging optics},
 journal = {Proc.SPIE},
 volume = {8128},
 number = {},
-pages = {8128 - 8128 - 8},
+pages = {8},
 year = {2011},
 doi = {10.1117/12.894420},
 URL = {https://doi.org/10.1117/12.894420},
 eprint = {}
 }
+
+
+%GO
+
+@article{KuperGO1992,
+author = { Thomas G. Kuper and Thomas I. Harris},
+title = {Global optimization for lens design: an emerging technology},
+journal = {Proc.SPIE},
+volume = {1781},
+number = {},
+pages = {15},
+year = {1993},
+doi = {10.1117/12.140995},
+URL = {https://doi.org/10.1117/12.140995},
+eprint = {}
+}
+
+@article{RogersGO2006,
+author = {John R. Rogers},
+booktitle = {International Optical Design},
+journal = {International Optical Design},
+keywords = {Optical design and fabrication; Geometric optical design ; Lens system design},
+pages = {TuA4},
+publisher = {Optical Society of America},
+title = {Using Global Synthesis to Find Tolerance-Insensitive Design Forms},
+year = {2006},
+url = {http://www.osapublishing.org/abstract.cfm?URI=IODC-2006-TuA4},
+doi = {10.1364/IODC.2006.TuA4},
+abstract = {A method of using Global Synthesis{\texttrademark} for finding tolerance-insensitive systems is described. By altering the merit function to include information that prefers less sensitive solutions, the space of tolerance-insensitive design configurations may be explored.},
+}
+
+
+%other
+@article{Strauch2015,
+	author = {M. Strauch and I. Livshits and F. Bociort and H. Urbach},
+	title = {Wide-angle spectral imaging using a Fabry-Pérot interferometer},
+	journal = {Journal of the European Optical Society - Rapid publications},
+	volume = {10},
+	number = {0},
+	year = {2015},
+	keywords = {Multispectral imaging; Fabry-Pérot interferometer; optical design},
+	abstract = {We show that wide-angle spectral imaging can be achieved with compact and cost-effective devices using Fabry-Pérot interferometers. Designs with a full field of view of 90°, in which the Fabry-Pérot interferometer is mounted either in front of an imaging lens system or behind a telecentric lens system, are presented and analysed. We show the dependency of the spectral resolution on the numerical aperture of the lens system and demonstrate its value as a design criterion.},
+	issn = {1990-2573},	url = {http://www.jeos.org/index.php/jeos_rp/article/view/15037}
+	}
+	
+	
+	
+@patent{BociortPatent2010,
+	author = {Bociort, Florian and Van Turnhout, Maarten and Marinescu, Oana Elena},
+	title = {Method Of Designing A Projection System, Lithographic Apparatus And Device Manufacturing Method},
+	year = {2010},
+	month = {05},
+	day = {11},
+	number = {US 7714307 B2},
+	type = {Patent},
+	location = {United States},
+	url = {https://lens.org/121-195-840-284-211}
+}
+
+
+

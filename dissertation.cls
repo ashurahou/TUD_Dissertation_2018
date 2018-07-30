@@ -22,6 +22,7 @@
 \RequirePackage[flushmargin,hang]{footmisc}
 \RequirePackage{ifpdf}
 \RequirePackage{ifxetex}
+%\Requirepackage{adjustbox}
 \ifxetex
     \RequirePackage[xetex]{geometry}
     \RequirePackage[xetex]{graphicx}
