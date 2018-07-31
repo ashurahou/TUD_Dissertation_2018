@@ -68,7 +68,7 @@ A wide angle pin-hole lens (designed by Irina Livsthis from ITMO) has been chose
     \begin{tabular}{ p{20em} c }
     \hline 
     Entrance pupil diameter (EPD, mm) & 0.8\\
-    Full field of view (FOV, ${\circ}$) & 110\\
+    Full field of view (FOV, °) & 110\\
     Effective focal length (EFL, mm) & 3.5\\
     Wavelength (nm) & 644, 546, 480\\
     \hline
@@ -177,7 +177,18 @@ It turns out that the minimums that were not found by SPC only exist for certain
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Effect of changing the field of view on the landscape}
 In \colorbox{orange}{Section 5} we have seen that when the field of view is reduced, more minimums can be found in the design space. This happens for two reasons. First, when design specifications (e.g., FOV or entrance pupil diameter) are modified, the distances in the design space between minimums and SPs change
-and therefore the merit function landscape also changes. As can be observed in numerical experiments, when a minimum and a SP with MI of one collide, they both disappear. Alternatively, such a pair can appear when specifications are changed. Similarly, two minimums with a SP between them can be replaced by one minimum, and two SPs with a minimum between them can be replaced by a SP. This can be explained mathematically by the conservation of topological degree of the MF landscape [20]. A minimum has a topological degree of 1 and a SP with MI of one has a topological degree of −1. The sum of the topological degrees must be conserved when the landscape changes continuously, e.g., by changing the field. Second, when the FOV is increased ray failure appears more easily, and the region of ray failure expands in the design space. Because certain minimums and SPs existing at lower fields cross the border of the ray failure region and disappear, we find fewer of them at large fields.
+and therefore the merit function landscape also changes. As can be observed in numerical experiments, when a minimum and a SP with MI of one collide, they both disappear. Alternatively, such a pair can appear when specifications are changed. Similarly, two minimums with a SP between them can be replaced by one minimum, and two SPs with a minimum between them can be replaced by a SP. This can be explained mathematically by the conservation of topological degree of the MF landscape \cite{vanTurnhoutThesis2009}. A minimum has a topological degree of 1 and a SP with MI of one has a topological degree of −1. The sum of the topological degrees must be conserved when the landscape changes continuously, e.g., by changing the field. Second, when the FOV is increased ray failure appears more easily, and the region of ray failure expands in the design space. Because certain minimums and SPs existing at lower fields cross the border of the ray failure region and disappear, we find fewer of them at large fields.
+
+
+\colorbox{orange}{added}
+We varied the FOV of the system with three different numbers: 60°, 90° and 110°. The results number of solutions are different for different FOV specifications. As shown in Figure \ref{fig:FOVvarying}, the number of solutions changes for different FOV. For FOV 110°, there are six solutions; five for FOV 90° and ten for FOV 60° (they are the same minima as shown in \ref{fig:tripletnetwork}). For FOV 60°, there are five new systems appear, which did not exist for larger field (second row for the 60° systems in Figure \ref{fig:FOVvarying}). The dashed boxes in Figure \ref{fig:FOVvarying} mark the missing correspondent systems which exist in other FOV specifications. As we have mentioned in the previous paragraph, the appearance and disappearance of the systems can be explained by the change of the merit function landscape. This change can be observed from the SPC scan curves.  
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1.0\textwidth]{chapter-3/figures/FOVvarying.png}
+    \caption{\colorbox{orange}{For different} field of view, the number of solutions is different. Systems with 110° FOV has six solutions marked by the red colour; Systems with 90° has five solutions marked by the green colour; Systems with 60° marked by the blue colour. The dashed boxes mark the missing systems.}
+    \label{fig:FOVvarying}
+\end{figure}
 
 \begin{figure}[h!]
     \centering
@@ -185,6 +196,8 @@ and therefore the merit function landscape also changes. As can be observed in n
     \caption{SPC scan curves for different values of the FOV. Shaded areas are ray failure regions. The scan curves are obtained in the same way as the one shown in \colorbox{orange}{Figure SPSCAN}. Saddle-point curvatures are marked by red circles. With the increase of the FOV, SP 1 disappears in the ray failure region. SPs 3 and 4 merge with the minimum between them, and are replaced by a saddle point (not shown) that is not constructible with SPC.}
     \label{fig:phasechange_field}
 \end{figure}
+
+
 
 These phenomena can also be observed by examining the SPC scan curves. In Fig. 11 the FOV of the system increases from 50° [Figure \ref{fig:phasechange_field}(a)] to 90° [Figure \ref{fig:phasechange_field}(d)]. With the increase of the FOV we observe the expansion of the ray failure region (shown as shaded area). Two SPs are found at 70° [Figure \ref{fig:phasechange_field}(c)], but at 90° [Figure \ref{fig:phasechange_field}(d)] we see that the left SP disappears into the ray failure region.
 
