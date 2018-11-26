@@ -15,7 +15,7 @@
 %% The '0pt' option ensures that no extra vertical space follows this epigraph,
 %% since there is another epigraph after it.
 \epigraph[0pt]{
-   Proof of the putin is to eat it }
+   The proof of the pudding is in the eating.}
 
 \epigraph{
     Sample quotes
@@ -28,7 +28,8 @@ Previous researches have shown that different solutions of the optical system ca
 %% Start the actual chapter on a new page.
 \newpage
 
-\noindent Previous investigations have shown that in an idealized lens design problem, where the structure of the landscape is determined by spherical aberration, all the solutions in the design landscape can be obtained via SPC \cite{PascalTriplet2009}. A detailed study of the design network of a simple wide angle pin-hole lens \cite{HouSimple16} shows that SPC is effective to escape from poor local minima and to reach to the global minimum. In a specific case, SPC is able to find all the solutions found in the design landscape with other methods. A thorough study of the design landscape of a complicated system will be quite difficult, but the above results for simple systems give us confidence in the ability of SPC to find new good solutions for complicated lens systems as well. 
+\noindent How to apply SPC in a real design problem?  
+Previous investigations have shown that in an idealized lens design problem, where the structure of the landscape is determined by spherical aberration, all the solutions in the design landscape can be obtained via SPC \cite{PascalTriplet2009}. A detailed study of the design network of a simple wide angle pin-hole lens \cite{HouSimple16} shows that SPC is effective to escape from poor local minima and to reach to the global minimum. In a specific case, SPC is able to find all the solutions found in the design landscape with other methods. A thorough study of the design landscape of a complicated system will be quite difficult, but the above results for simple systems give us confidence in the ability of SPC to find new good solutions for complicated lens systems as well. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -39,13 +40,66 @@ In this chapter, we apply the saddle point construction method in complicated de
 
 
 \section{Investigation of a wide angle lens with six elements}
+Wide angle lenses are broadly used for various applications, including photographic cameras, surveillance cameras and projectors. To increase the field of view of the system and maintain a good image quality, a certain complexity of the system is necessary. A wide angle lens with a moderate complexity is chosen here to study the performance of SPC as a switching tool. The system consists of six lenses including one cemented surface. The specifications of the lens are shown in Table \ref{table: sysspecWAL}. The maximum field of view is 120°. The overall length of the system is 38.75mm, which is small enough for integration into surveillance systems. The MTF curve shows that the modulation stays above 0.4 for 100 cycles/mm at full field of view. The system is not optimized for distortion, which can be corrected with image processing tools afterwards \cite{Sahin:18DisCorrec}.
 
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{System specification of the wide-angle lens}
+    \label{table: sysspecWAL}
+    \vspace{-1em}
+    \begin{tabular}{ p{20em} c }
+    \hline 
+    Full field of view (FOV, °) & 120\\
+    Effective focal length (EFL, mm) & 3.0\\
+    F Number & 2.0\\
+    Overall Length (mm) & 38.75\\
+    Wavelength (nm) & 644, 546, 480 (e, F', C')\\
+    \hline
+    \end{tabular}
+\end{table}
 
+The wide angle lens was first designed with a conventional method by using surfaces with special properties (concentric and aplanatic) \cite{LivshitsQA2013}. Surfaces that are concentric with respect to the chief ray are free from coma and astigmatism, and the aplanatic surfaces do not introduce spherical aberrations. Figure \ref{fig:wideanglelensPerformance} shows that the six lenses are divided into two groups. A front group with three lenses is responsible for expanding the field of view. A rear group containing a cemented element is the focusing group. The two parts of the system were first designed separately and then combined together to form the entire lens system.  In order to combine the two parts, the front group has the stop at the end of the lens group, and the rear group has the stop in front of it.  The front group is designed as an afocal system with an angle reduction ratio of 0.3. The field of view on the object side is designed to be 120° and the field of view on the image side is 40°. The rear group is designed as a focusing system with a field of view of the same 40°. The diameter of the common stop of the two parts, that will be the aperture stop of the whole system is 4.5mm. 
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.68]{chapter-4/figures/WideAngleL.png}
+    \caption{System plot of a wide angle lens and its performance.}
+    \label{fig:wideanglelensPerformance}
+\end{figure}
+
+With the conventional method, the design of the front group started with a lens using a flat and a concentric surface, given that the stop is at the right side of the lens. A moderate field of view was first used. Then lenses were added with either concentric or aplanatic surfaces. Adjustment and optimization were done to increase the field of view and achieve an angle reduction ratio of 0.3. The rear group was designed starting with a cemented doublet having a flat surface and two concentric surfaces. Another lens was added and a different glass was used to further reduce the aberration. 
+After we reach a result with the conventional method, SPC can be used to look for alternative solutions. One way is to apply SPC to both front part and rear part to obtain all the possible solutions for both parts. Then, different combinations can be tested for the whole system. Another way is to directly combine the two groups and perform SPC on the combined system to look for other solutions. We chose to perform SPC only on the rear group, and then combine the rear group solutions with the front group. Afterwards, we performed SPC on the combined systems.
+Figure \ref{fig:WAL_combine} shows the solution after combining the front and rear parts. First, there are three different solutions for the rear part after we performed SPC on the last surface. However, after combining and optimizing the combined system, all three combinations converged to one solution as shown on the right side of Figure \ref{fig:WAL_combine}. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{chapter-4/figures/WAL_combine.png}
+    \caption{Combination of the front part and three rear parts all result in one solution.}
+    \label{fig:WAL_combine}
+\end{figure}
+
+Once the combined system is obtained, we perform saddle point switching in the whole system to look for other minima. Because the first lens is responsible for collecting the large angle rays, extracting it from the system while keeping the large field of view is not possible. Therefore, the possible positions to extract and perform SPC scans are the second, third and last lenses. Six different minima were found in the design network illustrated in Figure \ref{fig:WAL_network}. Global optimization run (Global Synthesis CODE V) was performed, and no new system was found. We notice that the major difference of the systems are in the front group. The lens shape stays the same for the rear group in all six solutions.
+
+The relationship between different systems is indicated by arrows in Figure \ref{fig:WAL_network}. Black arrows show that via SPC, two systems are connected in both ways. For example, by using SPC, M1 can be switched into M2. Starting from M2, SPC reaches M1. Blue arrows indicate a one-way connection. For example, starting from M2, it is possible to find M3 via SPC. However, M3 does not lead to M2. In general, the typical situation is a two-way connection. However, a one-way connection can appear in two situations. In the first situation, a system with high stress and higher value of merit function (MF) is unstable (e.g. M6). It is easy to get out of this kind of poor local minimum with SPC, however, it is not easy (and not necessary for practical purpose) to reach them. The second situation is for two minima which are very close to each other in the design space (e.g. M1 and M2). Systems M1 and M2 that are the best two systems have similar system shapes and close values of MF. Another system obtained by switching from M1, can easily, when switched back, go to M2. However, we see that all minima are connected, which means that starting from any of the minima in the network, there is always a route to reach any other system. It can also be observed that M3 – M6 are all directly connected with the best two systems M1 and M2. This means that if the design process is trapped in one of the poor local minima, applying SPC will switch to one of the best two systems in the network without intermediate steps.  
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{chapter-4/figures/WAL_network.png}
+    \caption{A network of minima for the wide angle lens. All systems are connected with SPC. Global optimization using CODE V did not find extra systems. CODE V transverse ray aberration is used as the merit function.}
+    \label{fig:WAL_network}
+\end{figure}
+
+\subsection{Analysis of SPC in detailed steps}
 
 \section{Applying SPC to a microscope objective}
 
 \section{Applying SPC to a lithographic object (extreme complex case)}
+
+
 %% We need an empty line before the quote environment to work around a bug in
 %% the lettrine package, from which the drop command is derived.
 \begin{quote}

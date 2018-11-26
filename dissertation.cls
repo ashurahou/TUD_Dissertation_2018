@@ -35,7 +35,8 @@
 \else
     \ifpdf
         \RequirePackage[pdftex]{geometry}
-        \RequirePackage[pdftex]{graphicx}
+        \RequirePackage{graphicx}
+        %\RequirePackage[pdftex]{graphicx}
         \RequirePackage[pdftex]{hyperref}
     \else
         \RequirePackage[dvips]{geometry}

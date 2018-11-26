@@ -1,11 +1,18 @@
 \documentclass{dissertation}
 
-
 \begin{document}
+
+%% Specify the title and author of the thesis. This information will be used on
+%% the title page (in title/title.tex) and in the metadata of the final PDF.
+
 
 %% Use Roman numerals for the page numbers of the title pages and table of
 %% contents.
 \frontmatter
+
+
+%% The (optional) dedication can be used to thank someone or display a
+%% significant quotation.
 
 
 \tableofcontents
@@ -16,11 +23,8 @@
 %% Turn on thumb indices.
 \thumbtrue
 
+\include{chapter-4/chapter-4}
 
-\include{chapter-4/chapter-4.tex}
-
-%% Use letters for the chapter numbers of the appendices.
-\appendix
 
 %\include{appendix-a/appendix-a}
 
@@ -28,3 +32,4 @@
 \thumbfalse
 
 \end{document}
+

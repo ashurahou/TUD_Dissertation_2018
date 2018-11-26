@@ -14,4 +14,33 @@ This is to test a reference in bibtex. \cite{book:Shannon1997}
 \bibliographystyle{unsrt}
 \bibliography{dissertation}
 
+
+
+%table template
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{System specification}
+    \label{table: sysspec}
+    \vspace{-1em}
+    \begin{tabular}{ p{20em} c }
+    \hline 
+    Entrance pupil diameter (EPD, mm) & 0.8\\
+    Full field of view (FOV, °) & 110\\
+    Effective focal length (EFL, mm) & 3.5\\
+    Wavelength (nm) & 644, 546, 480\\
+    \hline
+    \end{tabular}
+\end{table}
+
+%template figures
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{chapter-4/figures/WAL_combine.png}
+    \caption{Combination of the front part and three rear parts all result in one solution.}
+    \label{fig:WAL_combine}
+\end{figure}
 \end{document}
