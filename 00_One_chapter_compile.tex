@@ -1,9 +1,11 @@
-
-%%Only compile one chapter for the purpose of the test
 \documentclass{dissertation}
-\usepackage{adjustbox} 
+
 
 \begin{document}
+
+%% Use Roman numerals for the page numbers of the title pages and table of
+%% contents.
+\frontmatter
 
 
 \tableofcontents
@@ -14,7 +16,8 @@
 %% Turn on thumb indices.
 \thumbtrue
 
-\include{chapter-3/chapter-3}
+
+\include{chapter-4/chapter-4.tex}
 
 %% Use letters for the chapter numbers of the appendices.
 \appendix
@@ -24,6 +27,4 @@
 %% Turn off thumb indices for unnumbered chapters.
 \thumbfalse
 
-
 \end{document}
-

@@ -22,7 +22,9 @@
 \RequirePackage[flushmargin,hang]{footmisc}
 \RequirePackage{ifpdf}
 \RequirePackage{ifxetex}
-%\Requirepackage{adjustbox}
+\RequirePackage{adjustbox}
+\RequirePackage{blindtext}
+
 \ifxetex
     \RequirePackage[xetex]{geometry}
     \RequirePackage[xetex]{graphicx}
