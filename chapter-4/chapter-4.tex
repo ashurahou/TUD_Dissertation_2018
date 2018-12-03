@@ -95,6 +95,36 @@ The relationship between different systems is indicated by arrows in Figure \ref
 
 \subsection{Analysis of SPC in detailed steps}
 
+The system M3 in Figure \ref{fig:WAL_network} is used as a demonstration to show how SPC is practically performed. First, by extracting the second element from M3, a minimum with one lens less was obtained. Then, an SPC scan was done at the same position where the lens was extracted. Figure \ref{fig:WAL_demo_sp} shows the SPC scan curve and the saddle point system which was found via the scan. In an SPC scan curve, the crossing of the curve and the horizontal axis indicates the curvature of the saddle point system (the black dot in Figure \ref{fig:WAL_demo_sp}). In this case, only one saddle point system is found via the scan and the curvature of the saddle point system is -0.170. By constructing a 2-D plane in the high dimensional space (10-D in this case), it is possible to visualize the saddle point. We already know the value of the merit function at the saddle point, $MF_{S}$, and there exists a direction from the saddle point in which the value of the merit function will decrease. Numerically, we can find this direction by minimizing on a hyperplane, which is orthogonal to the SPC scan line along which the MF value is constant. As illustrated in Figure 11, point $S$ is the saddle point, point $A$ is a point on the equal MF line (where the two curvatures of the inserted element are the same \cite{MVTurnhoutSPC15}). If there are total $N$ variables in the system, $P1$ is an $N-1$ dimensional hyperplane, which is orthogonal to $\overrightarrow{SA}$ and at the same time passing through point $A$. Point $B$ is a point where the MF value is minimized on hyperplane $P1$. As a result, we will have $MF_{B}$ < $MF_{S}$. With points $A$, $B$ and $S$, a 2-D plane $P2$ can be determined in which we can visualize the saddle point. Given the two vectors on the 2-D plane, $\overrightarrow{SA}$ and $\overrightarrow{SB}$, an orthogonal base can be calculated with the Gram-Schmidt process:
+
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{equation} \label{eq:u1}
+\hat{u}_{1} =  \left\| \overrightarrow{SA}-{\frac{\langle \overrightarrow{SA},\overrightarrow{SB}\rangle}{\langle \overrightarrow{SB},\overrightarrow{SB}\rangle}}\overrightarrow{SB} \right\| 
+\end{equation}
+\setlength{\belowdisplayshortskip}{10pt}
+\begin{equation} \label{eq:u2}
+\hat{u}_{2} = \left\| \overrightarrow{SB} \right\|
+\end{equation}
+
+with $\hat{u}_{1}$ and $\hat{u}_{2}$ , the 2-D plane with the visualized saddle point can be plotted as shown in Figure \ref{fig:WAL_demo_sp}.
+In Figure 12, the Y direction is the direction along which the merit function decreases from the saddle point. We see again the numerical instability indicated by the yellow colour in Figure 12. Around the saddle point, the basins of attraction are those for the blue (MF 5.30) and cyan (MF 8.12) minima, that correspond to the red and green region in Figure 10. The way how the basins of attraction are placed in the 2-D plane in Figure 12, shows that the two minima connected by the saddle point are the ones with MF value 5.30 and 8.12 (the red and the green region in Figure 10). The two basins correspond to systems T2-M1 and T2-M4 in Table 2.
+
+
+
+
+The saddle point in this 2-D plane is illustrated in Figure \ref{fig:WAL_demo_sp}, and the plots along the X and the Y direction show that the value of the MF is increasing in one direction and decreasing in the other direction. Optimization routes following the descending directions on both sides of the saddle (on the Y-axis shown in Figure \ref{fig:WAL_demo_sp}) lead to two distinct local minima.
+
+However, in practice, it is computationally expensive to look for the 2-D plane where the saddle point is visualized as in Figure \ref{fig:WAL_demo_sp}. As mentioned previously, a common practice is to change the system along the SPC scan line, which means changing the curvatures of the inserted null-element with a small positive and negative value (this value is chosen empirically). The modified systems are the starting points for optimization. However, choosing different values for the curvature change may lead to different minima. This is demonstrated in Figure 6, where we have chosen different values for the null-element curvature as a starting point and optimize to a minimum. In order to better illustrate the phenomenon, the scan range chosen here (from -0.2 to 0.2) was larger than the curvature changes we normally use in practices for SPC. From Figure 6, we see that five different minima were obtained with different values chosen for the start curvature. The system shapes and MF value are shown in Table 2. 
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{chapter-4/figures/WAL_demo_sp.png}
+    \caption{A): the system we have chosen for the SPC scan. B): the SPC scan curve. C): the saddle point in a 2-D plane chosen as shown in the Appendix. D): the descending and ascending direction around the saddle point in the same 2-D plane. The saddle point is marked with a black dot.}
+    \label{fig:WAL_demo_sp}
+\end{figure}
+
 \section{Applying SPC to a microscope objective}
 
 \section{Applying SPC to a lithographic object (extreme complex case)}
