@@ -4,9 +4,10 @@
 \captionsetup[figure]{labelfont=bf}
 \captionsetup{margin=1.5em}
 \captionsetup[table]{labelfont=bf}
-%% The following annotation is customary for chapter which have already been
-%% published as a paper.
-\blfootnote{Parts of this chapter have been published in Annalen der Physik \textbf{324}, 289 (1906) \cite{LinWang2011}.}
+
+% The following annotation is customary for chapter which have already been
+% published as a paper.
+% \blfootnote{Parts of this chapter have been published in Annalen der Physik \textbf{324}, 289 (1906) \cite{LinWang2011}.}
 
 %% It is only necessary to list the authors if multiple people contributed
 %% significantly to the chapter.
@@ -14,21 +15,21 @@
 
 %% The '0pt' option ensures that no extra vertical space follows this epigraph,
 %% since there is another epigraph after it.
-\epigraph[0pt]{
-   The proof of the pudding is in the eating.}
+% \epigraph[0pt]{
+%   The proof of the pudding is in the eating.}
 
-\epigraph{
-    Sample quotes
-}{author}
+% \epigraph{
+%     Sample quotes
+% }{author}
 
-\begin{abstract}
-Previous researches have shown that different solutions of the optical system can be found using saddle point based method for some simplified cases\cite{PascalTriplet2009}. It is important, however, to study whether the saddle point based method still perform well in practical lens design problems. To study this, we chose to start with a relative simple example.
-\end{abstract}
+% \begin{abstract}
+% Previous researches have shown that different solutions of the optical system can be found using saddle point based method for some simplified cases\cite{PascalTriplet2009}. It is important, however, to study whether the saddle point based method still perform well in practical lens design problems. To study this, we chose to start with a relative simple example.
+% \end{abstract}
 
-%% Start the actual chapter on a new page.
-\newpage
+% %% Start the actual chapter on a new page.
+% \newpage
 
-\noindent How to apply SPC in a real design problem?  
+How to apply SPC in a real design problem?  
 Previous investigations have shown that in an idealized lens design problem, where the structure of the landscape is determined by spherical aberration, all the solutions in the design landscape can be obtained via SPC \cite{PascalTriplet2009}. A detailed study of the design network of a simple wide angle pin-hole lens \cite{HouSimple16} shows that SPC is effective to escape from poor local minima and to reach to the global minimum. In a specific case, SPC is able to find all the solutions found in the design landscape with other methods. A thorough study of the design landscape of a complicated system will be quite difficult, but the above results for simple systems give us confidence in the ability of SPC to find new good solutions for complicated lens systems as well. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -165,6 +166,7 @@ To obtain minima that are practical, the zero thickness of the inserted element 
 \end{figure}
 
 \section{Applying SPC to a microscope objective}
+\subsection{Constraints in optical design software}
 The wide angle lens shown in the previous section is a moderate complex system where saddle point construction can be used in limited positions. The system only has one constraint on the effective focal length (EFL) and it was given in as a system solve in CODE v. Given the entrance pupil diameter (EPD), the EFL can be controlled by setting the value of the exit angle of t he marginal ray on the last optical surface. Given the EPD, and the EFL, the exit marginal ray angle $\alpha$ can be set in CODE V as:
 \setlength{\belowdisplayshortskip}{5pt}
 \setlength{\abovedisplayshortskip}{5pt}
@@ -182,7 +184,7 @@ However, in lens design practise, most of the system requirements cannot be easi
 \begin{table}[h!]
     \centering
     \captionsetup{justification=centering}
-    \caption{Different types of constraints in CODE V}
+    \caption{Different types of constraints in CODE V\cite{codevmanual}}
     \label{table: codevconstraints}
     \vspace{-1em}
     \begin{tabular}{ p{0.31\textwidth} | m{0.45\textwidth} }
@@ -237,9 +239,25 @@ When operating the saddle point construction scan, two extra variables are added
 \begin{equation} \label{eq: nablaMFzero}
 \nabla_\textbf{x}MF(\textbf{x}) = 0 \;\; \text{if} \;\; \lambda =0 \;\; \text{or} \;\; \nabla_\textbf{x}g(\textbf{x})=0
 \end{equation}
-Both of the conditions in equation \ref{eq: nablaMFzero} implies that the space of the constraint overlaps the optimal points in the merit function landscape. However, in practise, it is rarely the case. As a result, we generally threat $\nabla_\textbf{x}MF(\textbf{x}) \neq 0 $ when constraint is implemented using the Lagrange multiplier, and therefore, it will not be acurate to apply saddle point construction scan in this case.
-
-
+Both of the conditions in equation \ref{eq: nablaMFzero} implies that the space of the constraint overlaps the optimal points in the merit function landscape. However, in practise, it is rarely the case. As a result, we generally threat $\nabla_\textbf{x}MF(\textbf{x}) \neq 0 $ when constraint is implemented using the Lagrange multiplier, and therefore, it will not be accurate to apply saddle point construction scan in this case.
+The inequality constraint mentioned in Table \ref{table: codevconstraints} can not be implemented for saddle point construction scan either. The constraint becomes active when the optimization violates the boundary, and remains inactive if the optimization is operated within the defined boundary. Therefore, the merit function landscape is also altered between different status, causing the result of saddle point construction scan to be unreliable. 
+Using of penalty function and weighted function in the merit function is possible to combine with saddle point construction scan. Both approaches of implementing the constraints adding extra terms into the merit function with explicit expressions. The merit function is altered, nevertheless, remains unchanged for the following operation. The modified merit function with penalty function term or weighted function term can be written as 
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{equation} \label{eq: MFp}
+MF_P(\textbf{x})=MF(\textbf{x})+\sum_{i=1}^{m}P_i(\textbf{x})
+\end{equation}
+\setlength{\belowdisplayshortskip}{10pt}
+\begin{equation} \label{eq: MFw}
+MF_W(\textbf{x})=MF(\textbf{x})+\sum_{i=1}^{m}W_i(\textbf{x})
+\end{equation}
+where the summation indicates that multiple penalty/weighted function can be added. Both approaches for implementing the constraints are essentially identical, and both provide a less rigid control compared to the Lagrange multiplier method. The penalty function mode is ideal for the "soft constraints", which are constraints that have an acceptable range of values \cite{codevmanual}. In CODE V, the expression of the penalty function is not explicitly given. The expression of the weighted function is given as
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{equation} \label{eq: WTC}
+W(\textbf{x})=(WTC\cdot \Delta C)^2
+\end{equation}
+where $WTC$ is the weighting factor set in CODE V, and $\Delta C$ is the departure of the constraints from its target. In the following research on the complex UV microscope objective, the necessary constraints are implemented with the weighted function.
 
 
 

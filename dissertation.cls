@@ -27,6 +27,7 @@
 \RequirePackage{CJKutf8} %For Chinese fonts
 \RequirePackage{array}
 \RequirePackage{hyphenat}
+\RequirePackage{textcomp}
 %\RequirePackage{showframe} %showframe
 
 \ifxetex
