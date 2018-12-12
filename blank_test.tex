@@ -55,3 +55,21 @@ This is to test a reference in bibtex. \cite{book:Shannon1997}
 \begin{equation} \label{eq:u2}
 \hat{u}_{2} = \left\| \overrightarrow{SB} \right\|
 \end{equation}
+%template 2 - split one line into two
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{equation} \label{eq: MFminCon}
+\begin{split}
+& \text{minimize}\;\; MF(\textbf{x}) \\
+& \text{subject to}\;\; g(\textbf{x}) = 0
+\end{split}
+\end{equation}
+%template subequations
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{subequations} 
+\begin{align}
+& \nabla_\textbf{x}\mathcal{L}(\textbf{x},\lambda)=\nabla_\textbf{x}MF(\textbf{x})-\lambda\nabla_\textbf{x}g(\textbf{x})=0 \label{eq: LagCondition1} \\
+& \nabla_\lambda\mathcal{L}(\textbf{x},\lambda)=g(\textbf{x})=0 \label{eq:LagCondition2}
+\end{align}
+\end{subequations}

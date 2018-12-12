@@ -24,6 +24,10 @@
 \RequirePackage{ifxetex}
 \RequirePackage{adjustbox}
 \RequirePackage{blindtext}
+\RequirePackage{CJKutf8} %For Chinese fonts
+\RequirePackage{array}
+\RequirePackage{hyphenat}
+%\RequirePackage{showframe} %showframe
 
 \ifxetex
     \RequirePackage[xetex]{geometry}
@@ -175,10 +179,12 @@
 }
 %% Redefine the author command to accept a first and last name, and to add the
 %% full name to the PDF meta data.
-\renewcommand*\author[2]{%
+\renewcommand*\author[4]{% Zhe added #3 and #4 for testing the Chinese type function, remove the parts to recover the function/ 2018/12/03
     \def\@firstname{#1}%
     \def\@lastname{#2}%
-    \hypersetup{pdfauthor=#1\ #2}%
+    \def\@firstnameCH{#3}
+    \def\@lastnameCH{#4}
+    \hypersetup{pdfauthor=#1\ #2\ #4\ #3}%
 }
 
 %% Remove the header and page number on empty pages.

@@ -17,12 +17,12 @@
 }{Alexander Pope}
 
 \epigraph{
-    It did not last: the devil shouting `Ho. \\
-    Let Einstein be!' restore the status quo.
-}{Sir John Collings Squire}
+    ? \\
+    
+}{haha}
 
 \begin{abstract}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+be filled.
 \end{abstract}
 
 %% Start the actual chapter on a new page.
@@ -36,6 +36,24 @@ Instructions on how to use this template under Windows and Linux, and which \LaT
 \section{Problem for optical system design}
 \vspace{1em}
 How does this nonlinearty appear?
+
+
+
+\section{Modern Optical Design}
+Prior to the development of digital computers, lens optimization was a hand-calculation task using trigonometric and logarithmic tables to plot 2-D cuts through the multi\hyp dimensional space. Modern optical systems are parameterized into different variables representing the physical construction of an optical system. For example, a simple two-element air-spaced lens has nine variables (four radii of curvature, two thickness one airspace, and two glass types). With increasing complexity (number of elements, type of surfaces) of the system, the number of variable can exceed one hundred. With the aid of computers, rapid ray tracing allows the performance of the lens system to be quickly modelled and evaluated. Helped by the technique of numerical optimization, the vast high-dimensional design space can be searched to search for the set of variables giving the optimal performance of the system. Lens optimization has been studied as early as the 1940s \cite{wikilensdesign}. A good description of the starting of computer-aided optical design is given in a 1963 paper by Feder \cite{Feder:63}. In order to optimize an optical system using the computer, a merit function is always necessary to be constructed. The merit function in optical design problem is commonly defined as \cite{GrossHBOvol3}:
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{equation} \label{eq:MFdefi}
+MF(\textbf{x})=\sum_{j=1}^{m} w_j [\tilde{f}_j(\textbf{x}) - \tilde{f}_{tar,j} ]^2
+\end{equation}
+\noindent where $\textbf{x} = (x_1, x_2, ..., x_N)$ is a vector describing a point in the $N$-dimensional variable space. $\tilde{f}_j(\textbf{x})$ are the operands with target values $\tilde{f}_{tar,j}$. $\tilde{f}_j(\textbf{x}) - \tilde{f}_{tar,j}$ could then be defined as elementary aberration such as ray or wavefront deviations for selected rays. $w_j$ are the positive weighting factors, and therefore $MF$ is then a single number giving the residual of various operands and their target values.
+
+
+
+
+
+
+
 
 %% We need an empty line before the quote environment to work around a bug in
 %% the lettrine package, from which the drop command is derived.

@@ -88,14 +88,20 @@ The relationship between different systems is indicated by arrows in Figure \ref
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{chapter-4/figures/WAL_network.png}
+    \includegraphics[width=0.8\textwidth]{chapter-4/figures/WAL_network.png}
     \caption{A network of minima for the wide angle lens. All systems are connected with SPC. Global optimization using CODE V did not find extra systems. CODE V transverse ray aberration is used as the merit function.}
     \label{fig:WAL_network}
 \end{figure}
 
 \subsection{Analysis of SPC in detailed steps}
-
-The system M3 in Figure \ref{fig:WAL_network} is used as a demonstration to show how SPC is practically performed. First, by extracting the second element from M3, a minimum with one lens less was obtained. Then, an SPC scan was done at the same position where the lens was extracted. Figure \ref{fig:WAL_demo_sp} shows the SPC scan curve and the saddle point system which was found via the scan. In an SPC scan curve, the crossing of the curve and the horizontal axis indicates the curvature of the saddle point system (the black dot in Figure \ref{fig:WAL_demo_sp}). In this case, only one saddle point system is found via the scan and the curvature of the saddle point system is -0.170. By constructing a 2-D plane in the high dimensional space (10-D in this case), it is possible to visualize the saddle point. We already know the value of the merit function at the saddle point, $MF_{S}$, and there exists a direction from the saddle point in which the value of the merit function will decrease. Numerically, we can find this direction by minimizing on a hyperplane, which is orthogonal to the SPC scan line along which the MF value is constant. As illustrated in Figure 11, point $S$ is the saddle point, point $A$ is a point on the equal MF line (where the two curvatures of the inserted element are the same \cite{MVTurnhoutSPC15}). If there are total $N$ variables in the system, $P1$ is an $N-1$ dimensional hyperplane, which is orthogonal to $\overrightarrow{SA}$ and at the same time passing through point $A$. Point $B$ is a point where the MF value is minimized on hyperplane $P1$. As a result, we will have $MF_{B}$ < $MF_{S}$. With points $A$, $B$ and $S$, a 2-D plane $P2$ can be determined in which we can visualize the saddle point. Given the two vectors on the 2-D plane, $\overrightarrow{SA}$ and $\overrightarrow{SB}$, an orthogonal base can be calculated with the Gram-Schmidt process:
+The system M3 in Figure \ref{fig:WAL_network} is used as a demonstration to show how SPC is practically performed. First, by extracting the second element from M3, a minimum with one lens less was obtained. Then, an SPC scan was done at the same position where the lens was extracted. Figure \ref{fig:WAL_demo_sp} shows the SPC scan curve and the saddle point system which was found via the scan. In an SPC scan curve, the crossing of the curve and the horizontal axis indicates the curvature of the saddle point system (the black dot in Figure \ref{fig:WAL_demo_sp}). In this case, only one saddle point system is found via the scan and the curvature of the saddle point system is -0.170. By constructing a 2-D plane in the high dimensional space (10-D in this case), it is possible to visualize the saddle point. We already know the value of the merit function at the saddle point, $MF_{S}$, and there exists a direction from the saddle point in which the value of the merit function will decrease. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{chapter-4/figures/WAL_demo_sp_2.png}
+    \caption{A): the system we have chosen for the SPC scan. B): the SPC scan curve. C): the saddle point in a 2-D plane chosen as shown in the Appendix. D): the descending and ascending direction around the saddle point in the same 2-D plane. The saddle point is marked with a black dot.}
+    \label{fig:WAL_demo_sp}
+\end{figure}
+Numerically, we can find this direction by minimizing on a hyperplane, which is orthogonal to the SPC scan line along which the MF value is constant. As illustrated in Figure \ref{fig:hyperplane}, point $S$ is the saddle point, point $A$ is a point on the equal MF line (where the two curvatures of the inserted element are the same \cite{MVTurnhoutSPC15}). If there are total $N$ variables in the system, $P1$ is an $N-1$ dimensional hyperplane, which is orthogonal to $\overrightarrow{SA}$ and at the same time passing through point $A$. Point $B$ is a point where the MF value is minimized on hyperplane $P1$. As a result, we will have $MF_{B}$ < $MF_{S}$. With points $A$, $B$ and $S$, a 2-D plane $P2$ can be determined in which we can visualize the saddle point. Given the two vectors on the 2-D plane, $\overrightarrow{SA}$ and $\overrightarrow{SB}$, an orthogonal base can be calculated with the Gram-Schmidt process:
 
 \setlength{\belowdisplayshortskip}{5pt}
 \setlength{\abovedisplayshortskip}{5pt}
@@ -106,26 +112,138 @@ The system M3 in Figure \ref{fig:WAL_network} is used as a demonstration to show
 \begin{equation} \label{eq:u2}
 \hat{u}_{2} = \left\| \overrightarrow{SB} \right\|
 \end{equation}
-
 with $\hat{u}_{1}$ and $\hat{u}_{2}$ , the 2-D plane with the visualized saddle point can be plotted as shown in Figure \ref{fig:WAL_demo_sp}.
-In Figure 12, the Y direction is the direction along which the merit function decreases from the saddle point. We see again the numerical instability indicated by the yellow colour in Figure 12. Around the saddle point, the basins of attraction are those for the blue (MF 5.30) and cyan (MF 8.12) minima, that correspond to the red and green region in Figure 10. The way how the basins of attraction are placed in the 2-D plane in Figure 12, shows that the two minima connected by the saddle point are the ones with MF value 5.30 and 8.12 (the red and the green region in Figure 10). The two basins correspond to systems T2-M1 and T2-M4 in Table 2.
-
-
-
-
-The saddle point in this 2-D plane is illustrated in Figure \ref{fig:WAL_demo_sp}, and the plots along the X and the Y direction show that the value of the MF is increasing in one direction and decreasing in the other direction. Optimization routes following the descending directions on both sides of the saddle (on the Y-axis shown in Figure \ref{fig:WAL_demo_sp}) lead to two distinct local minima.
-
-However, in practice, it is computationally expensive to look for the 2-D plane where the saddle point is visualized as in Figure \ref{fig:WAL_demo_sp}. As mentioned previously, a common practice is to change the system along the SPC scan line, which means changing the curvatures of the inserted null-element with a small positive and negative value (this value is chosen empirically). The modified systems are the starting points for optimization. However, choosing different values for the curvature change may lead to different minima. This is demonstrated in Figure 6, where we have chosen different values for the null-element curvature as a starting point and optimize to a minimum. In order to better illustrate the phenomenon, the scan range chosen here (from -0.2 to 0.2) was larger than the curvature changes we normally use in practices for SPC. From Figure 6, we see that five different minima were obtained with different values chosen for the start curvature. The system shapes and MF value are shown in Table 2. 
-
+In Figure 12, the Y direction is the direction along which the merit function decreases from the saddle point. We see again the numerical instability indicated by the yellow colour in Figure 12. Around the saddle point, the basins of attraction are those for the blue (MF 5.30) and cyan (MF 8.12) minima, that correspond to the red and green region in Figure 10. The way how the basins of attraction are placed in the 2-D plane in Figure 12, shows that the two minima connected by the saddle point are the ones with MF value 5.30 and 8.12 (the red and the green region in Figure 10). The two basins correspond to systems T2-M1 and T2-M4 in Table \ref{table: scanline}.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{chapter-4/figures/WAL_demo_sp.png}
-    \caption{A): the system we have chosen for the SPC scan. B): the SPC scan curve. C): the saddle point in a 2-D plane chosen as shown in the Appendix. D): the descending and ascending direction around the saddle point in the same 2-D plane. The saddle point is marked with a black dot.}
-    \label{fig:WAL_demo_sp}
+    \includegraphics[width=0.65\textwidth]{chapter-4/figures/hyperplane.png}
+    \caption{The construction of a 2-D plane(P2) to visualize the saddle point(S). Point A is a point on the SPC scan line. P1 is a hyperplane perpendicular to line SA. Point B is where the MF value is minimized on P1.}
+    \label{fig:hyperplane}
+\end{figure}
+The saddle point in this 2-D plane is illustrated in Figure \ref{fig:WAL_demo_sp}, and the plots along the X and the Y direction show that the value of the MF is increasing in one direction and decreasing in the other direction. Optimization routes following the descending directions on both sides of the saddle (on the Y-axis shown in Figure \ref{fig:WAL_demo_sp}) lead to two distinct local minima.
+
+However, in practice, it is computationally expensive to look for the 2-D plane where the saddle point is visualized as in Figure \ref{fig:WAL_demo_sp}. As mentioned previously, a common practice is to change the system along the SPC scan line, which means changing the curvatures of the inserted null-element with a small positive and negative value (this value is chosen empirically). The modified systems are the starting points for optimization. However, choosing different values for the curvature change may lead to different minima. This is demonstrated in Figure \ref{fig: scanning_line}, where we have chosen different values for the null-element curvature as a starting point and optimize to a minimum. In order to better illustrate the phenomenon, the scan range chosen here (from -0.2 to 0.2) was larger than the curvature changes we normally use in practices for SPC. From Figure \ref{fig: scanning_line}, we see that five different minima were obtained with different values chosen for the start curvature. The system shapes and MF value are shown in Table \ref{table: scanline}. 
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{Result of the optimization along the scan line}
+    \label{table: scanline}
+    \vspace{-1em}
+    \hspace*{-16.5pt} %adjusting the position of the plot(table)
+    \begin{tabular}{l}
+    \includegraphics[width=0.98\textwidth]{chapter-4/figures/Line_Opt_table.png}
+    \end{tabular}
+\end{table}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.95\textwidth]{chapter-4/figures/Scanning_Line_plot.png}
+    \caption{Optimized MF value along the scan line. The vertical dashed line indicates the saddle point curvature.}
+    \label{fig: scanning_line}
+\end{figure}
+It is also possible to choose the starting points on a 2-D plane, where the saddle point locates. We plot the optimization results on two of these 2-D planes to compare: one is the plane determined by equation \ref{eq:u1} and \ref{eq:u2}; the other is the plane determined by the two newly inserted variables. As shown in Figure \ref{fig:basins}, the right side of the plot show the basins of attraction in a large region, from which the complexity of the optimization landscape can be observed. On the right side of the plot, the local region around the saddle point is plotted. In both plots, the scan line divides the basins into two parts: the green part converging to the minimum with a MF value of 8.12 and the red part converging to the minimum with a MF value of 5.30. In both cases, we also observe that if the starting points are chosen on the scan line, the optimization may converge to the minimum with a MF value of 17.08 (yellow color) or the minimum with a MF value of 10.40 (navy blue color). Shown by the consistent results from both plots, the red and green regions represent the two basins on both side of the saddle point. However, in this case, choosing starting points on the scan line may lead to unwanted local minima. Practically, it is still recommended to choose the starting points on the inserted 2-D plane since it does not involve extra computation. From the plots in Figure \ref{fig:basins}, it shows that a better to choose the starting points is to avoid the scan line, for example, perpendicular to the scan line. It is also seen that the starting points should not be too far away from the saddle point. Otherwise, the two basins around the saddle point will be missed. In Figure \ref{fig:basins} (B, the saddle point has its coordinates of $(-0.1702,-0.1702)$. The closest point where the optimization converges to unwanted minimum is $(-0.1713, -0.1675)$. The distance between to two points is $0.0029$, which is $1.7\%$ of the absolute value of the curvature at the saddle point. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter-4/figures/Basins_two_situations.png}
+    \caption{Basins of attraction around the saddle point in 2-D planes. A) Computed 2-D plane given by equation \ref{eq:u1} and \ref{eq:u2}; B) 2-D plane given by the two newly inserted variables. The saddle points (SP) are marked by black dots.}
+    \label{fig:basins}
+\end{figure}
+It is not clear yet why on the scan line the optimization shows such a behavior. It has been demonstrated in \cite{vanTurnhoutThesis2009} (Page 81) that when the damping factor of the damped least square algorithm is sufficient, there will be less artifacts shown in the plot of the basins of attraction. On the scan line, there is no artifact that lead to a different local minimum. Since we do not have control of the damping factor in CODE V, we cannot test whether it is caused by the choice of damping factor. Nevertheless, it is possible to look at the basins of attraction plot in a different scanning position. We extracted the third lens and chose to scan for saddle point at that position. As shown in Figure \ref{fig:basins_WAL_M3_S5}, along the scan line, there are no artifacts that lead to a different local minimum. In this case, choosing starting points along the scan line at different sides of the saddle point will lead to different local minima. It will either converge to the green region (MF = 44.53) or the orange region (MF = 37.82). White region (MF = 0) indicates ray failure. The closest starting point, which the system can still be ray traced, is at $(-0.1893, -0.1960)$. The coordinates of the saddle point is $(-0.1903, -0.1903)$. The distance between them is $0.0058$, which is $3.0\%$ of the absolute value of the curvature of the saddle point. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter-4/figures/M3-S5_basins.png}
+    \caption{Basins of attraction at a different scanning position compared to \ref{fig:basins}. Along the scan line (diagonal line in the plot) around the saddle point, there are no artifacts that lead optimization to minima other than the two near the saddle point.}
+    \label{fig:basins_WAL_M3_S5}
+\end{figure}
+To obtain minima that are practical, the zero thickness of the inserted element will be increased, as shown in the bottom row of Table \ref{table: scanline}. The two minima on the left side of the saddle point (T2-M1 and T2-M2) converged to minimum T2-MT1, and the two minima on the right side of the saddle point (T2-M3 and T2-M4) converged to minimum T2-MT2. When the thickness was increased, T2-M2 and T2-M3 merged with T2-M1 and T2-M4 respectively. This is shown by plotting the optimized value of MF while increasing the thickness in small steps (Figure \ref{fig:thickness_increase}). In Figure \ref{fig:thickness_increase}, the curve of T2-M3 has a jump around thickness 2 mm where the MF value suddenly changed. Before the changing point, the system became very stressed as shown in the figure. A slight change of thickness made system T2-M3 merged with T2-M4. The curve of T2-M4 stays smooth indicating that this minimum is a stable minimum while changing the thickness. The same situation happened with T2-M2: it merged with T2-M1 right after increasing the thickness. A detailed analysis using basins of attraction near the saddle point (Figure \ref{fig:basins}) shows that the stable minima T2-M1 and T2-M4 are the two zero-thickness minima connected by the saddle point.
+ In this example,  we have seen that choosing different distances from the saddle point along the scan line can lead to more than two minima after the first optimization from the SP system in Figure \ref{fig:WAL_demo_sp}. Even though this is not always the case, we suggest that a starting point should be chosen outside the scan line to prevent trapping in unwanted local minima. Data shown that the starting points can be chosen within a distance from the saddle point of $2.4\%$ of the absolute value of the saddle point curvature. Experiment results show that often many zero-thickness minima obtained in the intermediate steps of SPC are not stable and disappear after increasing the thickness of the new element. Therefore, the final result (two finite-thickness minima on both sides of the saddle in this example) is typically less dependent on the precise choice of the perturbation curvature.  
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapter-4/figures/thickness_increase.png}
+    \caption{Change of the optimized value of the merit function while increasing the thickness of the zero-thickness element. T2-M3 and T2-M4 correspond to systems when the thickness is zero. T2-MT2 corresponds to the system when the thickness equals to 3 mm. The discontinuity of the left plot indicates the instability around a minimum in the design space. Systems like the left one are usually poor local minima.}
+    \label{fig:thickness_increase}
 \end{figure}
 
 \section{Applying SPC to a microscope objective}
+The wide angle lens shown in the previous section is a moderate complex system where saddle point construction can be used in limited positions. The system only has one constraint on the effective focal length (EFL) and it was given in as a system solve in CODE v. Given the entrance pupil diameter (EPD), the EFL can be controlled by setting the value of the exit angle of t he marginal ray on the last optical surface. Given the EPD, and the EFL, the exit marginal ray angle $\alpha$ can be set in CODE V as:
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{equation} \label{eq:EFLsolve}
+\tan\alpha = \frac{EPD}{2\times EFL}
+\end{equation}
+\noindent Known system requirements, such as EFL, can be used to force selected parameters to be dependent variables which are solved directly for those system requirements. As other changes are made, these “solves” will keep the chosen requirements satisfied. In Automatic Design, this also makes it possible to reduce the number of independent variables, and thereby save computing time.
+
+However, in lens design practise, most of the system requirements cannot be easily implemented as system solves. Many constraints are then needed for a complex lens design in order to fulfill the various system requirements. In lens design software, the constraints can be set in different ways. Take CODE V as an example, there are four different types of constraints can be used in CODE V as shown in Table \ref{table: codevconstraints}.
+
+%table template
+%\setlength{\arrayrulewidth}{.5mm}
+%\setlength{\tabcolsep}{18pt}
+%\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{Different types of constraints in CODE V}
+    \label{table: codevconstraints}
+    \vspace{-1em}
+    \begin{tabular}{ p{0.31\textwidth} | m{0.45\textwidth} }
+    \hline 
+    \textbf{Constraint Mode} & \textbf{Explanation}\\
+    \hline
+    Equality constraint (=) & Always active. Handled with Lagrangian Multiplier Method. Constrains exactly to target value of the constraint.  \\
+    \hline
+    Inequality constraint (>, <) & Only active when the optimization violates the targeted boundary. Handled with Lagrangian Multiplier Method.\\
+    \hline
+    Penalty function (PTC) & Only used for targeted constraint.Includes a weighted function in the merit function.\\
+    \hline
+    Weighted function (WTC) & Only used for targeted constraint. Includes a penalty function in the merit function.\\
+    \hline
+    \end{tabular}
+\end{table}
+
+As we have mentioned in the \colorbox{orange}{previous chapter}, it is necessary to optimize the current optical system to a local minimum for a given merit function in order to operate the saddle point construction. However, it will not be possible for the merit function to locate at the minimum if the constraint is implemented using the method of Lagrange multiplier. One of the advantage of using Lagrange multiplier is that it separates the constraint control from the merit function, allowing the merit function to be based solely upon image quality-related criteria. For the case of an equality constraint, we can write the optimization of the merit function as follows:
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{equation} \label{eq: MFminCon}
+\begin{split}
+& \text{minimize}\;\; MF(\textbf{x}) \\
+& \text{subject to}\;\; g(\textbf{x}) = 0
+\end{split}
+\end{equation}
+\noindent where $\textbf{x} = (x_1, x_2, ..., x_N)$ is a vector describing a point in the $N$-dimensional variable space. $g(\textbf{x})=0$ is an equality constraint that the variables have to satisfy. Given that both $MF$ and $g$ have continuous first partial derivatives, we introduce a new variable $\lambda$ called a Lagrange multiplier and then the Lagrange function can be defined by
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{equation} \label{eq: LagFun}
+\mathcal{L}(\textbf{x},\lambda)=MF(\textbf{x})-\lambda\cdot g(\textbf{x})
+\end{equation}
+Given that $g(\textbf{x})=0$, minimizing $MF(\textbf{x})$ is equivalent to minimizing $\mathcal{L}(\textbf{x},\lambda)$. Therefore, the constrained optimization problem in equation \ref{eq: MFminCon} is converted an unconstrained optimization problem by solving 
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{equation} \label{eq: LagJacob}
+\nabla_{\textbf{x},\lambda}\mathcal{L}(\textbf{x},\lambda)=0
+\end{equation}
+A numerical optimization method can then be applied to minimize $\mathcal{L}(\textbf{x},\lambda)$. From equation \ref{eq: LagJacob}, we can derive
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{subequations} 
+\begin{align}
+& \nabla_\textbf{x}\mathcal{L}(\textbf{x},\lambda)=\nabla_\textbf{x}MF(\textbf{x})-\lambda\nabla_\textbf{x}g(\textbf{x})=0 \label{eq: LagCondition1} \\
+& \nabla_\lambda\mathcal{L}(\textbf{x},\lambda)=g(\textbf{x})=0 \label{eq: LagCondition2}
+\end{align}
+\end{subequations}
+From equation \ref{eq: LagCondition1}, we see that the Lagrange multiplier method converts the original $N$-dimensional problem to $N+1$-dimensional problem by adding one more variable $\lambda$ and one more equation. 
+When operating the saddle point construction scan, two extra variables are added to the existing problem. We use $c_{N+1}$ and $c_{N+2}$ as the name of the variables. The scan of the saddle point is to scan the partial derivative of the merit function ($MF$) with respect to the newly inserted variables. This value equals to $\nabla_{c_{N+1}}MF(\textbf{x},c_{N+1},c_{N+2}) \rvert _{c_{N+1}=c_{N+2}}$. The absolute value of the gradient for chosen $c_{N+1}$ or $c_{N+2}$ as an independent variable should be the same. From equation \ref{eq: LagCondition1}, we can derive 
+\setlength{\belowdisplayshortskip}{5pt}
+\setlength{\abovedisplayshortskip}{5pt}
+\begin{equation} \label{eq: nablaMFzero}
+\nabla_\textbf{x}MF(\textbf{x}) = 0 \;\; \text{if} \;\; \lambda =0 \;\; \text{or} \;\; \nabla_\textbf{x}g(\textbf{x})=0
+\end{equation}
+Both of the conditions in equation \ref{eq: nablaMFzero} implies that the space of the constraint overlaps the optimal points in the merit function landscape. However, in practise, it is rarely the case. As a result, we generally threat $\nabla_\textbf{x}MF(\textbf{x}) \neq 0 $ when constraint is implemented using the Lagrange multiplier, and therefore, it will not be acurate to apply saddle point construction scan in this case.
+
+
+
+
+
+
 
 \section{Applying SPC to a lithographic object (extreme complex case)}
 
