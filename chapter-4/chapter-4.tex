@@ -78,7 +78,7 @@ Figure \ref{fig:WAL_combine} shows the solution after combining the front and re
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{chapter-4/figures/WAL_combine.png}
+    \includegraphics[width=0.7\textwidth]{chapter-4/figures/WAL_combine.png}
     \caption{Combination of the front part and three rear parts all result in one solution.}
     \label{fig:WAL_combine}
 \end{figure}
@@ -166,6 +166,43 @@ To obtain minima that are practical, the zero thickness of the inserted element 
 \end{figure}
 
 \section{Applying SPC to a microscope objective}
+\subsection{Ultraviolet (UV) microscope dry objective}
+Working together with a designer in Jena, we have chosen a UV microscope objective and applied saddle point construction in practical design cases. The microscope objective is designed by Vollrath and its specification is reported in a published patent \cite{patentvollrath}. One variation from the patent is reproduced in CODE V. The operating wavelength of the system is at 325 nm. The system consists of seven lens elements. The material used in CODE V is fused silica (LithosilQ from SHOTT) with a refractive index of 1.4816 at 325 nm. Specification and performance of the system is listed in Table \ref{table: vollrathspec}. With a barrel lens having a focal length of 250 mm, the magnification of the composite microscope becomes 100. The seven lens elements in the system can be divided into three function groups according to Zhang and Gross \cite{ZhangMicroscope2017}. As shown in the system plot in Figure \ref{fig: vollrathoriginal}, the first lens on the left forms the rear group. The second and third lenses form the middle group, and the rest of the lens elements form the front group. Zhang and Gross categorize the existing microscopes into three types depending on the functions performed by different groups. The distribution of the spherical aberration in different groups shown in Figure \ref{fig: vollrathoriginal} indicates that the middle and rear group correct the spherical aberration together. 
+
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{System specification and performance of the microscope objective}
+    \label{table: vollrathspec}
+    \vspace{-1em}
+    \begin{tabular}{ p{15em}  c }
+    \hline 
+    Effective focal length (EFL, mm) & 2.5\\ 
+    Field (real image height, mm) & 0.1\\ 
+    Numerical aperture (NA) & 0.90\\ 
+    Operating wavelength (nm) & 325\\ 
+    Working distance (WD, mm) & 0.6\\ 
+    Overall length (mm) & 25\\
+    \midrule
+    RMS wave front error (m$\lambda$) & 48.5\\ 
+    Strehl ratio at 0 mm & 0.976\\ 
+    Strehl ratio at 0.1mm & 0.849\\
+    \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{chapter-4/figures/Vollrath_original.png}
+    \caption{System plot of the UV microscope objective \cite{patentvollrath}. The objective can be divided into three function groups, and the rear group and middle group correct the spherical aberration together \cite{ZhangMicroscope2017}.}
+    \label{fig: vollrathoriginal}
+\end{figure}
+
+The current system already has a good performance and a compact size with the specification listed in Table \ref{table: vollrathspec}. However, if some of the specifications is made more demanding, certain structural modification of the original system is necessary to keep a satisfactory performance. In this section, we investigate how to introduce structural change in the system by using saddle point construction. The main purpose of using saddle point construction is to add lens element in this case. Different from a simple design task, a complex system often needs various constraints in order to fulfill the system requirements. In the following section, we will discuss the use of constraints with saddle point construction in optical design software. 
+
 \subsection{Constraints in optical design software}
 The wide angle lens shown in the previous section is a moderate complex system where saddle point construction can be used in limited positions. The system only has one constraint on the effective focal length (EFL) and it was given in as a system solve in CODE v. Given the entrance pupil diameter (EPD), the EFL can be controlled by setting the value of the exit angle of t he marginal ray on the last optical surface. Given the EPD, and the EFL, the exit marginal ray angle $\alpha$ can be set in CODE V as:
 \setlength{\belowdisplayshortskip}{5pt}
@@ -259,6 +296,29 @@ W(\textbf{x})=(WTC\cdot \Delta C)^2
 \end{equation}
 where $WTC$ is the weighting factor set in CODE V, and $\Delta C$ is the departure of the constraints from its target. In the following research on the complex UV microscope objective, the necessary constraints are implemented with the weighted function.
 
+\subsection{Introducing structural change with saddle point construction}
+We increased the NA of the microscope objective from 0.90 to 0.95. The rays still can be traced after the modification. The system is then optimized with a wavefront error function. An EFL constraint and a working distance constraint were applied with equality constraint mode. From Table \ref{table: NAchange} we see that the performance of system deteriorates after increasing the NA.
+
+%table template
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{Change of the system performance with increasing NA}
+    \label{table: NAchange}
+    \vspace{-1em}
+    \begin{tabular}{ c c c }
+    \hline 
+     Numerical aperture (NA) & 0.90 & 0.95\\ 
+     \midrule
+    RMS wavefront error (m$\lambda$) & 48.5 & 111  \\ 
+    Strehl ratio at 0 mm & 0.976 & 0.833\\
+    Strehl ratio at 0.1 mm & 0.849 & 0.386\\
+    \hline
+    \end{tabular}
+\end{table}
 
 
 

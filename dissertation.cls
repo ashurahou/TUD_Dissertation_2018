@@ -28,6 +28,7 @@
 \RequirePackage{array}
 \RequirePackage{hyphenat}
 \RequirePackage{textcomp}
+\RequirePackage{booktabs}
 %\RequirePackage{showframe} %showframe
 
 \ifxetex
