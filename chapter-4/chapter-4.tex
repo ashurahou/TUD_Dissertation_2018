@@ -297,7 +297,7 @@ W(\textbf{x})=(WTC\cdot \Delta C)^2
 where $WTC$ is the weighting factor set in CODE V, and $\Delta C$ is the departure of the constraints from its target. In the following research on the complex UV microscope objective, the necessary constraints are implemented with the weighted function.
 
 \subsection{Introducing structural change with saddle point construction}
-We increased the NA of the microscope objective from 0.90 to 0.95. The rays still can be traced after the modification. The system is then optimized with a wavefront error function. An EFL constraint and a working distance constraint were applied with equality constraint mode. From Table \ref{table: NAchange} we see that the performance of system deteriorates after increasing the NA.
+We increased the NA of the microscope objective from 0.90 to 0.95. The rays still can be traced after the modification. The system is then optimized with a wavefront error function. An EFL constraint and a working distance constraint were applied with equality constraint mode. From Table \ref{table: NAchange} we see that the performance of system deteriorates after increasing the NA. One of major causes for the deterioration of the system performance is that the spherical aberration (especially the high-order spherical aberration) increases with the increasing of NA. Normally, a traditional approach would introduce structural change to the system to increase the degrees of the freedom to reduce the aberration. These kinds of structural change can be aspherize the existing surface, adding extra lens element, or split existing lens element. During our experiments, we only considering the case with adding or spliting elements.   
 
 %table template
 \setlength{\arrayrulewidth}{.5mm}
@@ -320,6 +320,7 @@ We increased the NA of the microscope objective from 0.90 to 0.95. The rays stil
     \end{tabular}
 \end{table}
 
+With the separation of the system into different function groups, it is possible to understand the function of different part of the system, and provides insight when structural change is needed. From Figure \ref{fig: vollrathoriginal} we know that the rear and middle group mainly correct the spherical aberration. A reasonable strategy is then to introduce structural changes in these two groups, namely by adding or splitting elements in the rear or middle group of the system. Based on this insight,   
 
 
 
