@@ -29,7 +29,7 @@
 \RequirePackage{hyphenat}
 \RequirePackage{textcomp}
 \RequirePackage{booktabs}
-%\RequirePackage{showframe} %showframe
+% \RequirePackage{showframe} %showframe
 
 \ifxetex
     \RequirePackage[xetex]{geometry}

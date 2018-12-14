@@ -297,7 +297,14 @@ W(\textbf{x})=(WTC\cdot \Delta C)^2
 where $WTC$ is the weighting factor set in CODE V, and $\Delta C$ is the departure of the constraints from its target. In the following research on the complex UV microscope objective, the necessary constraints are implemented with the weighted function.
 
 \subsection{Introducing structural change with saddle point construction}
-We increased the NA of the microscope objective from 0.90 to 0.95. The rays still can be traced after the modification. The system is then optimized with a wavefront error function. An EFL constraint and a working distance constraint were applied with equality constraint mode. From Table \ref{table: NAchange} we see that the performance of system deteriorates after increasing the NA. One of major causes for the deterioration of the system performance is that the spherical aberration (especially the high-order spherical aberration) increases with the increasing of NA. Normally, a traditional approach would introduce structural change to the system to increase the degrees of the freedom to reduce the aberration. These kinds of structural change can be aspherize the existing surface, adding extra lens element, or split existing lens element. During our experiments, we only considering the case with adding or spliting elements.   
+We increased the NA of the microscope objective from 0.90 to 0.95. The rays still can be traced after the modification. The system is then optimized with a wavefront error function. An EFL constraint and a working distance constraint were applied with equality constraint mode. Figure \ref{fig: vollrathNA90295} shows that the change of the system shape \footnote{When we mention system shape, it means the bending of each lens element and the relative thickness distribution between each element.} is mainly on the thickness of the elements. The bending of each element remains unchanged. From Table \ref{table: NAchange} we see that the performance of system deteriorates after increasing the NA. One of major causes for the deterioration of the system performance is that the spherical aberration (especially the high-order spherical aberration) increases with the increasing of NA. Normally, a traditional approach would introduce structural change to the system to increase the degrees of the freedom to reduce the aberration. These kinds of structural change can be aspherize the existing surface, adding extra lens element, or split existing lens element. During our experiments, we only considering the case with adding or splitting elements.   
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{chapter-4/figures/Vollrath_NA90295.png}
+    \caption{Change of the system shape after the increasing of the NA from 0.90 to 0.95.}
+    \label{fig: vollrathNA90295}
+\end{figure}
 
 %table template
 \setlength{\arrayrulewidth}{.5mm}
@@ -312,7 +319,7 @@ We increased the NA of the microscope objective from 0.90 to 0.95. The rays stil
     \begin{tabular}{ c c c }
     \hline 
      Numerical aperture (NA) & 0.90 & 0.95\\ 
-     \midrule
+     \cmidrule{2-3}
     RMS wavefront error (m$\lambda$) & 48.5 & 111  \\ 
     Strehl ratio at 0 mm & 0.976 & 0.833\\
     Strehl ratio at 0.1 mm & 0.849 & 0.386\\
@@ -320,8 +327,37 @@ We increased the NA of the microscope objective from 0.90 to 0.95. The rays stil
     \end{tabular}
 \end{table}
 
-With the separation of the system into different function groups, it is possible to understand the function of different part of the system, and provides insight when structural change is needed. From Figure \ref{fig: vollrathoriginal} we know that the rear and middle group mainly correct the spherical aberration. A reasonable strategy is then to introduce structural changes in these two groups, namely by adding or splitting elements in the rear or middle group of the system. Based on this insight,   
+With the separation of the system into different function groups, it is possible to understand the function of different part of the system, and provides insight when structural change is needed. From Figure \ref{fig: vollrathoriginal} we know that the rear and middle group mainly correct the spherical aberration. A reasonable strategy is then to introduce structural changes in these two groups, namely by adding or splitting elements in the rear or middle group of the system. Based on this insight, we chose four different positions in the rear and middle group to add or split element in a conventional way. The resulted system shapes are shown in Figure \ref{fig: vollrathNAtrad}. It is worth pointing out that with traditional approach, each operation only yields one solution. The performance of the resulting systems are listed in Table \ref{table: vollrathNAtrad}. From the table, we see that out of four, only one has a satisfactory performance \footnote{For satisfactory performance, the criteria is that the Strehl ratio is above 0.8 for all fields, and \colorbox{orange}{the wavefront RMS is below $\lambda/14$} \cite{patentvollrath}, for which the system is believed to be diffraction-limited.}. 
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{chapter-4/figures/Vollrath_NATradition.png}
+    \caption{Introducing structural change in the traditional way for system performance improvement.}
+    \label{fig: vollrathNAtrad}
+\end{figure}
+
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{System performance for the systems shown in Figure \ref{fig: vollrathNAtrad}}
+    \label{table: vollrathNAtrad}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c}
+    \hline 
+     No. & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4}\\ 
+     \midrule
+    RMS wavefront error (m$\lambda$) & 119 & 117 & 99 & 41 \\ 
+    Strehl ratio at 0 mm & 0.736 & 0.769 & 0.832 & 0.985\\
+    Strehl ratio at 0.1 mm & 0.428 & 0.453 & 0.548 & 0.882\\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
 
 
 \section{Applying SPC to a lithographic object (extreme complex case)}

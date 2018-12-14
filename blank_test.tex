@@ -23,18 +23,21 @@ This is to test a reference in bibtex. \cite{book:Shannon1997}
 \begin{table}[h!]
     \centering
     \captionsetup{justification=centering}
-    \caption{System specification}
-    \label{table: sysspec}
+    \caption{System performance for the systems shown in Figure \ref{fig: vollrathNAtrad}}
+    \label{table: vollrathNAtrad}
     \vspace{-1em}
-    \begin{tabular}{ p{20em} c }
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c}
     \hline 
-    Entrance pupil diameter (EPD, mm) & 0.8\\
-    Full field of view (FOV, °) & 110\\
-    \midrule
-    Effective focal length (EFL, mm) & 3.5\\
-    Wavelength (nm) & 644, 546, 480\\
+     No. & 1 & 2 & 3 & 4\\ 
+     \midrule
+    RMS wavefront error (m$\lambda$) & 119 & 117 & 99 & 41 \\ 
+    Strehl ratio at 0 mm & 0.736 & 0.769 & 0.832 & 0.985\\
+    Strehl ratio at 0.1 mm & 0.428 & 0.453 & 0.548 & 0.882\\
     \hline
     \end{tabular}
+    \end{adjustbox}
 \end{table}
 
 %template figures
