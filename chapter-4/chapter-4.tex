@@ -5,6 +5,11 @@
 \captionsetup{margin=1.5em}
 \captionsetup[table]{labelfont=bf}
 
+%%Newdefined commands
+%for circled number typing
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};}}
+
 % The following annotation is customary for chapter which have already been
 % published as a paper.
 % \blfootnote{Parts of this chapter have been published in Annalen der Physik \textbf{324}, 289 (1906) \cite{LinWang2011}.}
@@ -187,7 +192,7 @@ Working together with a designer in Jena, we have chosen a UV microscope objecti
     Working distance (WD, mm) & 0.6\\ 
     Overall length (mm) & 25\\
     \midrule
-    RMS wave front error (m$\lambda$) & 48.5\\ 
+    RMS wave front error (m$\lambda$) & 49\\ 
     Strehl ratio at 0 mm & 0.976\\ 
     Strehl ratio at 0.1mm & 0.849\\
     \hline
@@ -320,19 +325,19 @@ We increased the NA of the microscope objective from 0.90 to 0.95. The rays stil
     \hline 
      Numerical aperture (NA) & 0.90 & 0.95\\ 
      \cmidrule{2-3}
-    RMS wavefront error (m$\lambda$) & 48.5 & 111  \\ 
+    RMS wavefront error (m$\lambda$) & 49 & 111  \\ 
     Strehl ratio at 0 mm & 0.976 & 0.833\\
     Strehl ratio at 0.1 mm & 0.849 & 0.386\\
     \hline
     \end{tabular}
 \end{table}
 
-With the separation of the system into different function groups, it is possible to understand the function of different part of the system, and provides insight when structural change is needed. From Figure \ref{fig: vollrathoriginal} we know that the rear and middle group mainly correct the spherical aberration. A reasonable strategy is then to introduce structural changes in these two groups, namely by adding or splitting elements in the rear or middle group of the system. Based on this insight, we chose four different positions in the rear and middle group to add or split element in a conventional way. The resulted system shapes are shown in Figure \ref{fig: vollrathNAtrad}. It is worth pointing out that with traditional approach, each operation only yields one solution. The performance of the resulting systems are listed in Table \ref{table: vollrathNAtrad}. From the table, we see that out of four, only one has a satisfactory performance \footnote{For satisfactory performance, the criteria is that the Strehl ratio is above 0.8 for all fields, and \colorbox{orange}{the wavefront RMS is below $\lambda/14$} \cite{patentvollrath}, for which the system is believed to be diffraction-limited.}. 
+With the separation of the system into different function groups, it is possible to understand the function of different part of the system, and provides insight when structural change is needed. From Figure \ref{fig: vollrathoriginal} we know that the rear and middle group mainly correct the spherical aberration. A reasonable strategy is then to introduce structural changes in these two groups, namely by adding or splitting elements in the rear or middle group of the system. Based on this insight, we chose four different positions in the rear and middle group to add or split element in a conventional way. The resulted system shapes are shown in Figure \ref{fig: vollrathNAtrad}. It is worth pointing out that with traditional approach, each operation only yields one solution. The performance of the resulting systems are listed in Table \ref{table: vollrathNAtrad}. From the table, we see that out of four, only one has a satisfactory performance \footnote{For satisfactory performance, the criteria is that the Strehl ratio is above 0.8 for all fields, and \colorbox{orange}{the wavefront RMS is below $\lambda/14$} \cite{patentvollrath}, for which the system is believed to be diffraction-limited.}. In Figure \ref{fig: vollrathNAtrad}, the inserted or split element is highlighted with shade. For operation \circled{1}, the insertion of the lens resulting an extra shell lens in the front group. It gives four new freedoms (two curvatures, one lens thickness, and an air space thickness) for optimization. However, the performance of the system is not improved to a satisfactory result. Operation \circled{2} splitting one of the lens elements in the middle group distributing its original power from one lens element to two lens elements. The same happened for operation \circled{3}. Both operations only produce slightly better results than operation \circle{1}, however, none of them is good. Splitting the lens element in the rear group in operation \circled{4} produces a different system shape compared to the other three and the original system. A reverse-bended element is created (second element from the left), and it forms a narrow air gap with the element to the right of it. This kind of air gap is effective for introducing high-order spherical aberrations, which balances the high-order spherical aberration introduced by other parts of the system \colorbox{orange}{reference needed}.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{chapter-4/figures/Vollrath_NATradition.png}
-    \caption{Introducing structural change in the traditional way for system performance improvement.}
+    \caption{Introducing structural change in the traditional way for system performance improvement. Four operations have been executed on the NA 0.95 system resulting in four different results. The inserted or split element is highlighted with shade.}
     \label{fig: vollrathNAtrad}
 \end{figure}
 
@@ -360,116 +365,115 @@ With the separation of the system into different function groups, it is possible
 \end{table}
 
 
+Based on the same insight on where the change should be introduced in the system, we performed saddle point construction on the same operation positions as the traditional approach. Figure \ref{fig: VollrathSPCcaseNA} presents the results from saddle point construction scans. From four scans, a total number of eighteen solutions were obtained \footnote{\colorbox{orange}{an example of a scan will be given in the appendices}}. Besides the four solutions as same as the one obtained with traditional method, fourteen extra solutions were acquired. Their performances are listed in Table \ref{table: vollratSPCcaseNA}. Out of the eighteen solutions, nine reach satisfactory results. 
+
+\begin{figure}[h!]
+  \begin{adjustbox}{addcode={
+    \begin{minipage}{\width}}{
+    \captionsetup{margin=0em}
+    \caption{Eighteen solutions from four saddle point construction scans. The dashed line indicates constructing an air lens inside a lens element (equivalent to splitting lens). The solid line indicates constructing a glass element in the air space (equivalent to add lens). In comparison with Figure \ref{fig: vollrathNAtrad}, solution \textcircled{\scriptsize{1}}C, \textcircled{\scriptsize{2}}D, \textcircled{\scriptsize{3}}C, and \textcircled{\scriptsize{4}}D are the ones obtained with conventional approach.}\label{fig: VollrathSPCcaseNA}
+    \end{minipage}},rotate=90,center}
+    \includegraphics[width=\textheight]{chapter-4/figures/vollrathSPCcaseNA.png}
+  \end{adjustbox}
+\end{figure}
+
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{System performance for the systems shown in Figure \ref{fig: VollrathSPCcaseNA}}
+    \label{table: vollratSPCcaseNA}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c c}
+    \hline 
+       & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \\ 
+     \midrule
+    RMS WFR & 65 & 59 & 60 & 26 & \multirow{3}{*}{\textbf{A}} \\ 
+    SR(0) & 0.862 & 0.942 & 0.958 & 0.998\\
+    SR(0.1) & 0.829 & 0.807 & 0.808 & 0.945\\
+    \midrule
+    RMS WFR& 109 & 67 & 52 & 135 & \multirow{3}{*}{\textbf{B}} \\ 
+    SR(0) & 0.876 & 0.941 & 0.960 & 0.604\\
+    SR(0.1) & 0.378 & 0.756 & 0.847 & 0.319\\
+    \midrule
+    RMS WFR & 98 & 45 & 104 & 124 & \multirow{3}{*}{\textbf{C}} \\ 
+    SR(0) & 0.826 & 0.989 & 0.779 & 0.661\\
+    SR(0.1) & 0.505 & 0.874 & 0.540 & 0.371\\
+    \midrule
+    RMS WFR & 48 & 102 & 89 & 35 & \multirow{3}{*}{\textbf{D}} \\ 
+    SR(0) & 0.950 & 0.828 & 0.820 & 0.993\\
+    SR(0.1) & 0.859 & 0.444 & 0.625 & 0.894\\
+    \midrule
+    RMS WFR &  & 43 &  & 135 & \multirow{3}{*}{\textbf{E}} \\ 
+    SR(0) &  & 0.982 &  & 0.789\\
+    SR(0.1) &  & 0.853 &  & 0.251\\
+    \hline
+    \multicolumn{6}{c}{\textit{\footnotesize{RMS WFR = RMS wavefront error (m$\lambda$); SR(0) = Strehl ratio at 0 mm; SR(0.1) = Strehl ratio at 0.1 mm.}}}\\
+    % \vspace{-1em}
+    % \multicolumn{6}{c}{\textit{\footnotesize{SR(0) = Strehl ratio at 0 mm; SR(0.1) = Strehl ratio at 0.1 mm.}}}
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
+
+Compared to traditional method, using saddle point methods find 4.5 times more systems with the same amount of operation. If we count the efficiency for finding good systems, traditional method is 25\%, and SPC is 50\%.
+
+A second structural change introduced is to increase the working distance of the original system, from 0.6 mm to 2.5 mm. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{chapter-4/figures/Vollrath_WD06TO25.png}
+    \caption{Change of the system shape after the increasing of the working distance from 0.6 mm to 2.5 mm.}
+    \label{fig: vollrathWD06to25}
+\end{figure}
+
+%table template
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{Change of the system performance with increasing working distance}
+    \label{table: WDchange}
+    \vspace{-1em}
+    \begin{tabular}{ c c c }
+    \hline 
+     Working distance (WD, mm) & 0.6 & 2.5\\ 
+     \cmidrule{2-3}
+    RMS wavefront error (m$\lambda$) & 49 & 135  \\ 
+    Strehl ratio at 0 mm & 0.976 & 0.254\\
+    Strehl ratio at 0.1 mm & 0.849 & 0.019\\
+    \hline
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+\subsection{How to do the scan}
+\begin{itemize}
+\item computation 4 point
+\item optimization enough loops
+\item choice of weigths and constraint
+\end{itemize}
+
+
 \section{Applying SPC to a lithographic object (extreme complex case)}
 
 
-%% We need an empty line before the quote environment to work around a bug in
-%% the lettrine package, from which the drop command is derived.
-\begin{quote}
-\texttt{\textbackslash documentclass\{dissertation\}}
-\end{quote}
-which loads the dissertation template. The template is based on the \LaTeX{} \texttt{book} document class and stored in \texttt{dissertation.cls}. The document class accepts several comma-separated options. By default, hyperlinks are shown in cyan, which is convenient when reading the dissertation on a computer, but can be expensive when printing. They can be turned black with the \texttt{print} option. This will also turn the headers dark gray instead of cyan. Moreover, it will add a 3~mm bleed around the page including crop marks. This will help the printer with the thumb indices, since they run right up to the page borders. Finally, the \texttt{nativefonts} option can be used to override the automatic font selection (see below).
+\section{conclusion}
 
-A dissertation is a big document, which makes it easy to miss warnings about the layout in the \LaTeX{} output. In order to locate problem areas, add the \texttt{draft} option to the \texttt{\textbackslash documentclass} line. This will display a vertical bar in the margins next to the paragraphs that require attention.
+The saddle point construction introduces a disruption for the optimization with a certain amount of control. Instead of starting randomly in the optimization landscape intending to find a different local minimum, with saddle point construction, we are able to start from some space that there will be a higher chance of converging to a different local minima. 
 
-The contents of the dissertation are included between the \texttt{\textbackslash begin\{document\}} and \texttt{\textbackslash end\{document\}} commands, and split into three parts by
-\begin{enumerate}
-\item\texttt{\textbackslash frontmatter}, which uses Roman numerals for the page numbers and is used for the title page and the table of contents;
-\item\texttt{\textbackslash mainmatter}, which uses Arabic numerals for the page numbers and is the style for the chapters;
-\item\texttt{\textbackslash appendix}, which uses letters for the chapter numbers, starting with `A'.
-\end{enumerate}
-The title page is defined in \texttt{title.tex} in the \texttt{title} folder and included verbatim with \texttt{\textbackslash include\{title/title\}},\footnote{Note that it is not necessary to specify the file extension.} (see below). Additionally, it is possible to include a preface, containing, for example, the acknowledgements. An example can be found in \texttt{preface.tex}. The table of contents is generated automatically with the \texttt{\textbackslash tableofcontents} command. Chapters are included after \texttt{\textbackslash mainmatter} and appendices after \texttt{\textbackslash appendix}. For example, \texttt{\textbackslash include\{chapter-1/chapter-1\}} includes \texttt{chapter-1.tex}, which contains this introduction.
-
-\section{Title Page}
-
-\dropcap{T}{he} title pages are defined in \texttt{title/title.tex}, which you will have to modify according to your needs. Note that these pages are subject to the requirements of the \emph{promotieregelement} and cannot be changed at will. Apart from the names and dates, most of the Dutch text is dictated literally.
-
-Since the thesis title and name of the author appear several times throughout the document (on the title page, but also in, \emph{e.g.}, the preface and cv), special commands are provided so they only have to be specified once. The title (and optional subtitle) can be specified with
-
-\begin{quote}
-\texttt{\textbackslash title[Optional subtitle]\{Title\}}
-\end{quote}
-The name of the author is specified with
-\begin{quote}
-\texttt{\textbackslash author\{First name\}\{Last name\}}
-\end{quote}
-Note that the first and last name are separate arguments, since they may be printed in different font shapes. The \texttt{\textbackslash title} and \texttt{\textbackslash author} commands also ensure that the title and author appear in the metadata of the final PDF.
-
-See \texttt{title/title.tex} for detailed documentation on the comment and layout of the title pages. Logos of institutes that have contributed financially to the dissertation may be included on reverse side of the title page. A few example logos can be found in the \texttt{title/logos} folder.
-
-\section{Chapters}
-
-\dropcap{E}{ach} chapter has its own file. For example, the \LaTeX{} source of this chapter can be found in \texttt{chapter-1.tex}. A chapter starts with the command
-
-\begin{quote}
-\texttt{\textbackslash chapter\{Chapter title\}}
-\end{quote}
-This starts a new page, prints the chapter number and title and adds a link in the table of contents. If the title is very long, it may be desirable to use a shorter version in the page headers and the table of contents. This can be achieved by specifying the short title in brackets:
-
-\begin{quote}
-\texttt{\textbackslash chapter[Short title]\{Very long title with many words which could not possibly fit on one line\}}
-\end{quote}
-Unnumbered chapters, such as the preface, can be created with \texttt{\textbackslash chapter*\{Chapter title\}}. Such a chapter will not show up in the table of contents or in the page header. To create a table of contents entry anyway, add
-\begin{quote}
-    \texttt{\textbackslash addcontentsline\{toc\}\{chapter\}\{Chapter title\}}
-\end{quote}
-after the \texttt{\textbackslash chapter} command. To print the chapter title in the page header, add
-\begin{quote}
-    \texttt{\textbackslash setheader\{Chapter title\}}
-\end{quote}
-
-If (parts of) the chapter have already been published elsewhere, it is customary to add a reference. This can be done with the special unnumbered footnote command \texttt{\textbackslash blfootnote}. For example,
-
-\begin{quote}
-\texttt{\textbackslash blfootnote\{Parts of this chapter have been published in Annalen der Physik \textbackslash textbf\{324\}, 289 (1906) \textbackslash cite \{Einstein1906\}.\}}
-\end{quote}
-generates the footnote at the beginning of this chapter. Because this footnote is unnumbered, the \texttt{hyperref} package may throw a warning, which safely be ignored.
-
-If multiple people have contributed significantly to this chapter, they can be lister with the \texttt{\textbackslash authors} command. This can be followed by a quotation using \texttt{\textbackslash epigraph} as shown above. Finally, it is customary for a dissertation to include an abstract for every chapter (except perhaps the introduction). This can be accomplished with the \texttt{abstract} environment. The abstract should be followed by \texttt{\textbackslash newpage} to start the chapter text on a new page.
-
-In a dissertation, each chapter has its own list of references. These can be generated with the special command \texttt{\textbackslash references\{dissertation\}} from \texttt{dissertation.bib} at the end of the chapter. Note that this means that you need to run a command like \texttt{bibtex chapter-1/chapter-1} for each chapter. The bibliography style is specified in \texttt{dissertation.bst}, which is a modified version of \texttt{apsrev4-1.bst} (from REVTeX) designed to also display the titles of referenced articles. The template will automatically generate clickable hyperlinks if a URL or DOI (digital object identifier) is present for the reference. Although it is possible to manage the bibliography by hand, we recommend using EndNote (available from Blackboard) or JabRef (available from \url{http://jabref.sourceforge.net/}).
-
-Chapters are subdivided into sections, subsections, subsubsections, and, optionally, paragraphs and subparagraphs. All can have a title, but only sections and subsections are numbered. As with chapters, the numbering can be turned off by using \texttt{\textbackslash section*\{\ldots\}} instead of \texttt{\textbackslash section\{\ldots\}}, and similarly for the subsection.
-\section{\textbackslash section\{\ldots\}}
-\subsection{\textbackslash subsection\{\ldots\}}
-\subsubsection{\textbackslash subsubsection\{\ldots\}}
-\paragraph{\textbackslash paragraph\{\ldots\}}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\section{Fonts and Colors}
-
-\dropcap{T}{he} fonts used by this template depend on which version of \LaTeX{} you use. Regular \LaTeX, \emph{i.e.}, if you compile your document with with \texttt{latex}, \texttt{pslatex} or \texttt{pdflatex}, will use Utopia for text, Fourier for math and Latin Modern for sans-serif and monospaced text. However, if you want to adhere to the TU Delft house style, you will need to use \XeLaTeX, as it supports TrueType and OpenType fonts. Compiling with \texttt{xelatex} will use Bookman Old Style for titles, Tahoma for text, Courier New for monospace and Cambria for math. If you want to use \XeLaTeX, but do not want to use the TU Delft house style fonts, you can add the \texttt{nativefonts} option to the document class.
-
-This template supports the use of drop caps, a large colored initial at the beginning of a chapter or section, via the \texttt{\textbackslash dropcap} command:
-
-\begin{quote}
-\texttt{\textbackslash dropcap\{L\}\{orem\} ipsum\ldots}
-\end{quote}
-The first argument is the capital that will be printed on two lines (in the title color), and the second argument is the rest of the word. Depending on the font, the latter may be printed in small caps.
-
-The corporate colors of the TU Delft are cyan, black and white, available, respectively, via \texttt{\textbackslash color\{{\color{tudelft-cyan}tudelft-cyan}\}}, \texttt{\textbackslash color\{{\color{tudelft-black}tudelft-black}\}} (which differs slightly from the default \texttt{black}) and \texttt{\textbackslash color\{tudelft-white\}}. Apart from these three, the house style defines the basic colors
-\begin{itemize}
-%% Reduce the separation between the items, since this is just a list of words.
-\itemsep 0pt
-\parskip 0pt
-\item\texttt{\color{tudelft-sea-green}tudelft-sea-green},
-\item\texttt{\color{tudelft-green}tudelft-green},
-\item\texttt{\color{tudelft-dark-blue}tudelft-dark-blue},
-\item\texttt{\color{tudelft-purple}tudelft-purple},
-\item\texttt{\color{tudelft-turquoise}tudelft-turquoise} and
-\item\texttt{\color{tudelft-sky-blue}tudelft-sky-blue},
-\end{itemize}
-as well as the accent colors
-\begin{itemize}
-\itemsep 0pt
-\parskip 0pt
-\item\texttt{\color{tudelft-lavendel}tudelft-lavendel},
-\item\texttt{\color{tudelft-orange}tudelft-orange},
-\item\texttt{\color{tudelft-warm-purple}tudelft-warm-purple},
-\item\texttt{\color{tudelft-fuchsia}tudelft-fuchsia},
-\item\texttt{\color{tudelft-bright-green}tudelft-bright-green} and
-\item\texttt{\color{tudelft-yellow}tudelft-yellow}.
-\end{itemize}
+SPC is very effective on obtaining solutions with different bendings. 
 
 \references{dissertation}
 

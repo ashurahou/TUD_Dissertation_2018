@@ -29,6 +29,8 @@
 \RequirePackage{hyphenat}
 \RequirePackage{textcomp}
 \RequirePackage{booktabs}
+\RequirePackage{tikz}
+\RequirePackage{multirow}
 % \RequirePackage{showframe} %showframe
 
 \ifxetex
