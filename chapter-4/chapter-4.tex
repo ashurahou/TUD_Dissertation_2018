@@ -332,7 +332,7 @@ We increased the NA of the microscope objective from 0.90 to 0.95. The rays stil
     \end{tabular}
 \end{table}
 
-With the separation of the system into different function groups, it is possible to understand the function of different part of the system, and provides insight when structural change is needed. From Figure \ref{fig: vollrathoriginal} we know that the rear and middle group mainly correct the spherical aberration. A reasonable strategy is then to introduce structural changes in these two groups, namely by adding or splitting elements in the rear or middle group of the system. Based on this insight, we chose four different positions in the rear and middle group to add or split element in a conventional way. The resulted system shapes are shown in Figure \ref{fig: vollrathNAtrad}. It is worth pointing out that with traditional approach, each operation only yields one solution. The performance of the resulting systems are listed in Table \ref{table: vollrathNAtrad}. From the table, we see that out of four, only one has a satisfactory performance \footnote{For satisfactory performance, the criteria is that the Strehl ratio is above 0.8 for all fields, and \colorbox{orange}{the wavefront RMS is below $\lambda/14$} \cite{patentvollrath}, for which the system is believed to be diffraction-limited.}. In Figure \ref{fig: vollrathNAtrad}, the inserted or split element is highlighted with shade. For operation \circled{1}, the insertion of the lens resulting an extra shell lens in the front group. It gives four new freedoms (two curvatures, one lens thickness, and an air space thickness) for optimization. However, the performance of the system is not improved to a satisfactory result. Operation \circled{2} splitting one of the lens elements in the middle group distributing its original power from one lens element to two lens elements. The same happened for operation \circled{3}. Both operations only produce slightly better results than operation \circle{1}, however, none of them is good. Splitting the lens element in the rear group in operation \circled{4} produces a different system shape compared to the other three and the original system. A reverse-bended element is created (second element from the left), and it forms a narrow air gap with the element to the right of it. This kind of air gap is effective for introducing high-order spherical aberrations, which balances the high-order spherical aberration introduced by other parts of the system \colorbox{orange}{reference needed}.
+With the separation of the system into different function groups, it is possible to understand the function of different part of the system, and provides insight when structural change is needed. From Figure \ref{fig: vollrathoriginal} we know that the rear and middle group mainly correct the spherical aberration. A reasonable strategy is then to introduce structural changes in these two groups, namely by adding or splitting elements in the rear or middle group of the system. Based on this insight, we chose four different positions in the rear and middle group to add or split element in a conventional way. The resulted system shapes are shown in Figure \ref{fig: vollrathNAtrad}. It is worth pointing out that with traditional approach, each operation only yields one solution. The performance of the resulting systems are listed in Table \ref{table: vollrathNAtrad}. From the table, we see that out of four, only one has a satisfactory performance \footnote{For satisfactory performance, the criteria is that the Strehl ratio is above 0.8 for all fields, and \colorbox{orange}{the wavefront RMS is below $\lambda/14$} \cite{patentvollrath}, for which the system is believed to be diffraction-limited.}. In Figure \ref{fig: vollrathNAtrad}, the inserted or split element is highlighted with shade. For operation \circled{1}, the insertion of the lens resulting an extra shell lens in the front group. It gives four new freedoms (two curvatures, one lens thickness, and an air space thickness) for optimization. However, the performance of the system is not improved to a satisfactory result. Operation \circled{2} splitting one of the lens elements in the middle group distributing its original power from one lens element to two lens elements. The same happened for operation \circled{3}. Both operations only produce slightly better results than operation \circle{1}, however, none of them is good. Splitting the lens element in the rear group in operation \circled{4} produces a different system shape compared to the other three and the original system. A reverse-bended element is created (second element from the left), and it forms a narrow air gap with the element to the right of it. This kind of air gap is effective for introducing high-order spherical aberrations, which balances the high-order spherical aberration introduced by other parts of the system \colorbox{orange}{reference needed}. 
 
 \begin{figure}[h!]
     \centering
@@ -365,7 +365,7 @@ With the separation of the system into different function groups, it is possible
 \end{table}
 
 
-Based on the same insight on where the change should be introduced in the system, we performed saddle point construction on the same operation positions as the traditional approach. Figure \ref{fig: VollrathSPCcaseNA} presents the results from saddle point construction scans. From four scans, a total number of eighteen solutions were obtained \footnote{\colorbox{orange}{an example of a scan will be given in the appendices}}. Besides the four solutions as same as the one obtained with traditional method, fourteen extra solutions were acquired. Their performances are listed in Table \ref{table: vollratSPCcaseNA}. Out of the eighteen solutions, nine reach satisfactory results. 
+Based on the same insight on where the change should be introduced in the system, we performed saddle point construction on the same operation positions as the traditional approach. Figure \ref{fig: VollrathSPCcaseNA} presents the results from saddle point construction scans. From four scans, a total number of eighteen solutions were obtained \footnote{\colorbox{orange}{an example of a scan will be given in the appendices}}. Besides the four solutions as same as the one obtained with traditional method, fourteen extra solutions were acquired. Their performances are listed in Table \ref{table: vollratSPCcaseNA}. Out of the eighteen solutions, nine reach satisfactory results. We can also see that \circled{1}A and \circled{2}B have very close system shapes. One is the result from the left bending of the glass lens, and the other is the result of the right bending the of air lens. 
 
 \begin{figure}[h!]
   \begin{adjustbox}{addcode={
@@ -373,7 +373,7 @@ Based on the same insight on where the change should be introduced in the system
     \captionsetup{margin=0em}
     \caption{Eighteen solutions from four saddle point construction scans. The dashed line indicates constructing an air lens inside a lens element (equivalent to splitting lens). The solid line indicates constructing a glass element in the air space (equivalent to add lens). In comparison with Figure \ref{fig: vollrathNAtrad}, solution \textcircled{\scriptsize{1}}C, \textcircled{\scriptsize{2}}D, \textcircled{\scriptsize{3}}C, and \textcircled{\scriptsize{4}}D are the ones obtained with conventional approach.}\label{fig: VollrathSPCcaseNA}
     \end{minipage}},rotate=90,center}
-    \includegraphics[width=\textheight]{chapter-4/figures/vollrathSPCcaseNA.png}
+    \includegraphics[width=0.96\textheight]{chapter-4/figures/vollrathSPCcaseNA.png}
   \end{adjustbox}
 \end{figure}
 
@@ -421,7 +421,7 @@ Based on the same insight on where the change should be introduced in the system
 
 Compared to traditional method, using saddle point methods find 4.5 times more systems with the same amount of operation. If we count the efficiency for finding good systems, traditional method is 25\%, and SPC is 50\%.
 
-A second structural change introduced is to increase the working distance of the original system, from 0.6 mm to 2.5 mm. 
+A second structural change introduced is to increase the working distance of the original system, from 0.6 mm to 2.5 mm. This requires the first lens element on the right becoming plano-concentric instead of plano-vertex, causing the decrease of the power of the first element. In order to still maintain the performance, the lens element after the first one and those in the middle group need to compensate for more optical power. With the limitation of the degrees of the freedom, the performance of the system deteriorates. Figure \ref{fig: vollrathWD06to25} shows that how the system changed after increasing the working distance from 0.6 mm to 2.5 mm. A longer air gap emerges after the first element on the left due to the increasing of the size of the lens elements. The third lens element from the left is compressed into a thinner element. The bending of each element still remain close to the original system. Table \ref{table: vollrathWDchange} gives the change of the performance with the increasing of the working distance. 
 
 \begin{figure}[h!]
     \centering
@@ -438,7 +438,7 @@ A second structural change introduced is to increase the working distance of the
     \centering
     \captionsetup{justification=centering}
     \caption{Change of the system performance with increasing working distance}
-    \label{table: WDchange}
+    \label{table: vollrathWDchange}
     \vspace{-1em}
     \begin{tabular}{ c c c }
     \hline 
@@ -451,14 +451,95 @@ A second structural change introduced is to increase the working distance of the
     \end{tabular}
 \end{table}
 
+Given the insight of the cause of the deterioration of the system, a common practice to introduce changes to the system for system improvement is to introduce structural change in the middle or front group. By splitting or adding new lenses, newly added degrees of freedom will help in correcting the aberrations. Two insertion and one splitting positions were chosen to adding new degrees of freedom to the system. As shown in Figure \ref{fig: vollrathWDTrad}, the results of the three operations are chosen. Two insertions ended up in the same solution. The splitting shows a new system which the performance is also good. The data of the system is shown in Table \ref{table: vollrathWDTrad}.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{chapter-4/figures/vollrathWDTrad.png}
+    \caption{Introducing structural change in the traditional way for system performance improvement. Insertions at position \textcircled{\scriptsize{1}} and \textcircled{\scriptsize{2}} result the same solution. }
+    \label{fig: vollrathWDTrad}
+\end{figure}
 
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{System performance for the systems shown in Figure \ref{fig: vollrathWDTrad}}
+    \label{table: vollrathWDTrad}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c}
+    \hline 
+     No. & \textbf{1 \& 2} & \textbf{3}  \\ 
+     \midrule
+    RMS wavefront error (m$\lambda$) & 100 & 41 \\ 
+    Strehl ratio at 0 mm & 0.833 & 0.975 \\
+    Strehl ratio at 0.1 mm & 0.507 & 0.902 \\
+    \hline
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
 
+The same practice as the one we have done for increasing the NA case was done here for the working distance case. Saddle point construction was applied at the same positions. The result is shown in Figure \ref{fig: vollrathWDSPC}. From three operations of SPC, we acquire ten systems. The performance of the systems are shown in Table \ref{table: vollrathWDTrad}. Out of the ten systems, six are good systems having the Strehl ratio above 0.8 for both fields. It is worth mentioning that some of the systems have close system shapes. For example, system \circled{1}B, \circled{2}B, and \circled{3}B have very close power distributions for each element, and the different is on the lens thickness and air space variations. System \circled{2}A and system \circled{3}A are very close systems with different thickness variations. 
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{chapter-4/figures/vollrathWDSPC.png}
+    \caption{}
+    \label{fig: vollrathWDSPC}
+\end{figure}
 
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{System performance for the systems shown in Figure \ref{fig: vollrathWDSPC}}
+    \label{table: vollrathWDcase}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c}
+    \hline 
+       & \textbf{1} & \textbf{2} & \textbf{3} & \\ 
+     \midrule
+    RMS WFR & 55 & 49 & 60 & \multirow{3}{*}{\textbf{A}} \\ 
+    SR(0) & 0.952 & 0.976 & 0.946  \\
+    SR(0.1) & 0.835 & 0.863 & 0.807  \\
+    \midrule
+    RMS WFR & 133 & 101 & 179 & \multirow{3}{*}{\textbf{B}} \\ 
+    SR(0) & 0.645 & 0.779 & 0.410  \\
+    SR(0.1) & 0.309 & 0.511 & 0.131  \\
+    \midrule
+    RMS WFR & 95 & 43 & 41 & \multirow{3}{*}{\textbf{C}} \\ 
+    SR(0) & 0.732 & 0.971 & 0.983  \\
+    SR(0.1) & 0.642 & 0.901 & 0.896 \\
+    \midrule
+    RMS WFR &  & & 39 & \multirow{3}{*}{\textbf{D}} \\ 
+    SR(0) &  &  & 0.978 \\
+    SR(0.1) &  &  & 0.910 \\
+    \hline
+    \multicolumn{5}{c}{\textit{\footnotesize{RMS WFR = RMS wavefront error (m$\lambda$); SR(0) = Strehl ratio at 0 mm; SR(0.1) = Strehl ratio at 0.1 mm.}}}\\
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
 
 
 \subsection{How to do the scan}
+
+When working with complex systems, there are some extra situations we need to take into consideration in order to properly operate the saddle point construction. These issues are usually caused by the increasing complexity for multi-variable optimization and  the design approaches in complex lens design. 
+
+When we mention complexity of the system, it usually refers to the number of variables used in the lens system. One of the issue for complex system is that when the number of variable increases, optimization basin around the local minimum becomes a vast shallow region where absolute convergence has not been achieved and nothing like a unique prescription has been found, even when very long runs were made \cite{Brixner81}. In practise, we observed that the quality of the convergence of the local minimum will affect the SPC scan curve. An example is given for the case where we increased the working distance of the microscope objective. Before proceeding with SPC scan, we have to optimize the system to a local minimum. We used a merit function defined by transverse ray aberration. Two weighted constraint were used: an EFL constraint of 2.5 mm with a weight of 0.01 and an edge thickness constraint of 2.5 mm on the first surface from the right with a weight of 0.01. Only the curvatures of the surfaces were used as variables at this stage, and the number of the variable is fourteen. With the merit function, we defined a stop criteria for the improvement of the merit function as 1E-15. We operated the SPC scan after the fourth surface from the left. Figure \ref{} shows how the SPC scan curves look like when different numbers of optimization cycles applied. 
+
+
+
+
+Deviation from the local minimum will cause the scan to shift. In some cases, there still zero crossings of the partial derivative. However, bear in mind that the other partial derivative with respect to the merit function won't be zero. Therefore, considering all other variables, the scanned zero crossing points are not stationary point at all. 
+
 \begin{itemize}
 \item computation 4 point
 \item optimization enough loops
