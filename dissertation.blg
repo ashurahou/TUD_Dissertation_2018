@@ -1,0 +1,129 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: dissertation.aux
+A level-1 auxiliary file: title/title.aux
+A level-1 auxiliary file: preface/preface.aux
+A level-1 auxiliary file: chapter-1-intro/chapter-1-intro.aux
+The style file: dissertation.bst
+A level-1 auxiliary file: chapter-2-sp/chapter-2-sp.aux
+Illegal, another \bibstyle command---line 24 of file chapter-2-sp/chapter-2-sp.aux
+ : \bibstyle
+ :          {dissertation}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 25 of file chapter-2-sp/chapter-2-sp.aux
+ : \bibdata
+ :         {dissertation}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chapter-3/chapter-3.aux
+Illegal, another \bibstyle command---line 62 of file chapter-3/chapter-3.aux
+ : \bibstyle
+ :          {dissertation}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 63 of file chapter-3/chapter-3.aux
+ : \bibdata
+ :         {dissertation}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chapter-4/chapter-4.aux
+Illegal, another \bibstyle command---line 84 of file chapter-4/chapter-4.aux
+ : \bibstyle
+ :          {dissertation}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 85 of file chapter-4/chapter-4.aux
+ : \bibdata
+ :         {dissertation}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chapter-5/chapter-5.aux
+Illegal, another \bibstyle command---line 16 of file chapter-5/chapter-5.aux
+ : \bibstyle
+ :          {dissertation}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 17 of file chapter-5/chapter-5.aux
+ : \bibdata
+ :         {dissertation}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chapter-6/chapter-6.aux
+Illegal, another \bibstyle command---line 18 of file chapter-6/chapter-6.aux
+ : \bibstyle
+ :          {dissertation}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 19 of file chapter-6/chapter-6.aux
+ : \bibdata
+ :         {dissertation}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: chapter-7-appendix/Appendix.aux
+Illegal, another \bibstyle command---line 15 of file chapter-7-appendix/Appendix.aux
+ : \bibstyle
+ :          {dissertation}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 16 of file chapter-7-appendix/Appendix.aux
+ : \bibdata
+ :         {dissertation}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: summary/summary.aux
+A level-1 auxiliary file: cv/cv.aux
+A level-1 auxiliary file: publications/publications.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: dissertation.bib
+Warning--entry type for "BociortPatent2010" isn't style-file defined
+--line 346 of file dissertation.bib
+Warning--string name "august" is undefined
+--line 442 of file dissertation.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (72) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (0) allowed
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+Warning--empty year in wikilensdesign
+Warning--empty year in codevmanual
+You've used 31 entries,
+            5847 wiz_defined-function locations,
+            1864 strings with 21470 characters,
+and the built_in function-call counts, 30087 in all, are:
+= -- 2070
+> -- 677
+< -- 180
++ -- 217
+- -- 148
+* -- 4665
+:= -- 3033
+add.period$ -- 61
+call.type$ -- 31
+change.case$ -- 158
+chr.to.int$ -- 30
+cite$ -- 33
+duplicate$ -- 2886
+empty$ -- 2249
+format.name$ -- 387
+if$ -- 5894
+int.to.chr$ -- 2
+int.to.str$ -- 39
+missing$ -- 364
+newline$ -- 145
+num.names$ -- 93
+pop$ -- 1127
+preamble$ -- 1
+purify$ -- 153
+quote$ -- 0
+skip$ -- 1111
+stack$ -- 0
+substring$ -- 702
+swap$ -- 2722
+text.length$ -- 73
+text.prefix$ -- 0
+top$ -- 8
+type$ -- 415
+warning$ -- 2
+while$ -- 87
+width$ -- 0
+write$ -- 324
+(There were 12 error messages)

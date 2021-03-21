@@ -1,0 +1,194 @@
+%merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+%Control: key (0)
+%Control: author (72) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{14}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \textit  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{http://dx.doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {van Grol}\ \emph {et~al.}(2009)\citenamefont {van
+  Grol}, \citenamefont {Bociort},\ and\ \citenamefont {van
+  Turnhout}}]{PascalTriplet2009}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {van
+  Grol}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Bociort}}, \ and\
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {van Turnhout}},\
+  }\bibfield  {title} {\textit {\bibinfo {title} {Finding order in the design
+  landscape of simple optical systems},}\ }\href {\doibase 10.1117/12.825495}
+  {\bibfield  {journal} {\bibinfo  {journal} {Proc.SPIE}\ }\textbf {\bibinfo
+  {volume} {7428}},\ \bibinfo {pages} {11} (\bibinfo {year}
+  {2009})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hou}\ \emph {et~al.}(2016)\citenamefont {Hou},
+  \citenamefont {Livshits},\ and\ \citenamefont {Bociort}}]{HouSimple16}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont
+  {Hou}}, \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Livshits}}, \
+  and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Bociort}},\
+  }\bibfield  {title} {\textit {\bibinfo {title} {One-dimensional searches for
+  finding new lens design solutions efficiently},}\ }\href {\doibase
+  10.1364/AO.55.010449} {\bibfield  {journal} {\bibinfo  {journal} {Appl.
+  Opt.}\ }\textbf {\bibinfo {volume} {55}},\ \bibinfo {pages} {10449} (\bibinfo
+  {year} {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Matsuyama}\ \emph {et~al.}(2006)\citenamefont
+  {Matsuyama}, \citenamefont {Ohmura},\ and\ \citenamefont
+  {Williamson}}]{Matsuyama2006_LithoHis}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Matsuyama}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Ohmura}}, \
+  and\ \bibinfo {author} {\bibfnamefont {D.~M.}\ \bibnamefont {Williamson}},\
+  }\bibfield  {title} {\textit {\bibinfo {title} {The lithographic lens: its
+  history and evolution},}\ }\href {\doibase 10.1117/12.656163} {\bibfield
+  {journal} {\bibinfo  {journal} {Proc.SPIE}\ }\textbf {\bibinfo {volume}
+  {6154}},\ \bibinfo {pages} {6154 } (\bibinfo {year} {2006})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Livshits}\ and\ \citenamefont
+  {Vasilyev}(2013)}]{LivshitsQA2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Livshits}}\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Vasilyev}},\ }\bibfield  {title} {\textit {\bibinfo {title} {Q and a
+  tutorial on optical design},}\ }\href {\doibase 10.1515/aot-2012-0077}
+  {\bibfield  {journal} {\bibinfo  {journal} {Advanced Optical Technologies}\
+  }\textbf {\bibinfo {volume} {2}},\ \bibinfo {pages} {31} (\bibinfo {year}
+  {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Shafer}(1995)}]{Shafer1995_moreless}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Shafer}},\ }\bibfield  {title} {\textit {\bibinfo {title} {Doing more with
+  less},}\ }\href {\doibase 10.1117/12.216370} {\bibfield  {journal} {\bibinfo
+  {journal} {Proc.SPIE}\ }\textbf {\bibinfo {volume} {2537}},\ \bibinfo {pages}
+  {2537 } (\bibinfo {year} {1995})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cao}\ \emph {et~al.}(2017)\citenamefont {Cao},
+  \citenamefont {Li},\ and\ \citenamefont {Mao}}]{Cao2017_GroupDesign}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont
+  {Cao}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Li}}, \ and\
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Mao}},\ }\bibfield
+  {title} {\textit {\bibinfo {title} {Grouping design method of catadioptric
+  projection objective for deep ultraviolet lithography},}\ }\href {\doibase
+  10.1117/1.OE.56.2.025102} {\bibfield  {journal} {\bibinfo  {journal} {Optical
+  Engineering}\ }\textbf {\bibinfo {volume} {56}},\ \bibinfo {pages} {56 }
+  (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Marinescu}\ and\ \citenamefont
+  {Bociort}(2008{\natexlab{a}})}]{MarinescuSP2008}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
+  {Marinescu}}\ and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Bociort}},\ }\bibfield  {title} {\textit {\bibinfo {title} {Saddle-point
+  construction in the design of lithographic objectives, part 1: method},}\
+  }\href {\doibase 10.1117/1.2981512} {\bibfield  {journal} {\bibinfo
+  {journal} {Optical Engineering}\ }\textbf {\bibinfo {volume} {47}},\ \bibinfo
+  {pages} {6} (\bibinfo {year} {2008}{\natexlab{a}})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Marinescu}\ and\ \citenamefont
+  {Bociort}(2008{\natexlab{b}})}]{MarinescuSPS2008_p2}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
+  {Marinescu}}\ and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Bociort}},\ }\bibfield  {title} {\textit {\bibinfo {title} {Saddle-point
+  construction in the design of lithographic objectives, part 2:
+  application},}\ }\href {\doibase 10.1117/1.2981513} {\bibfield  {journal}
+  {\bibinfo  {journal} {Optical Engineering}\ }\textbf {\bibinfo {volume}
+  {47}},\ \bibinfo {pages} {47 } (\bibinfo {year}
+  {2008}{\natexlab{b}})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {van Turnhout}(2009)}]{vanTurnhoutThesis2009}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {van
+  Turnhout}},\ }\bibfield  {title} {\textit {\bibinfo {title} {A systematic
+  analysis of the optical merit function landscape: towards improved
+  optimization methods in optical design},}\ }\href
+  {https://repository.tudelft.nl/islandora/object/uuid\%3A6c6197bd-5757-428a-9d3d-e94af148ce90}
+  {\bibfield  {journal} {\bibinfo  {journal} {Ph.D. dissertation (Delft
+  University of Technology)}\ ,\ \bibinfo {pages} {63}} (\bibinfo {year}
+  {2009})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sahin}\ and\ \citenamefont
+  {Tanguay}(2018)}]{Sahin:18DisCorrec}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.~E.}\ \bibnamefont
+  {Sahin}}\ and\ \bibinfo {author} {\bibfnamefont {A.~R.}\ \bibnamefont
+  {Tanguay}},\ }\bibfield  {title} {\textit {\bibinfo {title} {Distortion
+  optimization for wide-angle computational cameras},}\ }\href {\doibase
+  10.1364/OE.26.005478} {\bibfield  {journal} {\bibinfo  {journal} {Opt.
+  Express}\ }\textbf {\bibinfo {volume} {26}},\ \bibinfo {pages} {5478}
+  (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {van Turnhout}\ \emph {et~al.}(2015)\citenamefont {van
+  Turnhout}, \citenamefont {van Grol}, \citenamefont {Bociort},\ and\
+  \citenamefont {Urbach}}]{MVTurnhoutSPC15}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {van
+  Turnhout}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {van Grol}},
+  \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Bociort}}, \ and\
+  \bibinfo {author} {\bibfnamefont {H.~P.}\ \bibnamefont {Urbach}},\ }\bibfield
+   {title} {\textit {\bibinfo {title} {Obtaining new local minima in lens
+  design by constructing saddle points},}\ }\href {\doibase
+  10.1364/OE.23.006679} {\bibfield  {journal} {\bibinfo  {journal} {Opt.
+  Express}\ }\textbf {\bibinfo {volume} {23}},\ \bibinfo {pages} {6679}
+  (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Vollrath}(1995)}]{patentvollrath}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Vollrath}},\ }\href {https://patents.google.com/patent/US5440422A/en}
+  {\textit {\bibinfo {title} {Method for manufacturing ultraviolet microscope
+  dry objectives and microscope objectives manufactured in accordance with this
+  method},}\ } (\bibinfo {year} {1995}),\ \bibinfo {note} {{US Patent
+  5,440,422}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhang}\ and\ \citenamefont
+  {Gross}(2017)}]{ZhangMicroscope2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Zhang}}\ and\ \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Gross}},\
+  }\bibfield  {title} {\textit {\bibinfo {title} {Systematic design of
+  microscopic lenses},}\ }\href {\doibase 10.1117/12.2287633} {\bibfield
+  {journal} {\bibinfo  {journal} {Proc.SPIE}\ }\textbf {\bibinfo {volume}
+  {10590}},\ \bibinfo {pages} {10590 } (\bibinfo {year} {2017})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {{Synopsis, Inc.}}()}]{codevmanual}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{Synopsis, Inc.}}},\
+  }\href@noop {} {\emph {\bibinfo {title} {{CODE V\textregistered} (version
+  11.0) Optimization Reference Manual}}},\ \bibinfo {note}
+  {\url{www.synopsis.com}}\BibitemShut {NoStop}%
+\end{thebibliography}%

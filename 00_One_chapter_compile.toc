@@ -1,0 +1,21 @@
+\babel@toc {english}{}
+\contentsline {part}{I\hspace {1em}title}{i}{part.1}
+\gdef \the@ipfilectr {@-1}
+\contentsline {chapter}{\numberline {1}Applying Saddle Point Construction in Complex Systems}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Investigation of a wide angle lens with six elements}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Analysis of SPC in detailed steps}{4}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}Applying SPC to a microscope objective}{10}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Ultraviolet (UV) microscope dry objective}{10}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Constraints in optical design software}{12}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Introducing structural change with saddle point construction}{14}{subsection.1.3.3}
+\contentsline {section}{\numberline {1.4}Applying SPC to a lithographic object (extreme complex case)}{15}{section.1.4}
+\contentsline {section}{\numberline {1.5}Title Page}{16}{section.1.5}
+\contentsline {section}{\numberline {1.6}Chapters}{16}{section.1.6}
+\contentsline {section}{\numberline {1.7}\textbackslash section\{\ldots \}}{17}{section.1.7}
+\contentsline {subsection}{\numberline {1.7.1}\textbackslash subsection\{\ldots \}}{17}{subsection.1.7.1}
+\contentsline {subsubsection}{\textbackslash subsubsection\{\ldots \}}{17}{subsection.1.7.1}
+\contentsline {paragraph}{\textbackslash paragraph\{\ldots \}}{17}{subsection.1.7.1}
+\contentsline {section}{\numberline {1.8}Fonts and Colors}{17}{section.1.8}
+\gdef \the@ipfilectr {}
+\contentsfinish 
