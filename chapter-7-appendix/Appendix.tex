@@ -29,11 +29,157 @@
 % %% Start the actual chapter on a new page.
 % \newpage
 \section{landscape cases}
-\section{system specifications}
+\section{system specification}
 \item Two systems from the SMS paper, which is in the paper already
 \item WAL system from Irina, give the original system is enough.
 \item UV microscope system, give the original 
 \DUV objective, give the original
+
+\section{System Specifications of the SMS Constructed Systems}\label{apdx: chapter-5-system-spec}
+The system parameters of system 1 and system 2 described in Chapter 5 are listed in the following tables. The first two tables provide the parameters of the systems after the SMS construction. The optimized system based on the first two tables are given in the last two tables. 
+
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{Surface parameters of system 1 constructed with the SMS method}}
+    \label{table: chap5 - sys1 - SMS}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c c c}
+    \hline 
+     \textbf{Surface} & \textbf{1 (Object)} & \textbf{2} & \textbf{3 (Stop)} & \textbf{4} & \textbf{5} & \textbf{6 (Image)}\\ 
+     \midrule
+    \rowcolor[gray]{0.9}  \textbf{Surface type} & Sphere & Qcon Asphere & Qcon Asphere & Qcon Asphere & Qcon Asphere & Sphere \\ 
+    \textbf{Material} &  & PMMA &  & PMMA & & \\
+   \rowcolor[gray]{0.9}  \textbf{Curvature (1/mm)} & 0 & -0.3142 & -0.3424 & -0.1874 &-0.2925 & 0\\
+    \textbf{Thickness (mm)} & Infinity & 2.50 & 4.50 & 2.00 & 9.00 & 0 \\ 
+    \rowcolor[gray]{0.9} \textbf{Normalized Radius (mm)} & & 2.20 & 2.40 & 2.75 & 2.90 & \\
+    \textbf{K} & & -1.2937 & -1.3707 & -7.0733 & -0.9741&\\
+    \rowcolor[gray]{0.9} \textbf{QC4} & & 5.9543E-02 & 2.7731E-02 & 1.1610E-01 &  1.2458E-01 &  \\ 
+    \textbf{QC6} & &  9.8831E-03 & 2.8067E-03 & -7.3253E-03 & -9.2028E-03 &\\
+   \rowcolor[gray]{0.9}  \textbf{QC8} & & -4.3303E-04 &  2.6278E-04 &  8.3891E-04 &  9.1018E-04 & \\
+    \textbf{QC10} & & -6.7898E-05 &  2.8571E-05 & -2.4930E-05 & -1.9440E-05 & \\ 
+   \rowcolor[gray]{0.9}  \textbf{QC12} & &  5.5475E-06 & -1.7237E-05 &  6.7655E-06 &  9.0658E-06 &\\
+    \hline
+    \multicolumn{6}{l}{\textit{\footnotesize{QC means the coefficient of Qcon polynomial.}}}\\
+    % \vspace{-1em}
+    % \multicolumn{6}{c}{\textit{\footnotesize{SR(0) = Strehl ratio at 0 mm; SR(0.1) = Strehl ratio at 0.1 mm.}}}
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
+
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{Surface parameters of system 2 constructed with the SMS method}}
+    \label{table: chap5 - sys2 - SMS}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c c c c}
+    \hline 
+     \textbf{Surface} & \textbf{1 (Object)} & \textbf{2}  & \textbf{3} &\textbf{4 (Stop)} & \textbf{5} & \textbf{6} & \textbf{7 (Image)}\\ 
+     \midrule
+    \rowcolor[gray]{0.9}  \textbf{Surface type} & Sphere & Qcon Asphere & Qcon Asphere & Sphere & Qcon Asphere & Qcon Asphere & Sphere \\ 
+    \textbf{Material} &  & PMMA &  & & PMMA & & \\
+   \rowcolor[gray]{0.9}  \textbf{Curvature (1/mm)} & 0 & -0.0823 & -0.1386 & 0 & -0.0876 & -0.2183 & 0\\
+    \textbf{Thickness (mm)} & Infinity & 3.00 & 2.00 & 2.50 & 2.50 & 10.00 & 0 \\ 
+    \rowcolor[gray]{0.9} \textbf{Normalized Radius (mm)} & & 3.70 & 3.40 & & 3.50 & 3.70 & \\
+    \textbf{K} & & -9.2639 & -5.7686 & &  6.0225 & -0.3232 &\\
+    \rowcolor[gray]{0.9} \textbf{QC4} & &  1.4285E-01 &  1.8381E-01 & &  2.6624E-01 &   2.1069E-01 &  \\ 
+    \textbf{QC6} & &   2.8156E-02 &  4.0717E-02 & &  1.2446E-02 &  9.0396E-03 &\\
+   \rowcolor[gray]{0.9}  \textbf{QC8} & & -1.6114E-03 &   3.0800E-03 &  & 3.4723E-03 &   2.4930E-03 & \\
+    \textbf{QC10} & & -1.4590E-04 &   7.4292E-04 & &  5.4780E-04 &  4.6335E-04 & \\ 
+   \rowcolor[gray]{0.9}  \textbf{QC12} & &   2.0759E-05 & 1.2620E-04 & &   9.8619E-05 &   9.9287E-05 &\\
+    \textbf{QC14} & & -1.4991E-06 & 2.9401E-05 & &   1.7711E-05 &   2.0624E-05 & \\ 
+   \rowcolor[gray]{0.9}  \textbf{QC16} & & -2.7096E-06 & 3.8057E-06 & & 3.1363E-06 & 4.9458E-06 &\\
+    \hline
+    \multicolumn{6}{l}{\textit{\footnotesize{QC means the coefficient of Qcon polynomial.}}}\\
+    % \vspace{-1em}
+    % \multicolumn{6}{c}{\textit{\footnotesize{SR(0) = Strehl ratio at 0 mm; SR(0.1) = Strehl ratio at 0.1 mm.}}}
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
+
+
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{Surface parameters of system 1 constructed with the SMS method}}
+    \label{table: chap5 - sys1 - SMS+OPT}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c c c}
+    \hline 
+     \textbf{Surface} & \textbf{1 (Object)} & \textbf{2} & \textbf{3 (Stop)} & \textbf{4} & \textbf{5} & \textbf{6 (Image)}\\ 
+     \midrule
+    \rowcolor[gray]{0.9}  \textbf{Surface type} & Sphere & Qcon Asphere & Qcon Asphere & Qcon Asphere & Qcon Asphere & Sphere \\ 
+    \textbf{Material} &  & PMMA &  & PMMA & & \\
+   \rowcolor[gray]{0.9}  \textbf{Curvature (1/mm)} & 0 & -0.4307 & -0.3952 & 0.0098 &-0.1153 & 0\\
+    \textbf{Thickness (mm)} & Infinity & 2.50 & 4.50 & 2.00 & 9.00 & 0 \\ 
+    \rowcolor[gray]{0.9} \textbf{Normalized Radius (mm)} & & 2.3309 & 2.5920 & 3.1730 & 2.8996 & \\
+    \textbf{K} & & -0.8916 & -1.0712 & -1.0000 & -2.6340 &\\
+    \rowcolor[gray]{0.9} \textbf{QC4} & &  1.6274E-02 &  2.7731E-02 &  6.8250E-01 &   3.4386E-01 &  \\ 
+    \textbf{QC6} & &   9.7144E-03 &  2.8067E-03 &  4.0248E-03 &  2.6399E-02 &\\
+   \rowcolor[gray]{0.9}  \textbf{QC8} & & -4.0643E-04 &   2.6278E-04 &   1.0928E-02 &   8.1496E-03 & \\
+    \textbf{QC10} & & -1.1117E-04 &   2.8571E-05 &  4.7472E-04 &  1.5117E-03 & \\ 
+   \rowcolor[gray]{0.9}  \textbf{QC12} & &  -8.8182E-05 & -1.7237E-05 & 4.7380E-05 &   1.1745E-04 &\\
+    \hline
+    \multicolumn{6}{l}{\textit{\footnotesize{QC means the coefficient of Qcon polynomial.}}}\\
+    % \vspace{-1em}
+    % \multicolumn{6}{c}{\textit{\footnotesize{SR(0) = Strehl ratio at 0 mm; SR(0.1) = Strehl ratio at 0.1 mm.}}}
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
+
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{Surface parameters of system 2 constructed with the SMS method}}
+    \label{table: chap5 - sys2 - SMS+OPT}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c c c c}
+    \hline 
+     \textbf{Surface} & \textbf{1 (Object)} & \textbf{2}  & \textbf{3} &\textbf{4 (Stop)} & \textbf{5} & \textbf{6} & \textbf{7 (Image)}\\ 
+     \midrule
+    \rowcolor[gray]{0.9}  \textbf{Surface type} & Sphere & Qcon Asphere & Qcon Asphere & Sphere & Qcon Asphere & Qcon Asphere & Sphere \\ 
+    \textbf{Material} &  & PMMA &  & & PMMA & & \\
+   \rowcolor[gray]{0.9}  \textbf{Curvature (1/mm)} & 0 & -0.2921 & -0.3233 & 0 & -0.0407 & -0.1148 & 0\\
+    \textbf{Thickness (mm)} & Infinity & 3.00 & 2.00 & 2.50 & 2.50 & 10.00 & 0 \\ 
+    \rowcolor[gray]{0.9} \textbf{Normalized Radius (mm)} & & 4.1468 & 4.6408 & & 4.1310 & 3.7007 & \\
+    \textbf{K} & & -0.8802 & -2.0004 & &  -7.7743 & -3.1404 &\\
+    \rowcolor[gray]{0.9} \textbf{QC4} & &   3.2669E-02 &  -6.5028E-01 & &  1.3960E+00 &    6.2198E-01 &  \\ 
+    \textbf{QC6} & &    1.0872E-01 &   1.5641E-01 & &   3.5767E-03 &   6.6385E-02 &\\
+   \rowcolor[gray]{0.9}  \textbf{QC8} & & -5.0938E-03 &  -5.3001E-03 &  &  3.1591E-02 &    2.6863E-02 & \\
+    \textbf{QC10} & & -1.4142E-03 &    1.7891E-03 & &   2.5853E-03 &   8.0621E-03 & \\ 
+   \rowcolor[gray]{0.9}  \textbf{QC12} & &   2.8801E-05 & -2.5384E-04 & &   1.3342E-03 &    2.4871E-03 &\\
+    \textbf{QC14} & & -1.4259E-04 &  2.7349E-04 & &   1.7310E-04 &    7.4316E-04 & \\ 
+   \rowcolor[gray]{0.9}  \textbf{QC16} & & -1.8754E-04 & -7.0801E-05 & &  2.3699E-05 &  1.1682E-04 &\\
+    \hline
+    \multicolumn{6}{l}{\textit{\footnotesize{QC means the coefficient of Qcon polynomial.}}}\\
+    % \vspace{-1em}
+    % \multicolumn{6}{c}{\textit{\footnotesize{SR(0) = Strehl ratio at 0 mm; SR(0.1) = Strehl ratio at 0.1 mm.}}}
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
+
+
 
 
 \section{math equations}
