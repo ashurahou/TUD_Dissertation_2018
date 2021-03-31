@@ -16,9 +16,27 @@
 
 %optical design
 
+@article{Meiron:65_dls, 
+author = {Joseph Meiron},
+journal = {J. Opt. Soc. Am.},
+keywords = {Automatic lens design; Lens design; Optical aberrations; Optical design; Optical systems; Ray tracing},
+number = {9},
+pages = {1105--1109},
+publisher = {OSA},
+title = {Damped Least-Squares Method for Automatic Lens Design},
+volume = {55},
+month = {Sep},
+year = {1965},
+url = {http://www.osapublishing.org/abstract.cfm?URI=josa-55-9-1105},
+doi = {10.1364/JOSA.55.001105},
+abstract = {A modification introduced in the damped least-squares method automatically assigns a damping factor to each parameter in a manner that compensates for the relative sensitivities of the variables. The convergence rate of the lens-design process is thereby considerably improved. The operation of the program is described, in particular the use of Lagrangian undetermined multipliers for the control of boundary conditions.},
+}
+
+
+
 @article{LivshitsQA2013,
 author = {Livshits, I. and Vasilyev, V.},
-title = {Q and A tutorial on optical design},
+title = {Q and {A} tutorial on optical design},
 journal = {Advanced Optical Technologies},
 volume = {2},
 number = {1},
@@ -32,7 +50,7 @@ eprint = {}
 @article{DilworthSP2012,
 author = { Donald C. Dilworth},
 title = {Novel global optimization algorithms: binary construction and the saddle-point method},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {8486},
 number = {},
 pages = {8486 - 8486 - 10},
@@ -50,10 +68,10 @@ eprint = {}
 @article{Cao2017_GroupDesign,
 author = { Zhen  Cao and Yanqiu  Li and Shanshan  Mao},
 title = {Grouping design method of catadioptric projection objective for deep ultraviolet lithography},
-journal = {Optical Engineering},
-volume = {56},
+journal = {Opt. Eng.},
+volume = {56(2)},
 number = {},
-pages = {56 - 56 - 6},
+pages = {025102},
 year = {2017},
 doi = {10.1117/1.OE.56.2.025102},
 URL = {https://doi.org/10.1117/1.OE.56.2.025102},
@@ -63,10 +81,10 @@ eprint = {}
 @article{Shafer1995_moreless,
 author = { David  Shafer},
 title = {Doing more with less},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {2537},
 number = {},
-pages = {2537 - 2537 - 11},
+pages = {11},
 year = {1995},
 doi = {10.1117/12.216370},
 URL = {https://doi.org/10.1117/12.216370},
@@ -92,10 +110,10 @@ abstract = {Automatic computing methods are being increasingly applied to optica
 @article{ZhangMicroscope2017,
 author = { Yueqian  Zhang and Herbert  Gross},
 title = {Systematic design of microscopic lenses},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {10590},
 number = {},
-pages = {10590 - 10590 - 12},
+pages = {12},
 year = {2017},
 doi = {10.1117/12.2287633},
 URL = {https://doi.org/10.1117/12.2287633},
@@ -120,12 +138,41 @@ abstract = {The widespread belief that local minima exist in the least squares l
 
 
 
-
 %SPC related
+
+
+@article{OanaOEngPart2,
+author = {Oana Marinescu and Florian Bociort},
+title = {Saddle-point construction in the design of lithographic objectives, part 2: application},
+volume = {47(9)},
+journal = {Opt. Eng.},
+number = {},
+pages = {093003},
+year = {2008},
+doi = {10.1117/1.2981513},
+URL = {https://doi.org/10.1117/1.2981513},
+abstrct = {Paper on how (what is the results) on applying SPCS to the litho lenses},
+eprint = {}
+}
+
+
+@article{BociortSPCSexplained,
+author = {F. Bociort and M. van Turnhout},
+title = {Finding new local minima in lens design landscapes by constructing saddle points},
+volume = {48(6)},
+journal = {Opt. Eng.},
+number = {},
+pages = {063001},
+year = {2009},
+doi = {10.1117/1.3156022},
+URL = {https://doi.org/10.1117/1.3156022},
+eprint = {}
+}
+
 @article{PascalTriplet2009,
 author = {van Grol, P and Bociort, F and van Turnhout, M},
 title = {Finding order in the design landscape of simple optical systems},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {7428},
 number = {},
 pages = {11},
@@ -138,7 +185,7 @@ eprint = {}
 @article{BociortThinLens2004,
 author = { Florian  Bociort and Alexander  Serebriakov and Maarten  van Turnhout},
 title = {Saddle points in the merit function landscape of systems of thin lenses in contact},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {5523},
 number = {},
 pages = {11},
@@ -151,7 +198,7 @@ eprint = {}
 @article{BociortToyModel2010,
 author = { F.  Bociort},
 title = {Why are there so many system shapes in lens design?},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {7849},
 number = {},
 pages = {13},
@@ -165,7 +212,7 @@ note = {This paper introduces the simplified toy model to explain the fundamenta
 @article{BociortTripletExplained2010,
 author = { F.  Bociort and P.  van Grol},
 title = {Systematics of the design shapes in the optical merit function landscape},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {7717},
 number = {},
 pages = {14},
@@ -193,10 +240,27 @@ abstract = {We show that in the lens design landscape saddle points exist that a
 }
 
 
+@article{vanTurnhout2009_landscape_instab,
+author = {M. van Turnhout and F. Bociort},
+journal = {Opt. Express},
+keywords = {Mathematical methods (general); Geometric optical design ; Lens system design; Computation methods ; Algorithms; Instabilities; Optical design; Optical design software; Refractive index; Total internal reflection},
+number = {1},
+pages = {314--328},
+publisher = {OSA},
+title = {Instabilities and fractal basins of attraction in optical system optimization},
+volume = {17},
+month = {Jan},
+year = {2009},
+url = {http://www.opticsexpress.org/abstract.cfm?URI=oe-17-1-314},
+doi = {10.1364/OE.17.000314},
+abstract = {Many optical design programs use various forms of the damped least-squares method for local optimization. In this paper, we show that damped least-squares algorithms, with maximized computational speed, can create sensitivity with respect to changes in initial conditions. In such cases, starting points, which are very close to each other, lead to different local minima after optimization. Computations of the fractal capacity dimension show that sets of these starting points, which lead to the same minimum (the basins of attraction for that minimum), have a fractal structure. Introducing more damping makes the optimization process stable.},
+}
+
+
 @article{LivshitsSP2014,
 author = { Irina  Livshits and Zhe  Hou and Pascal  van Grol and Yifeng  Shao and Maarten  van Turnhout and Paul  Urbach and Florian  Bociort},
 title = {Using saddle points for challenging optical design tasks},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {9192},
 number = {},
 pages = {8},
@@ -228,7 +292,7 @@ abstract = {A special structure is present in the lens design landscape that mak
 @article{HouProc2015,
 author = { Zhe  Hou and Florian  Bociort},
 title = {Reducible complexity in lens design},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {9626},
 number = {},
 pages = {8},
@@ -236,6 +300,7 @@ year = {2015},
 doi = {10.1117/12.2191364},
 URL = {https://doi.org/10.1117/12.2191364},
 eprint = {}
+abstract = {saddle point construction itermediate is mentioned in this proceeding.}
 }
 
 
@@ -255,13 +320,30 @@ doi = {10.1364/AO.46.008385},
 abstract = {The merit function space of mirror system for extreme ultraviolet (EUV) lithography is studied. Local minima situated in the multidimensional optical merit function space are connected via links that contain saddle points and form a network. We present networks for EUV lithographic objective designs and discuss how these networks change when control parameters, such as aperture and field, are varied, and constraints are used to limit the variation domain of the variables. A good solution in a network, obtained with a limited number of variables, has been locally optimized with all variables to meet practical requirements.},
 }
 
+
+@article{EcovanDrielSPD,
+author = {Eco van Driel and Florian Bociort and Alexander Serebriakov},
+title = {{Topography of the merit function landscape in optical system design}},
+volume = {5249},
+booktitle = {Optical Design and Engineering},
+editor = {Laurent Mazuray and Philip J. Rogers and Rolf Wartmann},
+organization = {International Society for Optics and Photonics},
+publisher = {SPIE},
+pages = {353 -- 363},
+keywords = {global optimization, saddle point, network, optical system design},
+year = {2004},
+doi = {10.1117/12.512973},
+URL = {https://doi.org/10.1117/12.512973}
+}
+
+
 @article{MarinescuSP2008,
 author = { Oana  Marinescu and Florian  Bociort},
 title = {Saddle-point construction in the design of lithographic objectives, part 1: method},
-journal = {Optical Engineering},
-volume = {47},
+journal = {Opt. Eng.},
+volume = {47(9)},
 number = {},
-pages = {6},
+pages = {093002},
 abstract = {The multidimensional merit function space of complex optical systems contains a large number of local minima. We illustrate a method to find new local minima by constructing saddle points, with examples of deep and extreme UV objectives. The central idea of the method is that, at certain positions in a system with N surfaces that is a local minimum, a thin meniscus lens or two mirror surfaces can be introduced to construct a system with N+2 surfaces that is a saddle point. When optimization rolls down on the two sides of the saddle point, two minima are obtained. Often one of these two minima can also be reached from several other saddle points constructed in the same way. With saddle-point construction we can obtain new design shapes from existing ones in a simple, efficient, and systematic manner that is suitable for complex designs such as those for lithographic objectives.},
 year = {2008},
 doi = {10.1117/1.2981512},
@@ -272,10 +354,10 @@ eprint = {}
 @article{MarinescuSPS2008_p2,
 author = { Oana  Marinescu and Florian  Bociort},
 title = {Saddle-point construction in the design of lithographic objectives, part 2: application},
-journal = {Optical Engineering},
-volume = {47},
+journal = {Opt. Eng.},
+volume = {47(9)},
 number = {},
-pages = {47 - 47 - 4},
+pages = {093003},
 year = {2008},
 doi = {10.1117/1.2981513},
 URL = {https://doi.org/10.1117/1.2981513},
@@ -287,7 +369,7 @@ eprint = {}
 @article{LinWang2011,
 author = { Wang Lin and Pablo Benítez and J. C. Miñano and José Infante and Guillermo Biot},
 title = {Progress in the SMS design method for imaging optics},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {8128},
 number = {},
 pages = {8},
@@ -313,14 +395,122 @@ doi = {10.1364/OE.26.032463},
 abstract = {Traditional imaging design methods can often be ineffective when designing aspheric systems because of the large number of optimization parameters and lack of a good starting point. They are often trapped in a poor local minimum and it can be highly time-consuming to find a good solution in a bumpy design landscape. The simultaneous multiple surface (SMS) method can significantly shorten the time and effort needed to find a desired solution by providing a starting point to optimize close to a good local minimum. We investigate here two design examples and compare them with similar designs obtained via traditional design approaches, as well as global optimization. In the examples considered here, the SMS method combined with a shorter optimization leads to an optimal design.},
 }
 
+@article{WangThesis,
+	author = {L. Wang},
+	title = {Advances in the simultaneous multiple surface optical design method for imaging and non-imaging applications},
+	year = {2012},
+	pages = {},
+	number = {},
+	type = {Thesis},
+	journal = {Ph.D. dissertation (Universidad Polit\'ecnica de Madrid)},
+	url = {}
+}
+
+
+@article{LinWang12OE,
+author = {Wang Lin and Pablo Ben\'{i}tez and Juan C. Mi\~{n}ano and Jos\'{e} M. Infante and Guillermo Biot and Marta de la Fuente},
+journal = {Opt. Express},
+keywords = {Geometric optical design; Lens system design; Mirror system design ; Chromatic aberrations; Diffraction limit; First order optics; Optical properties; Optical surfaces; Refractive index},
+number = {9},
+pages = {9726--9735},
+publisher = {OSA},
+title = {SMS-based optimization strategy for ultra-compact SWIR telephoto lens design},
+volume = {20},
+month = {Apr},
+year = {2012},
+url = {http://www.opticsexpress.org/abstract.cfm?URI=oe-20-9-9726},
+doi = {10.1364/OE.20.009726},
+abstract = {A new optical design strategy for rotational aspheres using very few parameters is presented. It consists of using the SMS method to design the aspheres embedded in a system with additional simpler surfaces (such as spheres, parabolas or other conics) and optimizing the free-parameters. Although the SMS surfaces are designed using only meridian rays, skew rays have proven to be well controlled within the optimization. In the end, the SMS surfaces are expanded using Forbes series and then a second optimization process is carried out with these SMS surfaces as a starting point. The method has been applied to a telephoto lens design in the SWIR band, achieving ultra-compact designs with an excellent performance.},
+}
+
+@article{BenitezSPIE2014,
+author = { P. Benítez,Juan C. Miñano,Milena Nikolic,Jiayao Liu,Jose Infante,Fabian Duerr},
+title = {Conditions for perfect focusing multiple point sources with the SMS design method},
+journal = {Proc. SPIE},
+volume = {9191},
+year = {2014},
+doi = {10.1117/12.2062594},
+URL = {https://doi.org/10.1117/12.2062594},
+eprint = {}
+}
+
+@article{FDuerrOE2013,
+author = {Fabian Duerr and Youri Meuret and Hugo Thienpont},
+journal = {Opt. Express},
+keywords = {Mathematical methods (general); Geometric optical design; Lens system design; Nonspherical lens design ; Freeform lenses; Image quality; Imaging systems; Optical components; Optical systems; Single point diamond turning},
+number = {25},
+pages = {31072--31081},
+publisher = {OSA},
+title = {Potential benefits of free-form optics in on-axis imaging applications with high aspect ratio},
+volume = {21},
+month = {Dec},
+year = {2013},
+url = {http://www.opticsexpress.org/abstract.cfm?URI=oe-21-25-31072},
+doi = {10.1364/OE.21.031072},
+abstract = {Including free-form optical components in imaging systems provides numerous opportunities for enhanced performance and compact, lightweight packaging. This applies especially to the use of free-form optics in off-axis imaging applications. In case of on-axis imaging, rotationally symmetric lenses are typically used, as they greatly simplify the design and manufacturing process. However, for imaging applications with high aspect ratio, free-form optics can help to provide solutions with clearly better overall imaging performance. For such cases, the ray tracing simulations in this work demonstrate superior imaging performance of basic free-form lenses in comparison to conventional rotationally symmetric lenses, each consisting of two surfaces.},
+}
+
+@article{FDuerrOE12,
+author = {Fabian Duerr and Pablo Ben\'{i}tez and Juan C. Mi\~{n}ano and Youri Meuret and Hugo Thienpont},
+journal = {Opt. Express},
+keywords = {Mathematical methods (general); Geometric optical design; Freeform lenses; Freeform surfaces; Imaging systems; Optical surfaces; Optical systems; Ray tracing},
+number = {10},
+pages = {10839--10846},
+publisher = {OSA},
+title = {Analytic free-form lens design in 3D: coupling three ray sets using two lens surfaces},
+volume = {20},
+month = {May},
+year = {2012},
+url = {http://www.opticsexpress.org/abstract.cfm?URI=oe-20-10-10839},
+doi = {10.1364/OE.20.010839},
+abstract = {The two-dimensional analytic optics design method presented in a previous paper \[Opt. Express 20, 5576--5585 (2012)\] is extended in this work to the three-dimensional case, enabling the coupling of three ray sets with two free-form lens surfaces. Fermat's principle is used to deduce additional sets of functional differential equations which make it possible to calculate the lens surfaces. Ray tracing simulations demonstrate the excellent imaging performance of the resulting free-form lenses described by more than 100 coefficients.},
+}
+
+@article{MinanoOE09,
+author = {Juan C. Mi\~{n}ano and Pablo Ben\'{i}tez and Wang Lin and Jos\'{e} Infante and Fernando Mu\~{n}oz and Asunci\'{o}n Santamar\'{i}a},
+journal = {Opt. Express},
+keywords = {Geometric optical design; Lens system design; Mirror system design ; First order optics; Focal points; Image quality; Optical design software; Optical surfaces; Refractive index},
+number = {26},
+pages = {24036--24044},
+publisher = {OSA},
+title = {An application of the SMS method for imaging designs},
+volume = {17},
+month = {Dec},
+year = {2009},
+url = {http://www.opticsexpress.org/abstract.cfm?URI=oe-17-26-24036},
+doi = {10.1364/OE.17.024036},
+abstract = {The Simultaneous Multiple Surface (SMS) method in planar geometry (2D) is applied to imaging designs, generating lenses that compare well with aplanatic designs. When the merit function utilizes image quality over the entire field (not just paraxial), the SMS strategy is superior. In fact, the traditional aplanatic approach is actually a particular case of the SMS strategy.},
+}
+
+@article{ForbesOE07,
+author = {G. W. Forbes},
+journal = {Opt. Express},
+keywords = {Numerical approximation and analysis; Aspherics; Optical fabrication; Systems design ; Testing ; Aspheric optics; Optical design; Optical fabrication; Optical properties; Optical surfaces; Refractive index},
+number = {8},
+pages = {5218--5226},
+publisher = {OSA},
+title = {Shape specification for axially symmetric optical surfaces},
+volume = {15},
+month = {Apr},
+year = {2007},
+url = {http://www.opticsexpress.org/abstract.cfm?URI=oe-15-8-5218},
+doi = {10.1364/OE.15.005218},
+abstract = {Advances in fabrication and testing are allowing aspheric optics to have greater impact through their increased prevalence and complexity. The most widely used characterization of surface shape is numerically deficient, however. Furthermore, with regard to tolerancing and to constraints for manufacturability, this representation is poorly suited for design purposes. Effective alternatives are therefore presented for working with rotationally symmetric surfaces that are either (i) strongly aspheric or (ii) constrained in terms of the slope in the departure from a best-fit sphere.},
+}
+
+
+
+
+
+
+
 
 
 %GO
-
 @article{KuperGO1992,
 author = { Thomas G. Kuper and Thomas I. Harris},
 title = {Global optimization for lens design: an emerging technology},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {1781},
 number = {},
 pages = {15},
@@ -332,17 +522,229 @@ eprint = {}
 
 @article{RogersGO2006,
 author = {John R. Rogers},
-booktitle = {International Optical Design},
+title = {Using Global Synthesis to Find Tolerance-Insensitive Design Forms},
 journal = {International Optical Design},
 keywords = {Optical design and fabrication; Geometric optical design ; Lens system design},
 pages = {TuA4},
 publisher = {Optical Society of America},
-title = {Using Global Synthesis to Find Tolerance-Insensitive Design Forms},
 year = {2006},
 url = {http://www.osapublishing.org/abstract.cfm?URI=IODC-2006-TuA4},
-doi = {10.1364/IODC.2006.TuA4},
+doi = {10.1364/IODC},
 abstract = {A method of using Global Synthesis{\texttrademark} for finding tolerance-insensitive systems is described. By altering the merit function to include information that prefers less sensitive solutions, the space of tolerance-insensitive design configurations may be explored.},
 }
+
+%Genetic algorithm
+@article{GAreview2018,
+author = {Höschel, Kaspar and Lakshminarayanan, Vasudevan},
+year = {2018},
+month = {12},
+pages = {},
+title = {Genetic algorithms for lens design: a review},
+journal = {Journal of Optics},
+doi = {10.1007/s12596-018-0497-3}
+}
+
+@article{VANLEIJENHORST1996177,
+title = "Optical design with the aid of a genetic algorithm",
+journal = "Biosystems",
+volume = "37",
+number = "3",
+pages = "177 - 187",
+year = "1996",
+issn = "0303-2647",
+doi = "https://doi.org/10.1016/0303-2647(95)01556-6",
+url = "http://www.sciencedirect.com/science/article/pii/0303264795015566",
+author = "Derek C. [van Leijenhorst] and Carlos B. Lucasius and Jos M. Thijssen",
+keywords = "Genetic algorithms, Optimization, Geometrical optics, Optical design, Ray tracing",
+abstract = "Natural evolution is widely accepted as being the process underlying the design and optimization of the sensory functions of biological organisms. Using a genetic algorithm, this process is extended to the automatic optimization and design of optical systems, e.g. as used in astronomical telescopes. The results of this feasibility study indicate that various types of aberrations can be corrected quickly and simultaneously, even on small computers."
+}
+
+@article{Moore1999,
+author = { Kenneth E. Moore},
+title = {Algorithm for global optimization of optical systems based on genetic competition},
+journal = {Proc. SPIE},
+volume = {3780},
+year = {1999},
+page = {40-47},
+doi = {10.1117/12.363781},
+URL = {https://doi.org/10.1117/12.363781},
+eprint = {}
+}
+
+%Particle Swarm
+@article{MenkeParticleSwarm,
+author = {C. Menke},
+title = {Application of particle swarm optimization to the automatic design of optical systems},
+journal = {Proc. SPIE},
+volume = {10690},
+year = {2018},
+doi = {10.1117/12.2311610},
+URL = {https://doi.org/10.1117/12.2311610},
+eprint = {}
+}
+
+@article{Guo:sParticleSwarm,
+author = {Dabo Guo and Liang Yin and Guang Yuan},
+journal = {Opt. Express},
+keywords = {Automatic lens design; Genetic algorithms; Lens design; Optical design; Optical systems; Ray tracing},
+number = {12},
+pages = {17027--17040},
+publisher = {OSA},
+title = {New automatic optical design method based on combination of particle swarm optimization and least squares},
+volume = {27},
+month = {Jun},
+year = {2019},
+url = {http://www.opticsexpress.org/abstract.cfm?URI=oe-27-12-17027},
+doi = {10.1364/OE.27.017027},
+% abstract = {Damped least square method is one of the popular methods for automatic lens design. Various improvements in this automatic optical design are mainly due to the optimization of the damping factor and the weight factor. Especially in the four stages of lens design, designers pay more attention to the \&\#x201C;correction\&\#x201D; stage, and recognized the importance of human experience in \&\#x201C;correction\&\#x201D;. The introduction of computer brought the feeling of indescribable about the balance aberration of computer. In fact, the function of computer has not gone beyond the range of balance aberration. In this paper, we discussed how to make the whole process of lens design completely automatic by computer, including the selection, correction and evaluation of the system. To achieve this process, the key step is how to make the computer think like a designer and select the type of lens. The success of lens design depends largely on the type selection. Designers who have a profound understanding of optical design theory and rich practical experience can select the simplest and most suitable one from a wide range of types, therefore, this method can also express a new global search method for optical design. Least squares is added to Particle Swarm Optimization (PSO) algorithm to optimize glass selection in optical system. After comparing and analysing the optimized design solutions, the system performance is well achieved. This method can be conveniently implemented and expands the solution space of the optical system.}
+}
+
+%Simulated Anealling
+
+@article{Forbes1991,
+author = {G. W. Forbes and A. E. W. Jones},
+title = {Towards global optimization with adaptive simulated annealing},
+journal = {Proc. SPIE},
+volume = {1354},
+year = {1991},
+doi = {10.1117/12.47874},
+URL = {https://doi.org/10.1117/12.47874},
+eprint = {}
+}
+
+@article{WELLER:87,
+author = {SCOTT W. WELLER},
+journal = {Optics News},
+keywords = {Lens design},
+number = {12},
+pages = {20--21},
+publisher = {OSA},
+title = {Simulated annealing and lens design},
+volume = {13},
+month = {Dec},
+year = {1987},
+url = {http://www.osa-opn.org/abstract.cfm?URI=on-13-12-20},
+doi = {10.1364/ON.13.12.000020},
+abstract = {},
+}
+
+%Escape function
+@article{Isshiki1998,
+author = {Masaki Isshiki},
+title = {{Global optimization with escape function}},
+volume = {3482},
+booktitle = {International Optical Design Conference 1998},
+editor = {Leo R. Gardner and Kevin P. Thompson},
+organization = {International Society for Optics and Photonics},
+publisher = {SPIE},
+pages = {104 -- 109},
+year = {1998},
+doi = {10.1117/12.321984},
+URL = {https://doi.org/10.1117/12.321984}
+}
+@article{Isshiki2006,
+author = {Masaki Isshiki and Douglas C. Sinclair and Seiichi Kaneko},
+title = {{Lens design: global optimization of both performance and tolerance sensitivity}},
+volume = {6342},
+booktitle = {International Optical Design Conference 2006},
+editor = {G. Groot Gregory and Joseph M. Howard and R. John Koshel},
+organization = {International Society for Optics and Photonics},
+publisher = {SPIE},
+pages = {192 -- 201},
+keywords = {Lens Design, Global optimization, Tolerance},
+year = {2006},
+doi = {10.1117/12.692252},
+URL = {https://doi.org/10.1117/12.692252}
+}
+
+
+@articles{KuperGO1993,
+author = { T. G. Kuper and T. I. Harris},
+title = {Global optimization for lens design: an emerging technology},
+journal = {Proc. SPIE},
+volume = {1781},
+year = {1993},
+doi = {10.1117/12.140995},
+URL = {https://doi.org/10.1117/12.140995},
+eprint = {}
+}
+
+@articles{ShaferComPhy1994,
+author = {D. Shafer},
+title = {Global Optimization in Optical Design},
+journal = {Comput. Phys.},
+volume = {8},
+pages = {188 - 195},
+year = {1994},
+doi = {/10.1063/1.4823287},
+URL = {https://doi.org/10.1063/1.4823287},
+eprint = {}
+}
+
+
+%Neural network 
+
+@article{JM_nn_93,
+author = {John Macdonald and Amanda J. Breese and Nigel L. Hanbury},
+title = {{Optimization of a lens design using a neural network}},
+volume = {1965},
+booktitle = {Applications of Artificial Neural Networks IV},
+editor = {Steven K. Rogers},
+organization = {International Society for Optics and Photonics},
+publisher = {SPIE},
+pages = {431 -- 442},
+year = {1993},
+doi = {10.1117/12.152573},
+URL = {https://doi.org/10.1117/12.152573}
+}
+
+@article{Yang:19,
+author = {Tong Yang and Dewen Cheng and Yongtian Wang},
+journal = {Opt. Express},
+keywords = {Geometric optics; Imaging systems; Neural networks; Optical design; Optical design software; Systems design},
+number = {12},
+pages = {17228--17238},
+publisher = {OSA},
+title = {Direct generation of starting points for freeform off-axis three-mirror imaging system design using neural network based deep-learning},
+volume = {27},
+month = {Jun},
+year = {2019},
+url = {http://www.opticsexpress.org/abstract.cfm?URI=oe-27-12-17228},
+doi = {10.1364/OE.27.017228},
+abstract = {In this paper, we propose a framework of starting points generation for freeform reflective triplet using back-propagation neural network based deep-learning. The network is trained using various system specifications and the corresponding surface data obtained by system evolution as the data set. Good starting points of specific system specifications for further optimization can be generated immediately using the obtained network in general. The feasibility of this design process is validated by designing the Wetherell-configuration freeform off-axis reflective triplet. The amount of time and human effort as well as the dependence on advanced design skills are significantly reduced. These results highlight the powerful ability of deep learning in the field of freeform imaging optical design.},
+}
+
+@article{Cote:19,
+author = {Geoffroi C\^{o}t\'{e} and Jean-Fran\c{c}ois Lalonde and Simon Thibault},
+journal = {Opt. Express},
+keywords = {Genetic algorithms; Lens design; Neural networks; Optical design software; Optical surfaces; Stochastic gradient descent},
+number = {20},
+pages = {28279--28292},
+publisher = {OSA},
+title = {Extrapolating from lens design databases using deep learning},
+volume = {27},
+month = {Sep},
+year = {2019},
+url = {http://www.opticsexpress.org/abstract.cfm?URI=oe-27-20-28279},
+doi = {10.1364/OE.27.028279},
+abstract = {We propose for the first time a deep learning approach in assisting lens designers to find a lens design starting point. Using machine learning, lens design databases can be expanded in a continuous way to produce high-quality starting points from various optical specifications. A deep neural network (DNN) is trained to reproduce known forms of design (supervised training) and to jointly optimize the optical performance (unsupervised training) for generalization. In this work, the DNN infers high-performance cemented and air-spaced doublets that are tailored to diverse desired specifications after being fed with reference designs from the literature. The framework can be extended to lens systems with more optical surfaces.},
+}
+
+@article{CoteNeuralNetworkStartingPoint,
+author = {Geoffroi Côté and Jean-François Lalonde and Simon Thibault},
+title = {{Introducing a dynamic deep neural network to infer lens design starting points}},
+volume = {11104},
+booktitle = {Current Developments in Lens Design and Optical Engineering XX},
+editor = {R. Barry Johnson and Virendra N. Mahajan and Simon Thibault},
+organization = {International Society for Optics and Photonics},
+publisher = {SPIE},
+pages = {8 -- 14},
+keywords = {Lens design, Optimization, Automization, Machine Learning, Neural Networks, Deep Learning, Recurrent Neural Network, Starting Point},
+year = {2019},
+doi = {10.1117/12.2528866},
+URL = {https://doi.org/10.1117/12.2528866}
+}
+
 
 
 %other papers
@@ -353,24 +755,55 @@ abstract = {A method of using Global Synthesis{\texttrademark} for finding toler
 	volume = {10},
 	number = {0},
 	year = {2015},
-	keywords = {Multispectral imaging; Fabry-Pérot interferometer; optical design},
+	keywords = {Multispectral imaging; {F}abry-{P}érot interferometer; optical design},
 	abstract = {We show that wide-angle spectral imaging can be achieved with compact and cost-effective devices using Fabry-Pérot interferometers. Designs with a full field of view of 90°, in which the Fabry-Pérot interferometer is mounted either in front of an imaging lens system or behind a telecentric lens system, are presented and analysed. We show the dependency of the spectral resolution on the numerical aperture of the lens system and demonstrate its value as a design criterion.},
 	issn = {1990-2573},	url = {http://www.jeos.org/index.php/jeos_rp/article/view/15037}
 	}
+
+@article{CaoCatadioptricwithSPCOeng2017,
+author = {Zhen Cao,Yanqiu Li,Shanshan Mao},
+title = {Grouping design method of catadioptric projection objective for deep ultraviolet lithography},
+volume = {56(2)},
+journal = {Opt. Eng.},
+number = {2},
+pages = {025102},
+year = {2017},
+abstract = {the paper mentions that SPCS is used to look for alternative solutions, however, no detailed procedure is given.}
+doi = {10.1117/1.OE.56.2.025102},
+URL = {https://doi.org/10.1117/1.OE.56.2.025102},
+eprint = {}
+}
+
+
+@article{Nagar:18,
+author = {J. Nagar and S. D. Campbell and D. H. Werner},
+journal = {Optica},
+keywords = {Geometric optical design; Gradient-index lenses; Dispersion; Metamaterials; Subwavelength structures ; Aberration correction; Chromatic aberrations; Gradient index lenses; Monochromatic aberrations; Optical systems; Transformation optics},
+number = {2},
+pages = {99--102},
+publisher = {OSA},
+title = {Apochromatic singlets enabled by metasurface-augmented GRIN lenses},
+volume = {5},
+month = {Feb},
+year = {2018},
+url = {http://www.osapublishing.org/optica/abstract.cfm?URI=optica-5-2-99},
+doi = {10.1364/OPTICA.5.000099},
+abstract = {Chromatic aberrations are a primary limiting factor in thin, high-quality imaging systems. Recent advances in nanoscale manufacturing, however, have enabled the creation of metasurfaces: ultra-thin optical components with sub-wavelength features that can locally manipulate the wavefront phase. Meanwhile, there has been renewed interest in GRadient-INdex (GRIN) lenses due to the extended degrees of design freedom they offer. When combined, these two technologies can provide unparalleled imaging system performance while realizing drastic reductions in size, weight, and power. Through paraxial theory and full ray tracing we produce a lens singlet that can achieve three-color (apochromatic) correction by employing a metasurface-augmented GRIN. This apochromatic singlet has the potential for application in high-quality optical systems.},
+}	
 	
 	
-	
-@patent{BociortPatent2010,
+@misc{BociortPatent2010,
 	author = {Bociort, Florian and Van Turnhout, Maarten and Marinescu, Oana Elena},
 	title = {Method Of Designing A Projection System, Lithographic Apparatus And Device Manufacturing Method},
-	year = {2010},
-	month = {05},
-	day = {11},
-	number = {US 7714307 B2},
-	type = {Patent},
-	location = {United States},
-	url = {https://lens.org/121-195-840-284-211}
+	year = {{US 7714307 B2, May. 2010}},
+% 	month = {05},
+% 	day = {11},
+% 	number = {US 7714307 B2},
+% 	type = {Patent},
+% 	location = {United States},
+% 	url = {https://lens.org/121-195-840-284-211}
 }
+ 
 
 @article{vanTurnhoutThesis2009,
 	author = {Maarten van Turnhout},
@@ -383,18 +816,36 @@ abstract = {A method of using Global Synthesis{\texttrademark} for finding toler
 	url = {https://repository.tudelft.nl/islandora/object/uuid\%3A6c6197bd-5757-428a-9d3d-e94af148ce90}
 }
 
+
 @article{Matsuyama2006_LithoHis,
 author = { Tomoyuki  Matsuyama and Yasuhiro  Ohmura and David M. Williamson},
 title = {The lithographic lens: its history and evolution},
-journal = {Proc.SPIE},
+journal = {Proc. SPIE},
 volume = {6154},
 number = {},
-pages = {6154 - 6154 - 14},
+pages = {14},
 year = {2006},
 doi = {10.1117/12.656163},
 URL = {https://doi.org/10.1117/12.656163},
 eprint = {}
 }
+
+@article{ThompsonOpticalDesignHistory,
+author = {Kevin P. Thompson},
+title = {{The earliest history of computer-aided optical design on large computers: the previously classified work by James G. Baker 1945-1954}},
+volume = {6668},
+journal = {Proc. SPIE}
+booktitle = {Novel Optical Systems Design and Optimization X},
+editor = {R. John Koshel and G. Groot Gregory},
+organization = {International Society for Optics and Photonics},
+publisher = {SPIE},
+pages = {119 -- 124},
+keywords = {History of Optics, Automatic Optical Design, Computer-Aided Optical Design},
+year = {2007},
+doi = {10.1117/12.739870},
+URL = {https://doi.org/10.1117/12.739870}
+}
+
 
 @article{Sahin:18DisCorrec,
 author = {F. E. Sahin and A. R. Tanguay},
@@ -412,6 +863,19 @@ doi = {10.1364/OE.26.005478},
 abstract = {An imaging system design procedure for miniature wide-angle computational cameras with subsequent software correction of distortion is described. Such miniature wide-angle computational cameras have a broad range of applications, including eye-tracked extraocular cameras for retinal prostheses, and also wearable visual aids for the blind and those with low vision. As significant (typically barrel) distortion is commonplace in wide-field-of-view imaging systems, digital post-processing is often employed to generate rectilinear output images. Relaxation of the constraint on distortion during the optical system design process is shown to allow for improved optimization of other image-degrading aberrations. Analysis of the effects of distortion on the software-corrected final image during optical design is accomplished by using comprehensive image quality metrics such as the correlation coefficient and the spatial frequency response. Selection of a surprisingly large exact initial distortion value as a constraint allows for the design of a miniature wide-angle imaging system that yields significantly enhanced final image quality.},
 }
 
+@article{KoornwinderTopologicaldegree,
+author = {T. H. Koornwinder},
+title = {The topological degree of a mapping},
+journal = {Nonlinear Analysis},
+volume = {Vol. 1},
+number = {},
+pages = {7-39},
+year = {1976},
+doi = {},
+URL = {},
+eprint = {},
+publisher = {Mathematisch Centrum, Amsterdam}
+}
 
 %book
 @book{book:Shannon1997,
@@ -436,6 +900,18 @@ abstract = {An imaging system design procedure for miniature wide-angle computat
 
 }
 
+@incollection{GrossHBOvol1,
+	author = {H. Gross and H. Z\"{u}gge and M. Peschka and F. Blechinger},
+	title = {},
+	booktitle = {Handbook of Optical Systems},
+	year = {2007},
+	volume = {1},
+	pages = {},
+	note = {},
+	type = {book},
+	publisher = {Wiley-VCH, Weinheim}
+}
+
 @incollection{GrossHBOvol3,
 	author = {H. Gross and H. Z\"{u}gge and M. Peschka and F. Blechinger},
 	title = {Principles of optimization},
@@ -446,7 +922,70 @@ abstract = {An imaging system design procedure for miniature wide-angle computat
 	note = {},
 	type = {book},
 	publisher = {Wiley-VCH, Weinheim}
+}
 
+@book{book:Kingslake,
+    author = {R. Kingslake},
+    title = {Lens Design Fundamentals},
+	year = {1978},
+	pages = {},
+	note = {Lens design reference for chapter 5},
+	type = {book},
+	publisher = {Academic Press}
+
+}
+
+@book{book:SmithModernOpticalEngineering,
+	author = {W. J. Smith},
+	title = {Modern Optical Engineering},
+	year = {2000},
+	pages = {},
+	note = {Lens design reference for chapter 5},
+	type = {book},
+	publisher = {McGraw-Hill}
+
+}
+@book{smith1992modern,
+  title={Modern Lens Design: A Resource Manual},
+  author={Smith, W.J. and Genesee Optics Software, Inc},
+  isbn={9780070591783},
+  lccn={92020038},
+  series={Optical and electro-optical engineering series},
+  url={https://books.google.nl/books?id=grFgQgAACAAJ},
+  year={1992},
+  publisher={McGraw-Hill}
+}
+
+@book{book:FisherOpticalSysDesign,
+	author = {R. E. Fisher and B. Tadic-Galeb},
+	title = {Optical System Design},
+	year = {2000},
+	pages = {},
+	note = {Lens design reference for chapter 5},
+	type = {book},
+	publisher = {McGraw-Hill}
+
+}
+
+@book{book:ChavesNonimagingOptics,
+	author = {J.Chaves},
+	title = {Introduction to Nonimaging Optics},
+	year = {2015},
+	pages = {chapter 8},
+	note = {chapter 8 focus on SMS method.},
+	type = {book},
+	publisher = {CRC}
+
+}
+
+@book{hecht2012optics,
+  title={Optics},
+  author={Hecht, E.},
+  isbn={9788131718070},
+  lccn={2001032540},
+  url={https://books.google.nl/books?id=wcMWpBMMzIkC},
+  year={2012},
+  publisher={Pearson}
 }
 
 
@@ -460,6 +999,14 @@ abstract = {An imaging system design procedure for miniature wide-angle computat
     publisher = {Google Patents},
     note = {{US Patent 5,440,422}}
 }
+@misc{patentZeissDUV,
+    title ={FIG. 5: projection objective for the wavelength 193 nm, Refractive projection lens,},
+    author = {W. Ulrich, R. Hudyma and H.J. Rostalski},
+    url = {},
+    year = {2003},
+    note = {{German patent WO2003075096}}
+}
+%https://patents.google.com/patent/WO2003075096A2/en
 
 
 %online sources
@@ -470,6 +1017,13 @@ abstract = {An imaging system design procedure for miniature wide-angle computat
     note = {{Accessed: 2018-12-11}}
 }
 
+@Misc{OsloSW,
+author =   {{Lambda Research Corporation}},
+title =    {{OSLO}},
+howpublished = {\url{https://www.lambdares.com/oslo/}},
+year = {Retrieved from 2019}
+}
+
 %user mannual
 @manual{codevmanual,
     author = {{Synopsis, Inc.}},
@@ -478,3 +1032,32 @@ abstract = {An imaging system design procedure for miniature wide-angle computat
     organization = {},
     note = {\url{www.synopsis.com}},
 }
+
+%thesis 
+@article{OanaThesis2006,
+	author = {Oana Elena Marinescu},
+	title = {Novel Design Methods for High-Quality Lithographic Objectives},
+	year = {2006},
+	pages = {77},
+	number = {},
+	type = {Thesis},
+	journal = {Ph.D. dissertation (Delft University of Technology)},
+	url = {}
+}
+
+%website
+ @misc{ wiki:HistoryofOptics,
+   author = "{Wikipedia contributors}",
+   title = "History of optics --- {W}ikipedia{,} The Free Encyclopedia",
+   year = "2019",
+   url = "https://en.wikipedia.org/wiki/History_of_optics",
+   note = "[Online; accessed December-2019]"
+ }
+
+ @misc{ wiki:Nimrudlens,
+   author = "{Wikipedia contributors}",
+   title = "Nimrud lens --- {W}ikipedia{,} The Free Encyclopedia",
+   year = "2019",
+   url = "https://en.wikipedia.org/wiki/Nimrud_lens",
+   note = "[Online; accessed December-2019]"
+ }

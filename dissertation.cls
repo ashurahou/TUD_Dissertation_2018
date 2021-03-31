@@ -31,6 +31,8 @@
 \RequirePackage{booktabs}
 \RequirePackage{tikz}
 \RequirePackage{multirow}
+\RequirePackage{enumitem} % to adjust line space for itemized item
+\RequirePackage{colortbl} % to apply colors in the table
 % \RequirePackage{showframe} %showframe
 
 \ifxetex
