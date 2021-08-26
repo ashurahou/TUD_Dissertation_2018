@@ -6,15 +6,50 @@
 \captionsetup[table]{labelfont=bf}
 
 \begin{abstract}
-Optical design
+Summary
+This dissertation addresses the typical problem during optical design or generally all engineering problem -- how to find the best solutions in a parameterized system. 
+
+Goal/Nature of the problem: find the best solution -> assess whether the solution is sufficient or not, if it is not, the process should go to the next design decision; if it is sufficient, the solution can be taken. 
+
+How: Parameterize the system with the multiple variables with a model representing its physical property therefore the performance can be evaluated.  
+Given the model, use mathematical tools to optimize in order to get the best solution.
+(alternatively, you can realize this by continuous testing and modifying during your manufacture -> caveman's method)
+
+  Sub-problem statement: after parameterization, the optimization space of the system is usually a non-convex space, which indicates a presence of multiple local minima when a typical local optimizer is used. Situation of non-convex space provides difficulties in getting a satisfactory solution: it is difficult to find all the existing solutions in the design space. With incomplete set of information, the following question exist: will there be a better solution if one keeps searching given the current system configuration. As a results, techniques that can quickly generate new solutions given a design configuration is welcome to verify if a better system can be found. The process usually ends when a good enough result is found or a time limit is reached. 
+
+Goal: Find whether there is a better solution in a non-convex optimization problem. This is global optimization. 
+
+How: 
+1) starting from a very good starting point (this indicates good technique is needed to construct the starting points) and after arriving at a local minimum, GO technique is used to check whether better solutions can be found (the anticipation is not). 
+
+2) starting from somewhat working point (this indicates small effort to determine the starting point) and combined with GO technique to see if we could find more better solutions. The anticipation is that there would be some better results appear. 
+
+    Sub-problem statement: SPC is a GO technique. SPC shows systematic approach and reveals certain structure between optimization landscape and the optical design model. The following questions are interesting regarding SPC:
+1) How SPC is performing as a GO technique? In terms of the completeness and efficiency for finding new solutions. Completeness -> do I find every solution, or at least all solutions find by other algorithms.  Efficiency-> what is the time needed to run such GO. Is it a limited amount of algorithmic trial?
+2) Does it show more profound connection to the lens design problem such that it could be used to facilitate the design more? This question should be implicitly included in the first one. It is more of scientific curiosity that if the nature of SPC is connected to the lens design problem. 
+
+    Sub-problem statement: SMS is a starting-point-generating technique. The hypothesis is that it generates a good starting point since the method is guided by the physical rules (Fermat's Principle). Is SMS method the method that providing the starting point that close to the best local minimum (via one local optimizer)? 
+    
+To sum, it is the balance between the effort of getting a good starting point and running less optimization. SPC as an optimization technique needed to be investigated for its GO efficiency. It means, given a non-perfect starting point, the GO method is preferred to efficiently find the best solution. Chapter 2-4 is trying to clarify this.
+SMS as a technique to construct starting points, the ultimate question is that if it constructs the starting point that the minimum optimization effort it needed. Chapter 5 is trying to answer this question. 
+
+
 \end{abstract}
+
 %%Definition of optical design
-\section{Optical Design}
+\section{Optical Lens Design}
 \vspace{1em}
-Optical design, generally speaking, can refer to all activities that involving manipulate the property of light to achieving a certain purpose. However, conventionally, it usually means designing optical systems where light is mainly treated with its geometrical model rather than its more complicated wave model. These optical systems can be a photographic camera, a lamp or a laser beam-shaper. The simplification of the model is mostly driven by the practicality of optical design: with the more rigorous wave model, designing and analysing an common optical system is computationally expensive and hence very time consuming . On the other side, with geometrical optics where light is simplified with rays pointing towards the traveling direction of radiation energy, billion of rays can be traced in seconds for a normal modern computer. The aperture sizes of these optical systems are normally from several millimeters to meters. They are very large compared to the operating wavelength of the systems. Therefore, it is safe to apply the geometrical model and it maintains the essence of light that is sufficient to obtain a reasonable optical system design.  
+Optical design, generally speaking, can refer to the activities that manipulate light to achieve a certain purpose. This can be designing a telescope to observe remote celestial bodies, designing a concentrator to maximally harvest the solar energy, or designing a optical fibre to maximize the efficiency for information transmission. In the community of optical engineering, optical design is commonly associated with optical lens design. That means using optical lenses as the manipulator of light. The focus of this thesis will also be the design with optical lenses. However, the insights summarized in this thesis can also be extended to the design with other optical manipulator (e.g. mirrors, phase masks).
 
-In some occasions, such as an imaging system close to diffraction limited performance, wave model is necessary to be applied to analyze the system performance, where geometrical model does not help anymore. As a result, common practice for optical system design may involve both geometrical and wave model. Geometrical model is usually used to rapidly obtain a designed system. Wave model helps to provide analysis result which gives feedback to fine-tune the system performance. The later part may only involved in very demanding systems such as microscopic objective or lithographic system. In this thesis, the discussion is limited to the part of geometrical optics. 
+In lens design, the light are usually modeled with its geometrical model, or ray model. The light propagation is described in terms of rays. When the wavelength of the light is small compared to the size of structures which light interacts, it is an excellent approximation. That also indicates the wave property of light such as interference and diffraction are not captured by the geometrical model. The utilization of the simpler geometric model is mostly driven by the practicality of optical design: with the more rigorous wave model, designing and analysing an common optical system is computationally expensive, hence very time consuming and inconvenient to rapidly compute system performance and optimize. On the other side, with geometrical optics where light is simplified as rays pointing towards the traveling direction of radiation energy, billion of rays can be traced in seconds for a standard modern personal computer. The performance of the system can be quickly determined for subsequent analysis or optimization.   
 
+%(reserved descriptions) However, conventionally, it usually means designing optical systems where light is mainly treated with its geometrical model rather than its more complicated wave model. These optical systems can be a photographic camera, a lamp or a laser beam-shaper, etc.. The aperture sizes of these optical systems are normally from several millimeters to meters. They are very large compared to the operating wavelength of the systems. Therefore, it is safe to apply the geometrical model and it maintains the essence of light that is sufficient to obtain a reasonable optical system design.
+
+
+%what I want to emphazie is the use of both models, but the description is not well polished.
+ % wave model: diffraction limited field analysis - diffraction, interference analysis (highly coherent beams), polarization
+In some occasions, wave model is necessary to be applied to understand the system performance. For instance, when an imaging system is only limited by diffraction, the intensity distribution of a focused beam at the focal plane requires wave model. Geometrical model will only indicate an extreme small spot without the information about the intensity distribution. As a result, common practice for optical system design may involve both geometrical and wave model. Geometrical model is usually used to rapidly obtain a system solution, which fulfill the requirements on the level of geometrical model. When approximation with geometrical model is not accurate anymore, wave model helps to provide further analysis result which gives feedback to fine-tune the system performance. The later part may only involved in very demanding systems such as microscopic objective or lithographic system. In this thesis, the discussion is focused on the part of designing systems with geometrical optics. 
+%
 In geometrical optics, one of most important law would be the law of refraction (also know as the Snell's law). It describes the how a light ray travels when it intersect with an interface:
 \begin{equation}
 n \sin i = n^\prime \sin r,
