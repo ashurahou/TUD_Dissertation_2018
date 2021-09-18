@@ -66,35 +66,37 @@ The earliest known lenses were made by the ancient Egyptians and Mesopotamians \
 
 \subsubsection{Example of designing a Magnifying Glass} \label{magnifier}
 \vspace{1em}
-Let us start with an example to design a Magnifying Glass. Assume the magnification of the magnifier is $3\times$. It is known from text book\cite{hecht2012optics} that a common magnifier can be made using a single convex lens. The magnified image is a virtual image that is then captured by the human-eye. Figure \ref{fig: geo_formulae} - (a) shows how the virtual image is formed considering an ideal thin lens scenario. Some rules are used for drawing such a plot:
-1) Light is treated as rays;
-2) A ray starting from the object plane parallel to the optical axis intersects with the focal point at image side;
-3) A ray starting from the object plane intersects with the nodal point (the intersection of the ideal lens and the optical axis) remains its direction.
+Let us start with an example to design a magnifying glass, whose application can be assisting reading. Assume the magnification of the magnifier is $3\times$. It is known from text book\cite{hecht2012optics} that a common magnifier can be made using a single convex lens. The magnified image is a virtual image that is then captured by the human-eye. Figure \ref{fig: geo_formulae} - (a) shows how the virtual image is formed considering an ideal thin lens scenario. Certain rules are used to derive such a plot:
+1) A light ray, which starts from the object plane and is parallel to the optical axis, will pass the focal point at image side;
+2) A light ray, which starts from the object plane and passes the nodal point (the intersection between the ideal lens and the optical axis), will remain its original direction.
 
-In this thesis, we use the following convention for the geometrical optics formulas: the intersection of the ideal lens and the optical axis ($O$ in Figure \ref{fig: geo_formulae} - (a)) is taken as the reference. The distance defined on the left of the intersection (as known as the principle point) has a negative sign and the ones defined on the right has a positive sign. Regarding the radius of the optical surfaces, it is positive when the center of the circle is to the right of the surface vertex, and vice versa. 
+In this thesis, we use the following convention for the geometrical optics formulas: points (object, image or focal point) sitting on the left side of the lens has a negative distance to the lens. Points sitting on the right side of the lens has a positive distance. The radius of the optical surfaces is positive when the center of curvature is to the right of the surface vertex, and vice versa. 
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.58]{chapter-1/figures/geo_magnifier.png}
-    \caption{(a) Geometrical ray-tracing for the magnifier in the thin lens scenario. A virtual image is formed. (b) Illustration of the Lensmaker's equation. For thin lens case, the equation is given by \ref{eq: lensmaker_r}. The thick lens case equation is given by \ref{eq: lensmaker_r_thick}.}
+    \caption{(a) Geometrical ray-tracing for a magnifier in the thin lens scenario. A virtual image is formed on the left side of the lens. (b) Illustration of the Lensmaker's equation. For thin lens case, the equation is given by \ref{eq: lensmaker_r}. The thick lens case equation is given by \ref{eq: lensmaker_r_thick}.}
     \label{fig: geo_formulae}
 \end{figure} 
 
-A typical working distance of a magnifier is $30 mm$. Using the following thin lens equation 
+A typical working distance of a magnifier is $30 \; mm$. It means that the distance between the magnifier and the object to be magnified (e.g. texts on a book) is approximately $30 \; mm$. To obtain a magnification of $3\times$, the distance between the image and the lens needs to be $90 \; mm$. We use the following thin lens equation 
 \begin{equation} \label{eq: thinlensformula}
     \frac{1}{l^\prime} - \frac{1}{l} = \frac{1}{f^\prime},
 \end{equation}
 
-substituting $l$ with $-30 \; mm$ and $l^\prime$ with $-90 \; mm$, the focal length of the magnifier can be calculated as $45 mm$. A real convex lens consists of two refracting surface. Given a usual case where both of the surfaces are spherical surface, a different form of Lensmaker's equation can be used to calculate the radii of the two spherical surfaces:
+substituting $l$ with $-30 \; mm$ and $l^\prime$ with $- 90 \; mm$, the focal length $f^\prime$ of the magnifier can be calculated as $45 \;mm$. Let us use a spherical lens element, then the radii of the two spherical surfaces of the lens can be calculated using Lensmaker's equation 
 \begin{equation} \label{eq: lensmaker_r}
     (n-1)(\frac{1}{R_1} - \frac{1}{R_2}) = \frac{1}{f^\prime},
 \end{equation}
-where $n$ stands for the refractive index of the material used. $R_1$ and $R_2$ are the radii of the two spherical surfaces. When using a common material such as BK7 glass, the value of the refractive index $n$ is $1.5$. There is still freedom for the radii of the surfaces. Namely, there is infinite amount of combinations for $R_1$ and $R_2$ satisfying the equation. If we set the two radii with the same absolute value, then $R_1 = 45 \; mm$, and $R_2 = -45 \; mm$. 
-The equation \ref{eq: lensmaker_r} is assuming the thickness of the lens is very small compared to the radius of the two surfaces (a thin lens scenario). There is also the equation when the thickness of the lens is considered:
+where $n$ stands for the refractive index of the lens material. $R_1$ and $R_2$ are the radii of the two spherical surfaces. A illustration of the parameters is given in Figure \ref{fig: geo_formulae} - (b). The focal length $f^\prime$ is $45 \; mm$. Let us use a common optical material such as BK7 glass. It has a refractive index ($n$) of approximately $1.5$ in the visible spectrum. For simplicity, we use $1.5$ as our refractive index value.
+
+Now in Equation \ref{eq: lensmaker_r}, the two radii can still vary and we do not have a unique set of values to satisfy the equation. We can choose to have a double-convex lens by forcing the absolute radii to be identical, where $R_1 = 45 \; mm$, and $R_2 = -45 \; mm$. 
+
+Equation \ref{eq: lensmaker_r} assumes the thickness of the lens is very small compared to the radius of the two surfaces (a thin lens scenario). There is also the equation when the thickness $d$ of the lens is considered:
 \begin{equation} \label{eq: lensmaker_r_thick}
     (n-1)\left( \frac{1}{R_1} - \frac{1}{R_2} + \frac{(n-1)d}{nR_1R_2} \right) = \frac{1}{f^\prime}  .
 \end{equation}
-With a thickness $d$ of $5 \; mm$, the radii can be now calculated using Equation \ref{eq: lensmaker_r_thick} as $R_1 =  44 \; mm$ and $R_2 = 44 \; mm$. These values are very close to the case when using thin lens approximation ($45 \; mm$ and $-45 \; mm$). A thickness of $20 \; mm$ of the lens will require the radii to be $41 \ mm$ and $-41 \ mm$.
+With a thickness $d$ of $5 \; mm$, the radii can be now calculated using Equation \ref{eq: lensmaker_r_thick} to be$R_1 =  44 \; mm$ and $R_2 = 44 \; mm$. These values are very close to the case when using thin lens approximation ($45 \; mm$ and $-45 \; mm$). A thickness of $20 \; mm$ of the lens results a double-convex lens with the radii to be $41 \ mm$ and $-41 \ mm$.
 At this phase, the above derivation shows that based on first order (Gaussian) optics, the following specification can achieve a magnification factor of $3$, given that the object locates $30 \; mm$ from the lens:
 
 \begin{table}[h!]
@@ -115,24 +117,24 @@ At this phase, the above derivation shows that based on first order (Gaussian) o
     \hline
     \end{tabular}
 \end{table}
-
-For the aforementioned example, it is seen that the radius of the surfaces do not change much when consider a reasonable thickness. Note that all the calculation above is based on first order optics. Since a Magnifier is an imaging system, further analysis can be done by calculating the third order aberration. 
+ 
+For the aforementioned example, we used the most basic Lensmaker's formula to design a $3 \times$ magnifier with a double-convex lens.  The condition of double-convex is chosen by us since according to Equation \ref{eq: lensmaker_r_thick}, there are infinite choices of radii that satisfy the equation. Note that the Lensmaker's formula is based on first-order optics, where the angle between the rays and the optical axis is assumed to be very small. This assumption does not hold anymore when optical aberration needs to be treated. In the following part, we show an example on how to improve the magnifier design considering minimizing the spherical aberration.  
 
 The primary monochromatic aberration are the spherical aberration, coma, astigmatism, field curvature and distortion. There are axial and lateral chromatic aberrations when chromatic application is considered. Given the thin lens model, the coefficient of each aberration term can be explicitly expressed. The term of the spherical aberration can be expressed as:
 \begin{equation} \label{eq: Si_spherical}
     S_I = \frac{h^4}{4{f^\prime}^3}\left(\frac{3n+2}{n}M^2 - \frac{4(n+1)}{(n-1)n}XM + \frac{n+2}{(n-1)^2n}X^2 + \frac{n^2}{(n-1)^2}\right).
-\end{equation}                            %% Figure illustration of the spherical aberration%
-In the equation above, $h$ indicates the ray height on the lens surface. $X$ stands for the bending factor of the thin lens (\cite{GrossHBOvol1}, 10.1.1):
+\end{equation}                            %% Figure illustration of the spherical aberration. I don't think I need to add it. 21/09/18%
+where $h$ indicates the ray height on the lens surface. $X$ stands for the bending factor of the thin lens (\cite{GrossHBOvol1}, 10.1.1):
 \begin{equation} \label{eqn: bending factor}
 X = \frac{R_1+R_2}{R_2-R_1},
 \end{equation}and $M$ stands for the position parameter (\cite{GrossHBOvol1}, 10.1.2):
 \begin{equation} \label{eqn: position parameter}
 M = \frac{1+m}{1-m},
-\end{equation}$m$ is the magnification factor which is $3$ as defined previously. In this case, $M=-2$. In Equation \ref{eq: Si_spherical}, for a chosen ray, parameter $f^\prime$, $M$, and $n$ are all given. Therefore, $S_I$ becomes a quadratic function for the bending factor $X$. There is a value of $X$ that makes $S_I$ a minimum value. In this case, when $X = -1.43$ , the minimum value of $(\frac{4(f^\prime)^3}{h^4})S_I = 7.29$. This value is proportional to the spherical aberration for each ray. 
+\end{equation}$m$ is the magnification factor and it is $3$ as defined previously. In this case, $M=-2$. In Equation \ref{eq: Si_spherical}, for a chosen ray, parameter $f^\prime$, $M$, and $n$ are all given. Therefore, $S_I$ becomes a quadratic function for the bending factor $X$. There is a value of $X$ that minimize the value of $S_I$. In this case, when $X = -1.43$ , the minimum value of $S_I $ is $ 7.29(\frac{h^4}{4(f^\prime)^3})$. The spherical aberration of each ray is proportional to its ray height given the fixed lens configuration. 
 
-Now if considered both the Lensmaker's equation \ref{eq: lensmaker_r} and the spherical term in Equation\ref{eq: Si_spherical}, the two radii of the lens can be solved as $R_1 = -105 \ mm, R_2 = -18.53 \ mm$. These two values are very different from the first-order calculated values ($45 \ mm$ and $-45 \ mm$). 
+Now if we consider both the Lensmaker's equation \ref{eq: lensmaker_r} and the spherical term in Equation\ref{eq: Si_spherical}, the two radii of the lens can be solved as $R_1 = -105 \ mm, R_2 = -18.53 \ mm$. These two values are very different from the values ($45 \ mm$ and $-45 \ mm$) calculated based on first-order optics. It is worth mentioning that Equation \ref{eq: Si_spherical} assumes a thin lens, hence the comparison of the radii is done between thin lens models. It is also observed that in our magnifier example, considering a $5 \;mm$ lens thickness in Lensmaker's formula does not alter the radii significantly.  
 
-When more aberration terms are considered, the number of variables in this example is not enough to analytically solve the values for the minimal values of each aberration term. Normally, new variables will be introduced by adding new lens element. However, more variables also imply increasing complexity of the formulae. Modern optical design handles it by using computer-aided design techniques. Numerical optimization and rapid ray tracing are done by computers, which improves the efficiency for optical design. 
+When more aberration terms are considered, the number of variables in this example is not enough to analytically solve the values for the minimal values of each aberration term. Normally, new degrees of freedom will be introduced to the system (e.g. adding new lenses). However, more number of variables also implies an increasing complexity of the formulae. Modern optical design handles it by using computer-aided design techniques. Numerical optimization and rapid ray tracing are done by computers, which improves the efficiency of optical design.  
 
 
 \section{Modern Optical Design}
