@@ -67,7 +67,7 @@ The earliest known lenses were made by the ancient Egyptians and Mesopotamians \
 \subsubsection{Example of designing a Magnifying Glass} \label{magnifier}
 \vspace{1em}
 Let us start with an example of designing a magnifying glass, whose application can be assisting reading. Assume the magnification requirement of the magnifier is $6\times$. We know from text book \cite{hecht2012optics} that such a magnifier can be made using a convex lens. The magnified image is a virtual image that is then captured by the human-eye. The magnification of a magnifier is defined as the angular magnification which is the ratio between the subtended angles to the eye of the object and the image. This is illustrated in Figure \ref{fig: geo_formulae}-(a). A larger angle means a larger image is formed on the retina of the eye. The object and image are normally located at a distance of $250 mm$ from the eye. The distance represents the near-point, which is the closest distance that the eye can view comfortably. 
-% illustration of the angular magnification
+% illustration of the angular magnification[done]
 
 
 Figure \ref{fig: geo_formulae}-(b) shows how the virtual image is formed considering an ideal thin lens scenario. Certain rules are used to derive such a plot:
@@ -81,7 +81,7 @@ In this thesis, we use the following convention for the geometrical optics formu
     \includegraphics[scale=0.58]{chapter-1/figures/geo_magnifier_v2.png}
     \caption{(a) The magnification of a magnifying glass is defined as the ratio between the image subtended angle $\theta_{i}$ and  the object subtended angle $\theta_{o}$.  
     (b) Illustration of a virtual, enlarged image of the object through a magnifying glass. Equations \ref{eq: thinlensformula} - \ref{eq: magnifier magnification} explain the relation of the parameters.}
- %(b) Illustration of the Lensmaker's equation. For thin lens case, the equation is given by \ref{eq: lensmaker_r}. The thick lens case equation is given by \ref{eq: lensmaker_r_thick}.
+ %(b) Illustration of the Lensmaker's equation. For thin lens case, the equation is given by \ref{eq: lensmaker_r}. The thick lens case equation is given by \ref{eq: lensmaker_r_thick}.[old caption]
     \label{fig: geo_formulae}
 \end{figure} 
 
@@ -110,7 +110,7 @@ m_{mag} = \frac{\theta_i}{\theta_o} = (1-\frac{l'}{f'})\cdot\frac{250 \; mm}{l_e
 \label{eq: magnifier magnification simplified}
 m_{mag}  = 1+\frac{250 \; mm}{f'}.
 \end{equation}Now we substitute $m_{mag}$ with $6$, then we have $f' = 50 \; mm$. As a result, we need a magnifying glass with a focal length of $50 \;mm$ to achieve a magnification of  $6\times$.
-%% use the following equation to derive lens shape 2021-09-28
+%% use the following equation to derive lens shape 2021-09-28 [done]
 Now we know the focal length  $f' = 50 \; mm$ and the image distance $l' = -250 \; mm$. Given Equation \ref{eq: thinlensformula}, the object distance is calculated to be $41.67 \;mm$.  
 
 For a spherical lens, the radii of the two spherical surfaces of the lens can be calculated using Lensmaker's equation 
@@ -136,23 +136,28 @@ At this phase, the above derivation shows that based on first order (Gaussian) o
     \vspace{-1em}
     \begin{tabular}{ p{15em}  c }
     \hline 
-    Magnification & 6 $\times$\\ 
-    Number of lens & 1\\ 
-    Diameter & 25 mm\\ 
-    Refractive index & 1.5\\ 
-    Thickness & 3 mm\\ 
-    Radii & 49.50 mm, -49.50 mm\\
-    Effective focal length & 50 mm\\
+    Magnification & $6\times$\\ 
+    Number of lens & $1$\\ 
+    Diameter $(mm)$ & $20$ \\ 
+    Refractive index & $1.5$\\ 
+    Thickness $(mm)$& $3$\\ 
+    Radii $(mm)$ & $49.50$, $-49.50$\\
+    Effective focal length $(mm)$ & $50$\\
     \hline
     \end{tabular}
 \end{table}
  
-For the aforementioned example, we used the most basic Lensmaker's formula to design a $6 \times$ magnifier with a double-convex lens.  The condition of double-convex is chosen by us since according to Equation \ref{eq: lensmaker_r_thick}, there are infinite choices of radii that satisfy the equation. Note that the Lensmaker's formula is based on first-order optics, where the angle between the rays and the optical axis is assumed to be very small. This assumption does not hold anymore when optical aberration needs to be treated. In the following part, we show an example on how to improve the magnifier design considering minimizing the spherical aberration.  
-
-The primary monochromatic aberration are the spherical aberration, coma, astigmatism, field curvature and distortion. There are axial and lateral chromatic aberrations when chromatic application is considered. Given the thin lens model, the coefficient of each aberration term can be explicitly expressed. The term of the spherical aberration can be expressed as:
+For the aforementioned example, we used the most basic Lensmaker's formula to design a $6 \times$ magnifier with a double-convex lens.  The condition of double-convex is chosen by us since according to Equation \ref{eq: lensmaker_r_thick}, there are infinite choices of radii that satisfy the equation. Note that the Lensmaker's formula is based on first-order optics, where the angle between the rays and the optical axis is assumed to be very small. This assumption does not hold anymore when optical aberration needs to be treated. In the following part, we show an example on how to improve the magnifier design considering minimizing the spherical aberration. An illustration of spherical aberration is given in Figure \ref{fig: spherical aberration}. Light rays emit from an on-axis point and their deviation from the expected refracted\footnote{For a mirror, it is reflected.} on-axis point is called spherical aberration. 
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.58]{chapter-1/figures/illus_spherical_abe.png}
+    \caption{Illustration of the spherical aberration in the optical system. The light rays emitting from one on-axis object point is not converging perfectly into one on-axis point on the image plane. The deviation from the expected on-axis point is called spherical aberration.}
+    \label{fig: spherical aberration}
+\end{figure} 
+The primary monochromatic aberration are the spherical aberration, coma, astigmatism, field curvature and distortion. There are axial and lateral chromatic aberrations when chromatic application is considered. Given the thin lens model, the coefficient of each aberration term can be explicitly expressed. The term of the spherical aberration can be expressed as (\cite{GrossHBOvol1}, 29.4.7):
 \begin{equation} \label{eq: Si_spherical}
     S_I = \frac{h^4}{4{f^\prime}^3}\left(\frac{3n+2}{n}M^2 - \frac{4(n+1)}{(n-1)n}XM + \frac{n+2}{(n-1)^2n}X^2 + \frac{n^2}{(n-1)^2}\right).
-\end{equation}                            %% Figure illustration of the spherical aberration. I don't think I need to add it. 21/09/18%
+\end{equation}                            %% Figure illustration of the spherical aberration. I don't think I need to add it. 21/09/18%[done]
 where $h$ indicates the ray height on the lens surface. $X$ stands for the bending factor of the thin lens (\cite{GrossHBOvol1}, 10.1.1):
 \begin{equation} \label{eqn: bending factor}
 X = \frac{R_1+R_2}{R_2-R_1},
@@ -194,32 +199,37 @@ with optimization, a new set of values of the variables $\pmb{x_{opt}}$ is obtai
 
 As shown in the example of the magnifier, in order to fulfill the requirements of working distance, magnification and at the same time minimize the spherical aberration for a thin lens model, the radii of the optical surfaces have been calculated. However, in practice, spherical aberration is not the only aberration contributor that limit the image performance. At the same time, some thickness of the lens needs to be added for practical reasons. Given the previously calculated radii and other parameters of the magnifier, a merit function value can be determined after the lens is modeled in an optical design software. This merit function value usually can be further reduced for better system performance with optimization techniques.  
 
-We applied optimization in optical design software CODE V with the magnifier example. Three different cases are parameterized in CODE V as starting points for the optimization. The variables are the two radii of the surfaces. The thickness is also used as a constrained variable to optimize a thick lens. The radii and merit function in each step of the optimization of the three cases are listed in Table \ref{tb: magnifier optimization}. 
-% to do: 1) to add the merit function in the table.  2) good to have, to have the plot of the systems
-% the magnification of the magnifier is the defined typically as the angular magnification, so the model need recalcualtion, but the process should be the same !!!!!!! 09/23. Need further continuation on the topic after fix the magnification definition  
+We applied optimization for the previous magnifier example in optical design software CODE V. Three different cases are parameterized in CODE V as starting points for the optimization. They are calculated using the Lensmaker's formula  (Equation \ref{eq: lensmaker_r}), Lensmaker's formula considering a thick lens (Equation \ref{eq: lensmaker_r_thick}), and the spherical aberration formula for a thin lens (Equation \ref{eq: Si_spherical}). The variables are the two radii of the surfaces. The thickness is also used as a constrained variable to optimize for a thick lens configuration. The radii and merit function in each step of the optimization of the three cases are listed in Table \ref{tb: magnifier optimization}. 
+% to do: 1) to add the merit function in the table[done].  2) good to have, to have the plot of the systems [not necessary to do]
+% the magnification of the magnifier is the defined typically as the angular magnification, so the model need recalcualtion, but the process should be the same !!!!!!! 09/23. Need further continuation on the topic after fix the magnification definition [done] 
 
-In CODE V, the working distance is set as $30 \; mm$,  the magnification is constraint as $3$ and the object height are chosen as $0 \; mm$, $1.8 \; mm$ and $2.5 \; mm$. When optimized directly with the input setting, both thin lens approximation with paraxial optics and optimized spherical aberration converge to the same local minimum. Then, the thickness of the thin lens is gradually increased to 5 mm while optimizing the system. Three starting points all converge to the same local minimum. After that, we increased the field by adding non-axial object height. The radii changed slightly. From the table, it is seen that when optimizing in CODE V under the given condition, it makes no difference among the three starting points. All of  them in this case leads to the same local minimum. As a relative simple design problem, it is not sensitive to the choice of starting point.
+In CODE V, the object distance is set as $41.67 \; mm$ and the image distance is at $250 \;mm$. An effective focal length of $50 \;mm$ is used as a constraint of the system. Only one wavelength is used and the material refractive index is set as $1.5$. An entrance pupil diameter of $20 \;mm$ is used and the fields are defined with three object heights: $0$, $3$, and $5 \;mm$.  The merit function used here is the default transverse-ray function in CODE V. It is a composite value, scaled so that it is the mean square of the weighted image radius.
 
+When optimized directly with the input setting, the starting points of both thin lens approximation using paraxial optics and the one optimized for spherical aberration converge to the same local minimum (radii are given in the "Optimized thin" column in Table \ref{tb: magnifier optimization}). We also notice that the starting point for the thin lens which is optimized for spherical aberration already has very similar radii comparing to the CODE V optimized system. It indicates that for such a configuration, the image quality is dominated by the spherical aberration and the theoretical calculation predicts the image quality well. However, it is also noticed that the merit function value of these systems are very big ($9.06E5 \;\mu m^{2}$). Here we use this example only to demonstrate how a simple lens design and optimization flow works. In practical design, the merit function value needs to be further brought it down and additional degrees of freedoms (such as new lenses) are required. 
+
+We also optimized the system with a lens thickness constrained at $3 \;mm$. Three starting points all converge to the same local minimum. It indicates that there is no difference which starting configuration we choose. We will show later in the thesis that it is not the cases for more complicated optical system (e.g. with more lenses). 
+% what I want to show 1) how a flow of modern design is 2) it is a simple case.
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \begin{table}[h!]
 	\small
     %\centering
     \captionsetup{justification=centering}
-    \caption{Optimization results of the Magnifier in CODE V}
+    \caption{Optimization results of the magnifying glass in CODE V}
     \label{tb: magnifier optimization}
     \vspace{-1em}
-    \begin{tabular}{|M{2.7cm}|M{1.9cm}|M{1.9cm}|M{1.9cm}|M{1.9cm}|}
+    \begin{tabular}{|M{2cm}|M{0.9cm}|M{0.6cm}|M{0.8cm}|M{0.8cm}|M{0.6cm}|M{0.8cm}|M{0.8cm}|M{0.6cm}|M{0.8cm}|}
     \hline
-                           & \multicolumn{4}{c|}{Radii (mm)}\\ \cline{2-5}
-  \textbf{Starting point} & Original& Thin lens, 0 object height & Thick lens, 0 object height & Thick lens (5 mm),  2.5 mm object height\\  \hline
-   \textbf{Thin lens approx.}  & 45, -45 & -116, -19 & &\\  \cline{1-3}
-    \textbf{Thick lens} & 44, -44& / & \multirow{3}{*}{-203, -23} & \multirow{3}{*}{-196, -23}\\  \cline{1-3}
-    \textbf{Thin lens optimized for spherical aberration} & -105, -19& -116, -19& &\\ 
+  &\multicolumn{3}{c|}{\textbf{Starting point}} & \multicolumn{3}{c|}{\textbf{Optimized thin}} & \multicolumn{3}{c|}{\textbf{Optimized thick}}\\ \cline{2-10}
+  &  Radii (mm) & THK (mm) & MF ($\mu m^{2}$)&  Radii (mm) & THK (mm) & MF ($\mu m^{2}$) &  Radii (mm) & THK (mm) & MF ($\mu m^{2}$)     \\  \hline
+   \textbf{Thin lens }  & 50, -50 & 0 & 3.56E6 & 2247, -25 & 0& 9.06E5&&&\\ \cline{1-7}
+    \textbf{Thick lens} & 49.50, -49.50& 3 & 6.45E6 & /&/&/&  \multirow{3}{*}{108, \newline -32} & \multirow{3}{*}{3} &\multirow{3}{*}{4.98E6}\\ \cline{1-7}
+    \textbf{Thin lens optimized for SA} & $\infty, -25$ & 0 & 9.07E5 & 2247, -25&0&9.06E5&&&\\ 
     \hline
     \end{tabular}
+    \footnotesize{THK: thickness. SA: spherical aberration.}
 \end{table}
 
-In summary, the process of the modern optical design can be generally separated into two steps: 1) determine configurations of the system as starting points; 2) use computational model to optimize the system performance. Mastering both steps requires a good understanding of the optical systems as well as in-depth knowledge of optimization. We will explain these two parts in the following sections, with an emphasis on the optimization techniques. 
+In summary, the process of the modern optical lens design can be simplified into two steps: 1) determine parameterized configurations of the system as starting points; 2) use optimization tools to optimize the system performance. In practice, the two steps can be iterated for many times to finally obtain a satisfactory system. Mastering both steps requires a good understanding of the optical systems as well as in-depth knowledge of optimization. We will explain these two parts in the following sections, with an emphasis on the optimization techniques. 
 
 \subsection{Optical System Optimization }
 \vspace{1em}
