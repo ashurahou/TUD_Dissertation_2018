@@ -1,5 +1,5 @@
 \chapter{The Saddle Point Construction Method}
-\label{chapter_2}
+\label{chapter_SPC_method_reccomendation}
 \graphicspath{ {./chapter-sp/figures/} }
 \captionsetup[figure]{labelfont=bf}
 \captionsetup{margin=1.5em}
@@ -64,14 +64,13 @@ H^{N}_{ij}=\frac{\partial^2}{\partial{x_i}\partial{x_j}} MF^{N}(x^{0}_1, x^{0}_{
 \end{equation}are all non-negative.
 
 Next we introduce a null element with common curvature $c_1=c_2$ of its two surfaces. Additional variables are then introduced as follows:
-
 \begin{equation}
-\begin{align}
-\begin{rcases*}
+\begin{split}
+%\begin{rcases*}
 x_{N+1} &= c_1 + c_2, \;\;\\
 x_{N+2} &= c_1 - c_2. \;\;
-\end{rcases*}
-\end{align}
+%\end{rcases*}
+\end{split}
 \end{equation}
 
 Because the introduction of the null-element does not alter the physical property of the optical system, therefore does not have any effect on the merit function, we have the following relation between the $N$ and $N+2$ dimensional merit functions:
@@ -103,11 +102,11 @@ Equation \ref{MF_xn-1_fozero} applies to $(x^{0}_1, x^{0}_{2},...,x^{0}_{N})$, w
 \end{equation}Next we vary $x_{N+1}$ to find a point $x^0_{N+1}$ for which 
 \begin{equation}\label{eq:1dsearch}
 \frac{\partial}{\partial{x_{N+2}}}MF^{N+2}(x^0_1, x^0_{2}, \cdots,x^0_{N}, x^0_{N+1},x_{N+2}=0) = 0.
-\end{equation}Assuming that such point $x^0_{N+1}$ can be found, we conclude that 
-\newline
-
-\centerline{$(x^0_1, x^0_{2},\cdots,x^0_{N}, x^0_{N+1},0)$} 
-\newline \noindent is a critical point of $MF^{N+2}$. 
+\end{equation}Assuming that such point $x^0_{N+1}$ can be found, we conclude that
+\begin{equation*}
+(x^0_1, x^0_{2},\cdots,x^0_{N}, x^0_{N+1},0)
+\end{equation*}
+\noindent is a critical point of $MF^{N+2}$. 
  
 Now Equation \ref{eq_mfconst} implies
 \begin{equation}

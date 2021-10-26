@@ -1,12 +1,12 @@
 \chapter{Conclusion} %% change
-\label{chapter_6} %% change
+\label{chapter_Conclusion} %% change
 \graphicspath{ {./chapter-6/figures/} }  %% change
 \captionsetup[figure]{labelfont=bf}
 \captionsetup{margin=1.5em}
 \captionsetup[table]{labelfont=bf}
 %% The following annotation is customary for chapter which have already been
 %% published as a paper.
-\blfootnote{Parts of this chapter have been published in Annalen der Physik \textbf{324}, 289 (1906) \cite{LinWang2011}.}
+\blfootnote{-}
 
 %% It is only necessary to list the authors if multiple people contributed
 %% significantly to the chapter.
@@ -15,26 +15,80 @@
 %% The '0pt' option ensures that no extra vertical space follows this epigraph,
 %% since there is another epigraph after it.
 \epigraph[0pt]{
-   A journey of a thousand miles begins with a single step
-}{Laozi}
+Nel mezzo del cammin di nostra vita
+mi ritrovai per una selva oscura,
+che la diritta via era smarrita.
 
-\epigraph{
-    Sample quotes
-}{author}
+In the midst of life's journey
+I found myself in a dark wood
+where the right path was lost.
+
+}{First stanza of Dante's Inferno}
+
 
 \begin{abstract}
-Previous researches have shown that different solutions of the optical system can be found using saddle point based method for some simplified cases\cite{PascalTriplet2009}. It is important, however, to study whether the saddle point based method still perform well in practical lens design problems. To study this, we chose to start with a relative simple example.
+
 \end{abstract}
 
 %% Start the actual chapter on a new page.
 \newpage
 
-Questions:
-How many saddle points will result from a scan?
-Is the saddle point in the landscape all constructable? With the current technique we do not know how to do that. It is not possible.
-Are the minima all connected? via saddle points? - no proof
+Optical lens design has been revolutionized since the introduction of the computed-aid design. High performance optics providing nanometer resolution becomes possible. The design can be roughly divided into two parts: 1) determine a starting configuration; 2) optimize the system for better performance. 
 
-There are so many things cannot be proven in this context of the research. What we focus is on how to apply the method for solving the lens design problem. 
+The determination of the starting point for complex system becomes more vital because of its nonlinear design landscape where multiple local minima exist. Starting points locate in different basins of attraction will converge to different local minima. However, once the design is trapped in a non-optimal local minima. There is no systematic strategy to move away from it and look for new solutions. As mentioned in \color{orange}{Chapter xxx}\color{black}, there are methods based on testing strategy (simulated annealing, escape function) to move away from a local minima. More computational expensive method such as saddle-point detection is also proposed. Methods such as genetic algorithm or particle swarms follows a different strategy, where they starts with different clusters of starting point and filtering out less preferred candidate in each iteration. 
+
+% Saddle point as a local property holds 
+% 1) how this method can be applied in different way
+The focus of this thesis is on the saddle-point construction (SPC) method. By adding two curvature variables which do not alter the system performance, one can construct saddle points with Morse Index $1$ and optimize from them to obtain new local minima. It reveals such a connection in the lens design landscape: the minima with $N+2$ curvature variables are connected to the minima with $N$ curvature variables via the saddle points. In Chapter \ref{chapter_SPC_method_reccomendation}, we have provided practical recommendation on how such feature can be used to get new local minima. This can either be switching to a new solution given the current number of lenses or finding new solutions with extra number of lenses.  
+
+% To look at optimization for actual use cases 
+% 1) in a simple landscape, it shows that systems are connected by the saddle point - minima links
+% 2) for complicated systems, it is not easy to show all the systems, but what still remains is the essential of the construction where even in very complicated cases can generate useful results. 
+% 3) for such a design, it can be combined with traditional design strategy 
+Different from other methods, the saddle point - minima network shows a connection between the solutions and therefore provide a systematic way to search for solutions. This is possible when the system complexity (number of variables) is low or moderate low. In Chapter \ref{chapter_SPC_simple_system_landscape}, we have shown for a triplet system, solutions are linked via saddle point systems which can be obtained via SPC. However, we also noticed saddle point which can not be constructed via SPC. Nevertheless, there is sufficient redundancies in the saddle point - minima connection such that we do not miss the good solutions. It is also shown in Chapter \ref{chapter_4_complex_system_exploration} with the wide-angle lens where the system solutions are able to be linked via saddle point construction. From the examples we have investigated, redundancies in the network helps to obtain the good system. But we cannot prove that this redundancies always exist also in complex system. The redundancies means that it is always possible to find a saddle point - mimina starting from an arbitrary minimum in the design landscape and find to best minimum. 
+
+The network of saddle point - minima can grow fast as the number of lenses grows in the systems. This is shown in the microscope objective example in Chapter \ref{chapter_4_complex_system_exploration}. For practical design purpose, analyzing such a complex design network becomes a less helpful task. A more relevant question would be can we still guarantee that new solutions obtained using SPC is viable.
+In the example of microscope objective example, we demonstrate how combined with conventional strategy, SPC could benefit lens design by rapidly providing multiple solutions for assessment. In the example of the lithography objective which contains more than twenty lens elements, we have demonstrated that applying SPC can still provide candidate solutions given such complicated system design. Also the benefit is that only local groups are modified without affecting reset of the system configuration. 
+
+The challenge of obtaining a satisfying solutions is always closely tied with the complexity of the design (optimization) landscape. In most of the current research, the non-linearity and the existence of multiple local minima are always emphasized, therefore the interests stated as "how can we find the best system among all as efficient as possible". This is mostly considered a design (optimization) landscape that is static. If we look closely to the design process, the assumption of a static design landscape is not always true. 
+
+% Landscape is rather dynamic, to apply the method 
+% 0) it is still helps if the starting point would be perfectly chosen (SMS)
+% 1) given the dynamic situation, redundancy helps
+% 2) given the dynamic situation, recommendation would be first apply SPC and then apply constraint
+% 
+In Chapter \ref{chapter_5_SMS}, we showed that for an ideal case where the design landscape can be constructed statically (using SMS to generate the starting point), the chance of the efficiently arriving at a global minimum is high. However, rest of the optimization strategies involves gradually following a changing design landscape. Therefore the uncertainty of constantly following a good basin of attraction is high. 
+
+In Chapter \ref{chapter_SPC_simple_system_landscape}, we have dedicated a section discussing how changing FOV can affecting the number of solutions (and saddle point) which could be obtained. Since modifying element thickness is a standard technique used during SPC, we have also discussed the in the wide-angle lens example in Chapter \ref{chapter_4_complex_system_exploration}, where when changing the thickness of the an element, a solution could either disappear or appear. In the example of the microscope objective, we demonstrate how the use of the constraint could affect the design landscape by altering the number of saddle points which can be constructed. The general "feeling" is that less constrained system has a higher chance of producing more solution candidate. 
+With all these examples we would like to emphasize the dynamic aspect of the design landscape in an actual design activity. 
+A method that can adapt would have a higher chance of success. Combined with what is explained in Chapter \ref{chapter_SPC_method_reccomendation}, we have provided a strategy of how SPC can be applied in complicated system design, the rule of thumb is 
+1) apply less constraint when possible 
+2) iterate the process each time a design specification is changed (and the system performance is of the chart)
+
+
+
+
+QUESTIONS
+What are the special properties of the constructable saddle point with respect to the lens design landscape? For simple cases, we can show that by assuming a toy model that representing the major aberration in the system, the constructable saddle points is mapped to the ones in the math model. However, for complicated model, such an analytical mapping is difficult to be found.  
+
+What determines the number of saddle points from a scan?
+A high dimensional search, related to the above question.
+
+In a lens design landscape, are all the saddle points able to be constructed using SPC? The answer is no given the observation in the solution network (Figure \ref{fig:tripletnetwork}) where a saddle point system is found via saddle point detection algorithm, however, cannot be constructed using curvature variables. We believe in system with more complexity, more of such saddle points exist. 
+
+We rely on the redundancy of the links in the design network to be able to obtain as much as possible saddle points. 
+
+However, in practise, this redundancy can not always help due to the changing design landscape.
+Technically, SPC requires a zero-thickness minimum to have a corresponding nonzero-thickness minimum. However, in practice, this is not true from either side. Namely, you can have a zero-thickness minimum find by SPC, however, cannot increase its element thickness to a desired value or there is a nonzero-thickness solution but do not have a corresponding zero-thickness pair. The first effect is less troublesome since it means SPC constructs a system which is not practical, however, the second effect makes those results cannot be constructed using SPC (System C in Figure \ref{fig:thicknesschange}, Figure \ref{fig:thickness_increase}).  
+
+A optimistic observation is that the solutions with low merit function values are always captured by the SPC network. 
+
+
+What is always valid is the local operation, which means given a minimum with $N$ curvature variables, by adding $2$ variables, and run an SPC scan. Zero-thickness minima can be obtained from the constructed saddle points. This alter the system locally the produce candidate minima. 
+
+Questions that we only probed is that where is the best location to run an SPC scan? 
+Where is the most effective location to insert saddle point: 
+This is a difficult question as we demonstrate that by combining with traditional strategy it can be effective. However, a numerical exhausting is always help (computation is cheap). It could be more relevant to ask that for a certain type of lens system, where is the most effective location to run such a SPC scan.  
 
 Pros:
 Reduces the amount of search; smooth tradition avoiding ray failures
@@ -43,15 +97,61 @@ Cons:
 So far only effective in lens design, in the context of adding a pair of curvatures as new variables. With aspheres, it works, but not practical. 
 One variable, and with another variable that perfectly compensate the change introduced by the first variable. -->if it is the case, it is a pair of redundant variable, right? 
 
+global optimization tool or a local optimization tool
 
-Dynamics of the landscape
-Appearing and disappearing of the saddles and minima. 
+\section{Outlook}
+\textbf{SP}
+In the examples we have examined so far, if use SPC as a global optimization tool, it should be OK to start from any of the existing solution to obtain the global optimum (or arrive at the region of the global optimia). 
 
-There are other complexity in the problem of optimization (slow convergence) has to be considered when applying SPC.
+To prove that the SPC network can always capture the good solutions given a design landscape. That is to say, for the region of the good solutions, the design landscape is structured in a way that SPC network is mapping the saddle point - minima network. 
+It requires a deeper investigation of the design landscape. To start with, I would suggest to use a certain type of system and to characterize its landscape (in the thesis, we have been looking at wide-angle and microscope objectives). 
 
-For me this whole picture is a dynamic moving landscape that will change in every unpredictable way. It is utterly difficult to grasp any macro scale structure behind it. 
+It is a difficult task.
 
-\section{Suggestion for future work}
+\textbf{practical SPC}
+More practically, since SPC is used as a tool 
+1) strategy to determine where to run the SPC
+2) more rigorously move around the constructed SPC to be sure to not missing minima
+3) implementing constraints and the polishing of a local minima
+4) use it as a global and local tool 
+
+In addition, since the property for SPC is not constrained to lens design using curvatures, trying to adapt it into other design and optimization area is also interesting.
+1) using variables such as thickness, higher-order surface description
+2) benefit of constructing higher-order saddle points
+3) apply SPC in other design problem, e.g. thin film (zero-thickness, using n as variables, phase-mask)
+
+
+\textbf{lens design opt}
+1) In the search of lens design method, combining multiple strategies would be beneficial rather than only using one. 
+Lens design optimization strategy given the complex landscape
+
+
+
+
+%note
+//////////
+Saddle point wise, 
+1) what is the optimal construction place by comparing the curve change via the inserting positions. 
+
+For simple system, it is interesting to see the design networks mostly related to the saddle point network. Few number of lens is used, not much constraint is applied to the system. 
+
+For complicated system, mapping the network via saddle point becomes less value-added. What is sure the basic saddle point-minima approach is mostly fulfilled. 
+
+A more effective future optimization approach would combine different approaches, for example, using saddle point construction to provide multiple starting point and then use them as the seed for genetic algorithm. 
+
+The optimization strategy when adding higher order saddle point (adding more than 2 variables)
+
+
+To use it as a tool, what should be the requirement and engineering aspects.
+
+
+
+freeform, adding new dummy variables 
+
+Thin film using n as variable.
+
+Mapping one set of parameter to another set of parameters, need to gain more understanding on how to config the new set of parameter and its physical meanings, but it is nice to try since it is showing good results. 
+
 
 
 \references{dissertation}

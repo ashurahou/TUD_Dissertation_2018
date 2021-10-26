@@ -33,6 +33,7 @@
 \RequirePackage{multirow}
 \RequirePackage{enumitem} % to adjust line space for itemized item
 \RequirePackage{colortbl} % to apply colors in the table
+\RequirePackage{comment}
 % \RequirePackage{showframe} %showframe
 
 \ifxetex
