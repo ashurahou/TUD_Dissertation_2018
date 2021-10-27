@@ -1,4 +1,4 @@
-{Introduction}
+\chapter{Introduction}
 \label{chapter_1_intro}
 \graphicspath{ {./chapter-sp/figures/} }
 \captionsetup[figure]{labelfont=bf}
@@ -301,102 +301,12 @@ To find the minimum of $MF(\pmb{x})$ , numerical iteration steps are executed. T
 \end{equation}Different methods are used to solve this equations. We mention here the most common ones. 
 \newline
 
-\textbf{Newtonian method}
-
-The Newtonian methods solve the Equation \ref{eq: MF_grad_zero}. The computation of the Hessian matrix $\pmb{H}$ is expensive. As a result, approximation of the Hessian matrix is usually used. The Gauss-Newton method is a common method, where the $H$ is approximated by $2\pmb{J}^T \cdot \pmb{J}$ . The Equation \ref{eq: MF_grad_zero} can then be written as 
-\begin{equation} \label{eq: gauss-newton}
-\begin{split}
-&2 \pmb{J}^{T} \cdot \pmb{f_0} + 2\pmb{J}^T \cdot \pmb{J} \cdot \Delta x = 0 ,  then\\
-&\Delta x = - (\pmb{J}^T \cdot \pmb{J} )^{-1} \cdot \pmb{J}^{T} \cdot \pmb{f_0},
-\end{split}
-\end{equation}
-where $\Delta x$ is the steps used for iteration calculation. 
-The advantage for Newtonian method is that it converges fast when the operands are linear (in the vicinity of a local minimum). However, when starting far from the local minimum, the operands are usually very nonlinear. In such cases, it may be difficult for the algorithm to find the vicinity of a local minimum. 
-\newline
-
-\textbf{Steepest descent}
-
-The method of steepest descent  ignores the second order term and only uses the first order term for  Equation \ref{mf_expanded}. The step for the numerical optimization is defined with a negative direction towards the gradient of the function. If we start the optimization at $\pmb{x_0}$, the step can be written as
-\medskip
-\newline
-\begin{center}
-$
-\Delta x = - t \cdot \nabla MF(\pmb{x_0}), \;\; \pmb{x} = \pmb{x_0} + \Delta x,
-$
-\end{center}
-\medskip
-where $t>0$, represents the size of the step. We define a function of $t$ as 
-\begin{equation} \label{eq: function of t}
-\phi(t) = MF(\pmb{x_0} - t \cdot \nabla MF(\pmb{x_0})).
-\end{equation}The derivative of $\phi(t)$ at $t=0$ is
-\begin{equation}\label{t=0}
-\phi'(0) = - \vert\vert \nabla MF(\pmb{x_0}) \vert \vert < 0.
-\end{equation}Given $MF(\pmb{x})$ is continuous differentiable, for $t>0$, we have $\phi(t) < \phi(0)$. Hence, we have
-\begin{equation}
-MF(\pmb{x_0}) > MF(\pmb{x_0} + \Delta x).
-\end{equation}That is, the method of steepest descent is guaranteed to make at least some progress toward a minimized function value during each iteration. However, when the in the vicinity of the minima, the steepest descent converges slower than the Newtonian method.
-\newline
-
-\textbf{Method of damped least-square}
-
-The method of damped least-square is the one commonly used as a local optimizer in optical design. It interpolates between Gauss-Newton and steepest descent method.  
-Instead of solving Equation \ref{eq: gauss-newton}, it solves for 
-\begin{equation} \label{eq: dls}
-\begin{split}
-2 \pmb{J}^{T} \cdot \pmb{f_0} + 2(\pmb{J}^T \cdot \pmb{J} + \lambda \pmb{I} )\cdot \Delta x = 0 , \\
-\Delta x = - (\pmb{J}^T \cdot \pmb{J} + \lambda \pmb{I} )^{-1} \cdot \pmb{J}^{T} \cdot \pmb{f_0},
-\end{split}
-\end{equation}where $\lambda$ is non-negative damping factor, $\pmb{I}$ is identity matrix. If $\lambda$ is regarded as an independent variable, the angle between $\Delta x$ and $\nabla MF(\pmb{x_0}) $ (equals $-2 \cdot \pmb{J}^{T} \cdot \pmb{f_0}$) is a monotonically decreasing function of $\lambda$. With the $\lambda$ goes to infinity, the angle goes to zero. By adjusting the value of $\lambda$, the method of damped least-square has a behaviour between the steepest descent method and the Gauss-Newton method: when $\lambda \rightarrow \infty $, the method acts like the steepest descent method. It converges slowly to the local minimum even if starts far from it. When $\lambda = 0$, the method acts like the Gauss-Newton method. It converges rapidly in the vicinity of the local minimum. 
-In optical design optimization, the identity matrix $I$ in Equation \ref{eq: dls} is replaced with a diagonal matrix $Q$, with its diagonal elements scaling different variables (e.g. curvatures and refractive index). As a result, the convergence of the optimization become faster \cite{Meiron:65_dls}.
 
 \subsection{Global optimization}
 \vspace{1em}
 When multiple types of parameters, such as curvature, thickness, glass types, etc., are considered as variables in an optical system, the complexity of the multi-dimensional merit function space increases. Especially when the number of lens elements increases, multiple local minima are expected to exist and the results of the of an optimization is strongly depends on the choice of the starting point. For simple systems, first-order calculation and aberration analysis can be done to determine a starting point. The result is usually effective. When system gets more complex (e.g. more than 5 elements with all curvatures and thickness used as variables), conventional practice tends to start from an existing system which is relative good and have similar specifications to the design requirement. The database which used for searching these starting point varies from designer to designer. The definition of the ”similarity“ between the chosen starting point and the design requirement is normally determined by the designer's experience. The consequence of such complexity and uncertainty is that the design process can often trapped in a sub-optimal minimum. 
 
 Growing attention has been given in the field of global optimization method following the increase of the computational power for computers. Instead of the following the topography to converge to a minimum, global optimization methods apply strategies to cover multiple basins of attraction and attempt to reach to the global minimum. Some of the global optimization methods have been applied to optical design problems and show promising results. For the ones that are going to be briefly touched in the coming paragraph, they can be divided into two categories: 1) methods that applies strategies to move to a different basin of attraction when trapped. 2) methods that start from multiple basins of attraction, use mutual information to converge to the optimal location. 
-
-\subsubsection{Simulated Annealing}
-Simulated annealing is a stochastic approach to the solution of complex problem and it is essentially a search method driven by biased random walk \cite{WELLER:87}. It is inspired by the thermodynamics and the configuration of an alloy during cooling. When applied to optical design, the method is based on the idea that a given optical system can be thought of as being in some energy state. This energy state is lower when the system is "better (i.e. the merit function has a low value)", and is higher when the lens is "worse (i.e. the merit function value is high)". Different from iterative method, such as the method of damp least-square presented in the previous section, the step from the starting point is generate randomly. With the merit function value at the starting point $\pmb{x_0}$ is $MF_0$ and at point $\pmb{x_0} + \Delta\pmb{x_r}$ is $MF_0 + \Delta MF$, the new variable set is accepted based on a probability function \cite{Forbes1991} given by 
-\begin{equation} \label{eq: simualted_annealing_probability }
-P(MF_0 + \Delta MF) = 
-\begin{cases}
-  1, & \Delta MF < 0, \\ 
- e^{-\frac{\Delta MF}{T}}, & \Delta MF > 0,
-\end{cases}
-\end{equation}where $T$ refers to the \textit{temperature} for the annealing and can be adjusted to tune the probability for accepting the proposed step. 
-
-The method accepts location with a probability where the merit function value increases. In adaptive simulated annealing methods, the acceptance probability is changed during the optimization process. When maximizing searching space is prioritised, large increase in the merit function value is accepted. When further reduction of the merit function value is prioritised, the probability is changed such that large increase in the merit function value is unlikely to happen \cite{Forbes1991}. In practice, trial and error is required to set the optimal parameters for the algorithm to function as expected.    
-
-\subsubsection{Escape function}
-The method of escape function, as the name suggests, is to escape from the stagnation of a local minimum. It is implemented in the optical design software OSLO \cite{OsloSW} as an global optimizer. In additional to the merit function, the method uses an escape function to modify the landscape. The escape is given by \cite{Isshiki1998},
-\begin{equation}
-f_{E} = \sqrt{H} \cdot exp \Bigg\{ - \frac{1}{2W^{2}}\sum_{j} \left[\mu_{j}(x_j - x_{jL}) \right]^2 \Bigg\}, 
-\end{equation}where $x_j$ is the $j$-th variable in the merit function, $x_{jL}$ is its value at the obtained local minimum, and $\mu_j$ is the scale factor for the $j$-th variable. The escape function has a form of a multi-dimensional Gaussian function, where $H$ modifies the height and $W$ modifies the width of the function (Figure \ref{fig: Escape_function_explained}). 
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.58]{chapter-1/figures/EscapeFunction_explained.png}
-    \caption{Explanation of the method of escape function. (a) a 2-D escape function illustration, where $H$ modifies the height and $W$ modifies the width of the function. (b) $P_0$ is a minimum for the original 1-D merit function (solid line). By applying escape function (dotted line), $P_0$ is lifted to $P_1$. However, it cannot help the optimizer to escape to a new basin of attraction. When applying a different escape function (dashed line), $P_0$ is lifted to $P_2$. The optimizer escapes to the next basin of attraction.}
-    \label{fig: Escape_function_explained}
-\end{figure}
-Figure \ref{fig: Escape_function_explained} -(b) uses a 1-D case to illustrate the escape function with two different settings. The solid line represents the original 1-D merit function. After local optimization routine, the minimum $P_0$ is obtained. In order to escape from the current basin of attraction, the first escape function setting lifts $P_0$ to $P_1$, as indicated by the dotted line. However, the optimizer remains in the same basin of attraction due to a insufficient modification of the local landscape. The second escape function setting lifts $P_0$ to $P_2$. When local optimization routine applied for $P_2$, the optimizer escapes from the original basin of attraction. In practice, an automatic feedback loop is designed to adjust the escape function settings to increase the efficiency for minimum searching \cite{Isshiki1998}.
-
-
-\subsubsection{Generic algorithm}
-
-The genetic algorithm is inspired by the process of natural selection which belongs to the larger class of evolutionary algorithm. Similar to biological reproduction, the genetic algorithm defines population in the optimization landscape. Crossover and mutation occur among the population through generations. The fitness of survival of a given individual is determined within the population. Individuals that have a high fitness will be selected by the algorithm.
-
-In the context of optical design and optimization, the merit function value of an optical system configuration is equivalent to its fitness of survival. Solutions to optical systems are thought of as particular individuals of a hypothetical form of life \cite{Moore1999}. Variables can be compared to genes. The genes are represented by binary codes, which correspond to different variable values \cite{GAreview2018}. 
-
-To initialize an optimization process by genetic algorithm, starting population is created in the optimization landscape. Two kinds of evolutionary activities are considered: crossover and mutation. Crossover happens when the genetic codes of the selected parents are exchanged. Mutation happens when the genetic codes randomly change for individuals. Multiple strategies for crossover and mutation are available. However, trial and error are often needed to determine these strategies. The exit criteria for the genetic algorithm is usually determined by the number of generation the population evolves. 
-
-Different from the method of simulated annealing or escape function, genetic algorithm begins with sampling a larger range of the optimization landscape. Information in different part of the optimization landscape are exchanged to search for the global optimum. However, because of its combinatorial nature, the convergence to a minimum in the continuum variable space is not efficient. Hybrid algorithms where genetic algorithm combined with local optimizer (e.g. damped-least square) is thus recommended to improve the efficiency \cite{Moore1999}.
-
-\subsection{Particle swarm optimization}
-Particle swarm optimization was introduced as an analogue for the interaction of individuals in a swarm or a flock of birds. A collection of candidate solutions, called particles, move around in the optimization space according to simple mathematical rules. The goodness of a particle's location is given by the value of the merit function. For each particle, three vectors are used to represent it in the optimization space: the current location of the particle, the velocity of the particle , and its previous best position. During each iteration, every particle moves from its original location to a new location considering the velocity vector and the best location vectors.  After sufficient iterations, the swarm as a whole is likely to move close to an optimum in the optimization landscape \cite{MenkeParticleSwarm} . 
-
-Similar to the genetic algorithm, particle swarm optimization starts with initializing a population randomly located in the optimization space. Each particle starts with an initial velocity. The position vector and velocity vector of the particles are updated after each iteration as the particles move. Parameters associated with the particle movement such as initial velocity, movement inertia, and acceleration with respect to the global best positions need to be determined based on trial and error. 
-
-As for optical design, each system configuration represents a particle in the optimization space. Particle swarm optimization has been demonstrated in several design cases and it is especially helpful in handling large number of variables such as freeform systems \cite{MenkeParticleSwarm}. On the other hand, hybrid algorithm of combing particle swarm optimization with local optimizer has been proposed \cite{Guo:sParticleSwarm}: particle swarm optimization is used for the discrete optimization of the optical material choices, while the local optimizer is applied to obtain the minimum given the selected material choice.  
 
 \subsection{Saddle point method}
 In additional to minimum and maximum, saddle point is also a type of stationary points existing in the optimization landscape. Gradient vanishes at all stationary points. When computing the eigenvalues of the Hessian matrix of these stationary point, a minimum has its signs of the eigenvalues all positive, a maximum has its signs of the eigenvalues all negative, and the saddle point has both positive and negative signs of its eigenvalues. Morse Index is defined as the number of the negative signs of the eigenvalues, and the Morse Index of a saddle point is always bigger than \textit{1}. For example, if there is one negative eigenvalue of the Hessian matrix for a stationary point, it is then a saddle point with a Morse Index value of \textit{1}. For a \textit{N}-dimensional optimization landscape, the Morse Index value of its saddle points can vary from \textit{1} to \textit{N-1}.  The value of the Morse Index indicates the number of directions, following the eigenvectors, from which the merit function value decreases. An example of a saddle point in the \textit{2}-dimensional landscape is given in Figure \ref{fig: saddle_illustration} - (a). 
