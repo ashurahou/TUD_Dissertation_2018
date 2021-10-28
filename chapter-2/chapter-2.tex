@@ -15,12 +15,6 @@
 %% The '0pt' option ensures that no extra vertical space follows this epigraph,
 %% since there is another epigraph after it.
 
-\begin{abstract}
-The saddle point construction method is elaborated in this chapter. Recommendations on how to apply the method are given based on simple examples.
-\end{abstract}
-
-%% Start the actual chapter on a new page.
-\newpage
 
 \noindent 
 The saddle point construction (SPC) method is one of the major methods investigated in this research. Several variations of the methods for constructing the saddle point system have been introduced through the years \cite{BociortSPCSexplained}\cite{MVTurnhoutSPC15}\cite{HouProc2015}. Instead of searching for alternative local minima, the SPC method constructs saddle points as intermediate steps to obtain new local minima. This is achieved by adding extra variables to the existing system. With this approach, it is shown in this chapter that it is possible to obtain new solutions in a systematic way. 
@@ -36,7 +30,7 @@ In a two dimensional space, a 2-D saddle point is a "saddle" where along one dir
 In this research, the saddle point with a Morse Index of 1 is of particular interest. This kind of saddle point has one direction, along which the value of the merit function decreases, while in N-1 other directions the merit function increases. This means that a saddle point of Morse Index 1 is a local minimum in all but one direction. When the optimization follows the two opposite directions in which the merit function descends, two local minima can in principle be found (Figure \ref{fig:SPCdemo}-b). As a result, if there is a way to rapidly obtain these saddle points in the design landscape, it provides an approach to find more local minima. In fact one finds two local minima from a saddle point of Morse Index 1. 
 
 \section{The Saddle Point Construction method}
-In this section, the SPC method and its variations are introduced and explained. As the name suggests, the method constructs saddle points in the design landscape. These are all saddle points with Morse Indices of $1$  \footnote{In the special version of the SPC, it can be proven that the Morse Index of the constructed saddle point is $1$. In the general version of the SPC, it is shown in the numerical experiments that the Morse Index of the constructed saddle point is $1$}. Instead of optimizing from an arbitrary point in the landscape, optimizing from a saddle point can systematically lead to two local minima. 
+In this section, the SPC method and its variations are introduced and explained. As the name suggests, the method constructs saddle points in the design landscape. These are all saddle points with Morse Indices of $1$  \footnote{In the special version of the SPC, it can be proven that the Morse Index of the constructed saddle point is $1$. In the general version of the SPC, it is shown in the numerical experiments that the Morse Index of the constructed saddle point is $1$.}. Instead of optimizing from an arbitrary point in the landscape, optimizing from a saddle point can systematically lead to two local minima. 
 
 The saddle points are constructed by adding extra variables to the merit function that has attained the existing local minimum using the original number of variables. In principle, the variables can be any parameter in the lens design model. It should be mentioned that the most effective variables that have been used so far are the lens curvatures. 
 

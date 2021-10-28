@@ -12,7 +12,7 @@
 
 % The following annotation is customary for chapter which have already been
 % published as a paper.
-% \blfootnote{Parts of this chapter have been published in Annalen der Physik \textbf{324}, 289 (1906) \cite{LinWang2011}.}
+\blfootnote{Parts of this chapter have been presented in the SPIE conference Optical Systems Design (2018, Frankfurt) and published in Proc. SPIE \textbf{10690}, Optical Design and Engineering VII, 1069007 (2018) \cite{ZheHOU2018OSD}.}
 
 %% It is only necessary to list the authors if multiple people contributed
 %% significantly to the chapter.
@@ -34,7 +34,7 @@
 % %% Start the actual chapter on a new page.
 % \newpage
 
-In Chapter 2 and 3, suggestions have been given on how to apply SPC to simple design problems. In this chapter, SPC is applied to in some more complicated practical design problems.
+In Chapter \ref{chapter_SPC_method_reccomendation}  and \ref{chapter_SPC_simple_system_landscape}, suggestions have been given on how to apply SPC to simple design problems. In this chapter, SPC is applied to in some more complicated practical design problems.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -404,7 +404,7 @@ With the separation of the system into different function groups, it is possible
     \end{adjustbox}
 \end{table}
 
-Based on the insight on where the change should be introduced in the system, SPC scans were performed at four positions in the system. Figure \ref{fig: VollrathSPCcaseNA} presents the results from saddle point construction scans. From four scans, a total number of eighteen solutions were obtained \footnote{\colorbox{orange}{an example of a scan will be given in the appendices}}. Besides four solutions which are identical to the ones obtained with the traditional method, fourteen extra solutions were obtained. Their performance is listed in Table \ref{table: vollratSPCcaseNA}. Out of the eighteen solutions, nine reach satisfactory results. Among all the solutions, \circled{1}A and \circled{2}B have very close system shapes. One is the result from the left bending of the glass lens, and the other is the result of the right bending of the air lens. As explained in Chapter 2, there are two different ways to apply SPC, which lead to the same solution in this case.
+Based on the insight on where the change should be introduced in the system, SPC scans were performed at four positions in the system. Figure \ref{fig: VollrathSPCcaseNA} presents the results from saddle point construction scans. From four scans, a total number of eighteen solutions were obtained. Besides four solutions which are identical to the ones obtained with the traditional method, fourteen extra solutions were obtained. Their performance is listed in Table \ref{table: vollratSPCcaseNA}. Out of the eighteen solutions, nine reach satisfactory results. Among all the solutions, \circled{1}A and \circled{2}B have very close system shapes. One is the result from the left bending of the glass lens, and the other is the result of the right bending of the air lens. As explained in Chapter \ref{chapter_SPC_method_reccomendation}, there are two different ways to apply SPC, which lead to the same solution in this case.
 
 \begin{figure}
   \begin{adjustbox}{addcode={
@@ -623,7 +623,7 @@ From the two examples, it is seen that the way to implement the constraints affe
     \label{fig: vollrath_wt_change}
 \end{figure}
 
-\section{Applying SPC to a lithographic objective}
+\section{Applying SPC to a Photo-Lithographic Objective}
 Lithographic systems represent one of the most sophisticated optical systems nowadays. With an imaging objective consisting of more than twenty lens elements, nanometer resolution has to be realized. These systems are used in the semiconductor industry to produce integrated chips \cite{Matsuyama2006_LithoHis}, which boost all kinds of technology advances in the 21st century. 
 
 For this kind of complicated optical systems with a large amount of variables, the number of possible solutions increases drastically. These systems suffer more easily from ray failures. Varying variables in the system can easily cause failures in ray tracing. Normally, a new design starts from an existing one, where the system specification is close to the design requirement. The system is then modified by the designer based on certain design guidelines \cite{LivshitsQA2013}\cite{Shafer1995_moreless}\cite{Cao2017_GroupDesign} or his/her own experience. Trial and error always evolves before obtaining a good solution. 
