@@ -6,10 +6,7 @@
 \captionsetup{margin=1.5em}
 \captionsetup[table]{labelfont=bf}
 
-
 % %% Start the actual chapter on a new page.
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{comment}
@@ -24,25 +21,241 @@ What do I mean by this? Is it about better descriptions of what happened for eac
 \newpage
 \end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{System Specifications of the Wide-angle Pinhole Lenses} 
-\label{apdx: wide-angle-specs}
-Nominal design spec of the two (3 lenses and two-parts) wide-angle pinhole lens. 
+\section{Surface Specifications of the Wide-angle Pinhole Lenses with Four Elements} 
+\label{apdx: wide-angle-specs_4_elements}
+
+The original system surface specifications of the wide-angle pinhole lens in Chapter \ref{chapter_SPC_simple_system_landscape} is provided in the table below. The listed surface parameters corresponds to the system in Figure \ref{fig:widepinLens}-a. The design requirements are listed in Table \ref{table: sysspec}.
+
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{System surface specification of the wide-angle pinhole lens with four lens elements}
+    \label{table: appdx_system_spec_wide_angle_4_lenses}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c c}
+    \hline 
+     \textbf{Surface \#} & \textbf{Surface Type} & \textbf{Curvature (1/mm)} & \textbf{Thickness (mm)} & \textbf{Glass refractive index*} & \textbf{Glass Abbe \#*} \\ 
+     \midrule
+    \rowcolor[gray]{0.9}  \textbf{1 (Object)} & Sphere & 0 & Infinity &  &  \\ 
+    										\textbf{2 (Stop)}   & Sphere & 0 & 0.3500       &  &  \\
+   \rowcolor[gray]{0.9}    \textbf{3}               & Sphere & -0.4433 & 1.5000 & 1.7477 & 50.19\\
+                                            \textbf{4}              & Sphere & -0.3581 & 0       &  & \\ 
+    \rowcolor[gray]{0.9}   \textbf{5}              & Sphere & 0.1278  & 2.0000 & 1.6152 & 58.08 \\
+                                           \textbf{6}               & Sphere & -0.1478 & 0       &  &\\
+    \rowcolor[gray]{0.9}  \textbf{7}                & Sphere & 0.1743 & 2.0000 & 1.7477 &  50.19 \\ 
+                                          \textbf{8}                & Sphere  & -0.2267& 0.5000 & 1.8138 & 25.17 \\
+   \rowcolor[gray]{0.9}  \textbf{9}                & Sphere & 0.1385 &  2.1892 &   &   \\
+                                         \textbf{10 (Image)} & Sphere & 0 & 0 &  &  \\ 
+    \hline
+    \multicolumn{6}{l}{\textit{\footnotesize{* The glass material property are from a Russian glass catalog which we cannot retrieve.}}}\\
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
+
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{System Specifications of the UV Microscope Objective} 
+\section{System Surface Specifications of the Wide-angle Pinhole Lenses with Six Elements} 
+\label{apdx: wide-angle-specs_6_elements}
+
+The original system surface specifications of the wide-angle pinhole lens in Chapter \ref{chapter_4_complex_system_exploration} is provided in the table below. The listed surface parameters corresponds to the system in Figure \ref{fig:wideanglelensPerformance}. The design requirements are listed in Table \ref{table: sysspecWAL}
+
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{System surface specification of the wide-angle pinhole lens with six lens elements}
+    \label{table: appdx_system_spec_wide_angle_6_lenses}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c}
+    \hline 
+     \textbf{Surface \#} & \textbf{Surface Type} & \textbf{Curvature (1/mm)} & \textbf{Thickness (mm)} & \textbf{Glass Type*}  \\ 
+     \midrule
+    \rowcolor[gray]{0.9}  \textbf{1 (Object)} & Sphere & 0 & Infinity &    \\ 
+    										\textbf{2}              & Sphere & 0.0146 & 2.5000 & HLAK4L\_CDGM   \\
+   \rowcolor[gray]{0.9}    \textbf{3}               & Sphere & 0.2125 & 4.9000 &  \\
+                                            \textbf{4}              & Sphere & -0.2091 & 3.0000 & HLAK4L\_CDGM   \\ 
+    \rowcolor[gray]{0.9}   \textbf{5}              & Sphere  & -0.1491  & 1.0000 &  \\
+                                           \textbf{6}               & Sphere  & 0.0109 & 4.4000   & HLAK4L\_CDGM \\
+    \rowcolor[gray]{0.9}  \textbf{7}                & Sphere & -0.0645 & 5.7000 & \\ 
+                                          \textbf{8 (Stop)}    & Sphere  & 0          & 3.7200 &  \\
+   \rowcolor[gray]{0.9}  \textbf{9}                & Sphere  & 0.0745  &  3.2000 &  HZPK2\_CDGM   \\
+                                          \textbf{10}                & Sphere  & -0.1978& 1.3000 & HZF52\_CDGM \\
+   \rowcolor[gray]{0.9}  \textbf{11}                & Sphere & -0.0584 &  0         &      \\
+                                          \textbf{12}                & Sphere  & 0.0844 & 3.0000 & HLAK52\_CDGM \\
+   \rowcolor[gray]{0.9}  \textbf{13}                & Sphere & -0.0446 &  5.5000 &      \\
+                                          \textbf{14}                & Sphere  & 0          & 0.5250 & HK11\_CDGM \\
+   \rowcolor[gray]{0.9}  \textbf{15}                & Sphere &  0          &  0.0200 &      \\
+                                         \textbf{16 (Image)} & Sphere & 0 & 0 &   \\ 
+    \hline
+    \multicolumn{5}{l}{\textit{\footnotesize{* The glasses are from the CDGM catalog in CODE V. }}}\\
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\section{Surface Specifications of the UV Microscope Objective} 
 \label{apdx: uv-microscope-spec}
-UV microscope system, give the original 
-DUV objective, give the original
+
+The original system surface specifications of Volrath microscope objective in Chapter \ref{chapter_4_complex_system_exploration} is provided in the table below. The listed surface parameters corresponds to the system in Figure \ref{fig:wideanglelensPerformance}. The design requirements are listed in Table \ref{table: sysspecWAL}
+
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \caption{System surface specification of UV microscope objective }
+    \label{table: appdx_system_spec_wide_angle_6_lenses}
+    \vspace{-1em}
+    % \hspace*{-10pt} %adjusting the position of the plot(table) !!!!
+    \begin{adjustbox}{max width=\textwidth, center}
+    \begin{tabular}{c c c c c}
+    \hline 
+     \textbf{Surface \#} & \textbf{Surface Type} & \textbf{Curvature (1/mm)} & \textbf{Thickness (mm)} & \textbf{Glass Type*}  \\ 
+     \midrule
+   \rowcolor[gray]{0.9}   \textbf{1 (Object)} & Sphere & 0 & Infinity &    \\ 
+    										\textbf{2}              & Sphere & -0.2636 & 2.2391 & LITHOSILQ\_SCHOTT   \\
+   \rowcolor[gray]{0.9}    \textbf{3}               & Sphere & 0.1011& 0.6631 &  \\
+                                            \textbf{4}              & Sphere & -0.0222 & 6.0000 & LITHOSILQ\_SCHOTT    \\ 
+    \rowcolor[gray]{0.9}   \textbf{5 (Stop)}   & Sphere  & -0.0809  & 0.1000 &  \\
+                                           \textbf{6}               & Sphere  & 0.0113 & 5.9871  & LITHOSILQ\_SCHOTT  \\
+    \rowcolor[gray]{0.9}  \textbf{7}                & Sphere & -0.0894 & 0.1000 & \\ 
+                                          \textbf{8}                & Sphere  & 0.0504  & 1.8479 &  LITHOSILQ\_SCHOTT \\
+   \rowcolor[gray]{0.9}  \textbf{9}                & Sphere  & -0.0084  &  0.1000 &     \\
+                                          \textbf{10}                & Sphere  & 0.0918 & 1.8339 & LITHOSILQ\_SCHOTT  \\
+   \rowcolor[gray]{0.9}  \textbf{11}                & Sphere & 0.0327 &  0.1000  &      \\
+                                          \textbf{12}                & Sphere  & 0.1533 & 1.8771 & LITHOSILQ\_SCHOTT \\
+   \rowcolor[gray]{0.9}  \textbf{13}                & Sphere & 0.0933 &  0.1000 &      \\
+                                          \textbf{14}                & Sphere  & 0.3106 & 4.0518 & LITHOSILQ\_SCHOTT  \\
+   \rowcolor[gray]{0.9}  \textbf{15}                & Sphere &  0.4978 &  1.0598 &      \\
+                                         \textbf{16 (Image)} & Sphere & 0 & 0 &   \\ 
+    \hline
+    \multicolumn{5}{l}{\textit{\footnotesize{* The glasses are from the SCHOTT catalog in CODE V. }}}\\
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{System Specifications of the DUV Photo-Lithographic Objective}
+
+
+
+\section{Surface Specifications of the DUV Photo-Lithographic Objective}
 \label{apdx: duv-litho-spec}
 
+\setlength{\arrayrulewidth}{.5mm}
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.2}
+\definecolor{grey1}{gray}{0.6}
+\definecolor{grey2}{gray}{0.9}
+\taburowcolors[1]{grey2..grey1}
+\begin{longtabu}{*{5}{>{\scriptsize}X[c]}}
+    \caption{System surface specification of the DUV photo-lithographic objective}
+    \label{table: appdx_system_spec_wide_angle_6_lenses}
+    \\ \hline 
+     \textbf{Surface \#} & \textbf{Surface Type} & \textbf{Curvature (1/mm)} & \textbf{Thickness (mm)} & \textbf{Glass Type*}  \\ 
+     \midrule
+     \endhead
+                                            \textbf{1 (Object)} & Sphere & 0 & Infinity &    \\ 
+    										\textbf{2}              & Sphere  &  0 & 2.2391 & LUFTV193   \\
+                                            \textbf{3}               & Asphere & -0.0008 & 0.6631 &  \\
+                                            \textbf{4}              & Sphere & 0.0035 & 6.0000 & LITHOSILQ\_SCHOTT    \\ 
+                                            \textbf{5}               &Asphere  & -0.0809  & 0.1000 &  \\
+                                           \textbf{6}               & Sphere  & 0.0113 & 5.9871  & LITHOSILQ\_SCHOTT  \\
+                                          \textbf{7}                & Sphere & -0.0894 & 0.1000 & \\ 
+                                          \textbf{8}                & Sphere  & 0.0504  & 1.8479 &  LITHOSILQ\_SCHOTT \\
+   									      \textbf{9}                & Sphere  & -0.0084  &  0.1000 &     \\
+                                          \textbf{10}                & Sphere  & 0.0918 & 1.8339 & LITHOSILQ\_SCHOTT  \\
+   \rowcolor[gray]{0.9}  \textbf{11}                & Asphere & 0.0327 &  0.1000  &      \\
+                                          \textbf{12}                & Sphere  & 0.1533 & 1.8771 & LITHOSILQ\_SCHOTT \\
+   \rowcolor[gray]{0.9}  \textbf{13}                & Sphere & 0.0933 &  0.1000 &      \\
+                                          \textbf{14}                & Sphere  & 0.3106 & 4.0518 & LITHOSILQ\_SCHOTT  \\
+   \rowcolor[gray]{0.9}  \textbf{15}                & Sphere &  0.4978 &  1.0598 &      \\
+                                             \textbf{16}              & Sphere & -0.0222 & 6.0000 & LITHOSILQ\_SCHOTT    \\ 
+    \rowcolor[gray]{0.9}   \textbf{17}              & Sphere  & -0.0809  & 0.1000 &  \\
+                                           \textbf{18}               & Sphere  & 0.0113 & 5.9871  & LITHOSILQ\_SCHOTT  \\
+    \rowcolor[gray]{0.9}  \textbf{19}                & Sphere & -0.0894 & 0.1000 & \\ 
+                                          \textbf{20}                & Sphere  & 0.0504  & 1.8479 &  LITHOSILQ\_SCHOTT \\
+   \rowcolor[gray]{0.9}  \textbf{21}                & Sphere  & -0.0084  &  0.1000 &     \\
+                                          \textbf{22}                & Asphere  & 0.0918 & 1.8339 & LITHOSILQ\_SCHOTT  \\
+   \rowcolor[gray]{0.9}  \textbf{23}                & Sphere & 0.0327 &  0.1000  &      \\
+                                          \textbf{24}                & Sphere  & 0.1533 & 1.8771 & LITHOSILQ\_SCHOTT \\
+   \rowcolor[gray]{0.9}  \textbf{25}                & Sphere & 0.0933 &  0.1000 &      \\
+                                          \textbf{26}                & Sphere  & 0.3106 & 4.0518 & LITHOSILQ\_SCHOTT  \\
+   \rowcolor[gray]{0.9}  \textbf{27}                & Asphere &  0.4978 &  1.0598 &      \\
+                                           \textbf{28}                & Sphere  & 0.0504  & 1.8479 &  LITHOSILQ\_SCHOTT \\
+   \rowcolor[gray]{0.9}  \textbf{29}                & Sphere  & -0.0084  &  0.1000 &     \\
+                                          \textbf{30}                & Sphere  & 0.0918 & 1.8339 & LITHOSILQ\_SCHOTT  \\
+   \rowcolor[gray]{0.9}  \textbf{31}                & Sphere & 0.0327 &  0.1000  &      \\
+                                          \textbf{32}                & Sphere  & 0.1533 & 1.8771 & LITHOSILQ\_SCHOTT \\
+   \rowcolor[gray]{0.9}  \textbf{33}                & Sphere & 0.0933 &  0.1000 &      \\
+                                          \textbf{34}                & Asphere  & 0.3106 & 4.0518 & LITHOSILQ\_SCHOTT  \\
+   \rowcolor[gray]{0.9}  \textbf{35 (Stop)}     & Sphere &  0.4978 &  1.0598 &      \\
+                                          \textbf{36}                & Sphere & -0.0222 & 6.0000 & LITHOSILQ\_SCHOTT    \\ 
+    \rowcolor[gray]{0.9}   \textbf{37 }              & Sphere  & -0.0809  & 0.1000 &  \\
+                                           \textbf{38}               & Sphere  & 0.0113 & 5.9871  & LITHOSILQ\_SCHOTT  \\
+    \rowcolor[gray]{0.9}  \textbf{39}                & Asphere & -0.0894 & 0.1000 & \\ 
+                                          \textbf{40}                & Sphere  & 0.0504  & 1.8479 &  LITHOSILQ\_SCHOTT \\
+   \rowcolor[gray]{0.9}  \textbf{41}                & Sphere  & -0.0084  &  0.1000 &     \\
+                                          \textbf{42}                & Sphere  & 0.0918 & 1.8339 & LITHOSILQ\_SCHOTT  \\
+   \rowcolor[gray]{0.9}  \textbf{43}                & Sphere & 0.0327 &  0.1000  &      \\
+                                          \textbf{44}                & Sphere  & 0.1533 & 1.8771 & LITHOSILQ\_SCHOTT \\
+   \rowcolor[gray]{0.9}  \textbf{45}                & Sphere & 0.0933 &  0.1000 &      \\
+                                          \textbf{46}                & Asphere  & 0.3106 & 4.0518 & LITHOSILQ\_SCHOTT  \\
+   \rowcolor[gray]{0.9}  \textbf{47}                & Sphere &  0.4978 &  1.0598 &      \\
+                                          \textbf{48}                & Sphere  & 0.0504  & 1.8479 &  LITHOSILQ\_SCHOTT \\
+   \rowcolor[gray]{0.9}  \textbf{49}                & Sphere  & -0.0084  &  0.1000 &     \\
+                                         \textbf{50 (Image)} & Sphere & 0 & 0 &   \\ 
+    \hline
+    \multicolumn{5}{l}{\textit{\footnotesize{* The glasses are from the SCHOTT catalog in CODE V. }}}\\
+\end{longtabu}
+
+\definecolor{grey1}{gray}{0.6}
+\definecolor{grey2}{gray}{0.9}
+\taburowcolors[2]{grey2..grey1}
+\begin{longtabu}{*{5}{>{\scriptsize}X[c]}}
+    \caption{Test table}
+    \\ \hline 
+     \textbf{Surface \#} & \textbf{Surface Type} & \textbf{Curvature (1/mm)} & \textbf{Thickness (mm)} & \textbf{Glass Type*}  \\ 
+     \midrule
+     \endhead
+     \show
+                                            \textbf{1 (Object)} & Sphere & 0 & Infinity &    \\ 
+    										\textbf{2}              & Sphere & -0.2636 & 2.2391 & LITHOSILQ\_SCHOTT   \\
+                                            \textbf{3}               & Asphere & 0.1011& 0.6631 &  \\
+                                            \textbf{4}              & Sphere & -0.0222 & 6.0000 & LITHOSILQ\_SCHOTT    \\ 
+                                            \textbf{5}               &Asphere  & -0.0809  & 0.1000 &  \\
+                                           \textbf{6}               & Sphere  & 0.0113 & 5.9871  & LITHOSILQ\_SCHOTT  \\
+                                          \textbf{7}                & Sphere & -0.0894 & 0.1000 & \\ 
+                                          \textbf{8}                & Sphere  & 0.0504  & 1.8479 &  LITHOSILQ\_SCHOTT \\
+   									      \textbf{9}                & Sphere  & -0.0084  &  0.1000 &     \\
+                                          \textbf{10}                & Sphere  & 0.0918 & 1.8339 & LITHOSILQ\_SCHOTT  \\
+    \hline
+    \multicolumn{5}{l}{\textit{\footnotesize{* The glasses are from the SCHOTT catalog in CODE V. }}}\\
+\end{longtabu}
+
+
 \newpage
+\end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{System Specifications of the SMS Constructed Systems} 
+\section{Surface Specifications of the SMS Constructed Systems} 
 \label{apdx: chapter-5-system-spec}
 
 The system parameters of system 1 and system 2 described in Chapter 5 are listed in the following tables. The first two tables provide the parameters of the systems after the SMS construction. The optimized system based on the first two tables are given in the last two tables. 
@@ -151,6 +364,8 @@ The system parameters of system 1 and system 2 described in Chapter 5 are listed
     \end{adjustbox}
 \end{table}
 
+\newpage
+
 \setlength{\arrayrulewidth}{.5mm}
 \setlength{\tabcolsep}{18pt}
 \renewcommand{\arraystretch}{1.2}
@@ -225,7 +440,6 @@ z = \frac{c{r^2}}{1+\sqrt{1-(1+k){c^2}{r^2}}} + {u^4}\sum\limits_{m=0}^{13} {a_m
 
 More details about the Qcon polynomial can be found in \cite{ForbesOE07}.
 
-\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \references{dissertation}

@@ -74,7 +74,7 @@ Alternatively, for non-spherical systems, direct design methods such as the Simu
 In this chapter, we consider rotationally symmetric designs, for which SMS 2D is used \cite{book:ChavesNonimagingOptics}. SMS 2D may utilize rays in the meridian plane or skew rays \cite{LinWang2011}, but, in any case, obtaining a 2D profile of the surfaces. The method involves simultaneous calculation of N optical surfaces using N one-parameter bundles of rays for which specific conditions are imposed. The number of ray bundles can be greater than the number of surfaces to design when the footprints of the design bundles do not occupy the full SMS surfaces. This can be controlled by the size of the aperture stop or the relative distance between the aperture stop and the optical surfaces as demonstrated in \cite{BenitezSPIE2014}\cite{FDuerrOE2013}\cite{FDuerrOE12}. SMS also has a freeform version called SMS 3D. However, these cases are not discussed in this paper. 
 We start by briefly describing the SMS method applied in this paper. Then the design obtained with SMS is used as a starting point, followed by a single-step optimization of all parameters. The final design is compared with other designs obtained using spherical starting point and single-step, two-step, stepwise and global optimizations. Two designs are considered, a simple one and a slightly more difficult one, with a larger aperture and wider field.
 %%%% come back to check later 2021/03/02%%%%%%%%
-\section{Starting point with the SMS method}
+\section{Starting Point with the SMS Method}
 The standard SMS procedure for designing aspheric surfaces involves only meridian rays. It consists of two steps: selection of central segments of the surfaces and recursive generalized Cartesian oval calculation \cite{LinWang2011}\cite{MinanoOE09}. We will focus on SMS designs using only meridian rays. Skew rays are then controlled in a subsequent optimization. 
 
 The illustration in Figure \ref{fig: sms_2d_explain} gives an example of how SMS works. The figure shows one of the approaches on how to design a two-surface aspheric imaging system. The following aspects need to be defined as the starting conditions: 1) Coordinates of the object points (\textbf{O1} and \textbf{O2}) and image points (\textbf{I2} and \textbf{I1}). The points in each pair are symmetric to each other with respect to the optical axis. 2) Vertex position (\textbf{P0}) of one of the surfaces and its normal (along the optical axis); thickness of the lens (it is approximated by the projection of \textbf{P0-P1} on the optical axis in Figure \ref{fig: sms_2d_explain}). 3) The refractive indices of the lens (\textit{n'} and the medium outside the lens \textit{n0}). 
@@ -103,7 +103,7 @@ Applying a standard SMS 2D procedure, for the design directions we simultaneousl
     \label{fig: fig2_SMSdesignedSys}
 \end{figure}
 
-\section{Comparing the results of different design approaches}
+\section{Comparing the Results of Different Design Approaches}
 Two lens systems were designed and optimized for monochromatic light ($\lambda$= 587.56 nm) using the SMS method and other approaches mentioned in the introduction. Both lenses are made of PMMA (n = 1.4918 at the used wavelength) and have four aspheric surfaces in total. The two systems are referred as system 1 and system 2 where their specifications are given in Table. \ref{table: SMS_SystemSpec}. The object is located at infinity. System 1 has both a smaller field of view (FOV) and aperture, and system 2 has both a larger FOV and aperture. 
 
 \begin{table}[h!]
@@ -219,7 +219,7 @@ From the two examples we studied, to design a simple system with small field and
     \label{fig: fig11_case2_efficiencyCompare}
 \end{figure}
 \newpage
-\section{Design landscape for aspheric systems}
+\section{Design Landscape for Aspheric Systems}
 In our examples, we have noticed that when aspheric variables are not introduced, there is only one solution in the optimization landscape given the boundary condition for rays that are traced. However, when aspheric coefficients are added, new minima start to appear. 
 
 \begin{figure}[h!]

@@ -20,7 +20,7 @@
 The saddle point construction (SPC) method is one of the major methods investigated in this research. Several variations of the methods for constructing the saddle point system have been introduced through the years \cite{BociortSPCSexplained}\cite{MVTurnhoutSPC15}\cite{HouProc2015}. Instead of searching for alternative local minima, the SPC method constructs saddle points as intermediate steps to obtain new local minima. This is achieved by adding extra variables to the existing system. With this approach, it is shown in this chapter that it is possible to obtain new solutions in a systematic way. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section SPC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Saddle point and design landscape}
+\section{Saddle Point and Design Landscape}
 For a given optical design problem, once the merit function and the number of variables N have been determined, an N-dimensional design (optimization) space is defined. The optimization of an optical system then is equivalent to finding the minimum of the merit function in the N-dimensional design landscape. As mentioned in the introduction, the optimization problem of optical design is a nonlinear problem, where multiple local minima are present in the design landscape. As a result, searching for one or several good local minima among many becomes a challenge for optical design. 
 
 For the simple case of only two variables, the minima can be viewed as the bottoms of the valleys in the design landscape. On the other hand, maxima are the mountain tops, which are usually not observed in the lens design landscape. Minima and maxima are both critical points. A critical point is a point where the gradient of the merit function equals zero. In addition to minima and maxima, there are saddle points, which are also critical points and can be used to find new local minima.
@@ -29,12 +29,12 @@ In a two dimensional space, a 2-D saddle point is a "saddle" where along one dir
 
 In this research, the saddle point with a Morse Index of 1 is of particular interest. This kind of saddle point has one direction, along which the value of the merit function decreases, while in N-1 other directions the merit function increases. This means that a saddle point of Morse Index 1 is a local minimum in all but one direction. When the optimization follows the two opposite directions in which the merit function descends, two local minima can in principle be found (Figure \ref{fig:SPCdemo}-b). As a result, if there is a way to rapidly obtain these saddle points in the design landscape, it provides an approach to find more local minima. In fact one finds two local minima from a saddle point of Morse Index 1. 
 
-\section{The Saddle Point Construction method}
+\section{The Saddle Point Construction Method}
 In this section, the SPC method and its variations are introduced and explained. As the name suggests, the method constructs saddle points in the design landscape. These are all saddle points with Morse Indices of $1$  \footnote{In the special version of the SPC, it can be proven that the Morse Index of the constructed saddle point is $1$. In the general version of the SPC, it is shown in the numerical experiments that the Morse Index of the constructed saddle point is $1$.}. Instead of optimizing from an arbitrary point in the landscape, optimizing from a saddle point can systematically lead to two local minima. 
 
 The saddle points are constructed by adding extra variables to the merit function that has attained the existing local minimum using the original number of variables. In principle, the variables can be any parameter in the lens design model. It should be mentioned that the most effective variables that have been used so far are the lens curvatures. 
 
-\subsection{The general version of Saddle Point Construction \label{spc-general}}
+\subsection{The General Version of Saddle Point Construction \label{spc-general}}
 \label{SPC_general}
 The SPC method always starts with an optimized lens system that is a minimum of a merit function defined by N arbitrary variables. A saddle point then can be constructed in a design space with $N + 2$ variables by adding a lens with zero thickness and with surfaces having the same curvatures (see Figure \ref{fig:SPCdemo}(a)). Such a lens has no optical effect and hence the merit function is the same after insertion of this element as before. The two curvatures are the two new variables, so that the total number of variables has been increased to N+2. For certain values of the curvatures of the inserted surfaces, the resulting system is a saddle point, which is a minimum along $N + 1$ directions in the variable space and a maximum along one direction (i.e., mathematically it will have a Morse index of 1 \cite{MVTurnhoutSPC15}). The details of how such values are obtained will be explained in the part later. Along the direction for which the SP is a maximum, two minima can be obtained systematically, as shown for simplicity in a 2D case in Figure \ref{fig:SPCdemo}(b).
 
@@ -152,7 +152,7 @@ These steps are referred as "performing an SPC scan" in this thesis.  In our res
     \label{fig:SPCscan}
 \end{figure}
 
-\subsection{The special version of Saddle Point Construction}
+\subsection{The Special Version of Saddle Point Construction}
 \label{SPC_Special}
 Different from performing a scan using the general version of the SPC, the special version of the SPC directly constructs the saddle points by adding null elements to the existing system. This kind of null element (a glass or an air element) has to be attached to one of the existing surfaces in the system. The two curvatures of the null element have to be the same as that of the surface in contact. In such a case, three surfaces have the same curvatures and two zero-thickness spaces between them as illustrated in Figure \ref{fig:SPCS-illus}. It is explained in the previous section that such a constructed system can be a saddle point system with a Morse Index of either $1$ or $2$ (one negative eigenvalues or two negative eigenvalues from the remaining two for the Hessian matrix shown in Equation \ref{eq: the hessian}). In practice, we have not observed any case with a Morse Index of $2$ in our numerical experiment. When an equality constraint \footnote{For an optimization problem $min f(\mathbf{x})$, an equality constraint means that the problem is subject to $g_{equa}(\mathbf{x})=C_1$. An example of an inequality constraint can be that the problem is subject to $g_{inequa}(\mathbf{x}) > C_2$.} (e.g. a constraint on effective focal length) is applied to the system, it can be proven that such a saddle point system has a Morse Index of $1$ \cite{BociortSPCSexplained}.
 
@@ -167,13 +167,13 @@ Compared to the general version of the SPC, the special version is a rapid way t
 
 %%%%%%%%%%%%%%%\subsection{Saddle point construction intermediate}%%%%%%u%%%%%%%%
 
-\section{Recommendations for applying Saddle Point Construction}\label{section: SPC recommendation}
+\section{Recommendations for Applying Saddle Point Construction}\label{section: SPC recommendation}
 As mentioned in the previous section, the SPC adds two extra curvatures to an existing optical system. It is straight forward, if the design goal is to add new elements to the system. Nevertheless, when applying the SPC in the practical design scenario, the technique can be used in different ways to achieve different design goals. Some scenarios are listed below as recommendations.
 
-\subsection{Adding lens elements}
+\subsection{Adding Lens Elements}
 The direct way of applying SPC is to add a lens element to the existing system. This can be achieved by either inserting a glass null element or an air null element. Essentially, both approaches introduce two curvature variables to the system. Adding a glass null element can be treated as adding a lens element, while adding an air null element can be regarded as splitting an existing lens. The two approaches are described in the following two paragraphs.
 
-\subsubsection{glass null element - adding a lens}
+\subsubsection{Glass Null Element - Adding a Lens}
 The Cooke triplet is chosen here as an example to demonstrate how SPC is applied. 
 The position of the insertion of the glass null element is indicated by the dashed line in Figure \ref{fig:SPC-glass null element}. In principle, any position in the spaces between the lenses can be selected for the insertion. The choice of the position can be guided by the conventional lens design method. Examples of combining a traditional design method and the SPC method are given in Chapter 4.
 
@@ -186,7 +186,7 @@ In Figure \ref{fig:SPC-glass null element}, the insertion position is chosen bet
     \label{fig:SPC-glass null element}
 \end{figure}
 
-\subsubsection{air null element- splitting a lens}
+\subsubsection{Air Null Element - Splitting a Lens}
 
 Alternatively, adding lenses can also be realized by splitting lenses. With the SPC, inserting an air null element into a lens is equivalent to splitting this lens. In Figure \ref{fig:SPC-air null element}, the most right lens element was chosen to be split. The dashed line indicates where the lens was split. The derivative as function of the curvature of the inserted air space is plotted in the right part of the figure. It is seen that there are four saddle points. Same as the situation in glass element insertion case, they lead to three solutions instead of five. The solutions and their merit function values are listed in Figure \ref{fig:SPC-air null element}. Evaluating the MF values, it is seen that three new systems all have better MF values than the original one. The inserted air spaces are highlighted.
 
@@ -201,9 +201,9 @@ Compared with the solutions produced by inserting glass null element, the soluti
 \end{figure}
 
 \label{cp2-switching}
-\subsection{Switching to alternative minima}
+\subsection{Switching to Alternative Minima}
 
-\subsubsection{The EXTRACT and ADD operation}
+\subsubsection{The EXTRACT and ADD Operation}
 In practical lens design, it is usually important to obtain a better solution without changing the number of variables (lens elements). Adding extra elements in the system often means that the costs of the system become higher and that the system becomes less compact. 
 
 When using the SPC, with some subsequent steps described below, it is possible to switch between local minima with the same number of variables. Illustrated in Figure \ref{fig:SPC-switch-example}, the first step is to choose which lens to modify. The middle one of the Cooke triplet was chosen in this example. The next step is to extract this element from the original system as follows. The thickness of the chosen element is gradually reduced to zero while in each step the system is optimized with respect to the remaining variables. Small steps should be applied for the change of the thickness to prevent the optimization moving to a different basin of attraction. When the basin of attraction of the optimization changes, a sudden change in the merit function value can be observed. After the thickness is reduced to zero, the curvatures of the two surfaces are usually different. Next the curvatures can be changed gradually until they become equal and the system is optimized with respect to the remaining variables after each step. 
@@ -220,7 +220,7 @@ Once the thickness of the chosen lens has been made zero and the two curvatures 
 Three solutions were obtained from the two saddle points. After relaxing all variables and optimizing, the solution on the right in Figure \ref{fig:SPC-switch-example} becomes identical to that of the original Cooke triplet. The other two solutions are new solutions. None of the two shows better MF values compared to the Cooke triplet design. 
 
 
-\subsubsection{The ADD and EXTRACT operation }
+\subsubsection{The ADD and EXTRACT Operation }
 It was shown that with an extract-and-add strategy one can switch systematically from one local minimum to other minima, with the same number of variables. A intermediate step is necessary to first reduce the number of the variables in the original problem (by extracting a lens). 
 
 It is also possible to switch to different solutions using the SPC by first increasing the number of variables: an add-and-extract strategy. However, it is not really recommended since it requires more decisions on where to add or extract in the intermediate steps. For an extract-and-add strategy, it is demonstrated in the previous section that the designer only needs to decide where to extract an element. In contrast, an add-and-extract strategy will work as follows: the designer first has to decide where to add an element to the original system. Then, after the SPC operation, usually more than one solution is produced. In the simplest case, the designer can decide to extract the same element for all of them. However, it is also possible to decide to extract different elements from the solutions obtained after SPC. In either way, the add-and-extract strategy will require more decision steps than the extract-and-add strategy.

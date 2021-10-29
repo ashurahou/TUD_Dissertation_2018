@@ -9,7 +9,7 @@
 \ProcessOptions\relax
 
 \LoadClass[10pt]{book}
-
+\RequirePackage[table]{xcolor}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 %% English is the default language, but Dutch is used for some sections.
@@ -32,8 +32,10 @@
 \RequirePackage{tikz}
 \RequirePackage{multirow}
 \RequirePackage{enumitem} % to adjust line space for itemized item
-\RequirePackage{colortbl} % to apply colors in the table
+%\RequirePackage{colortbl} % to apply colors in the table
 \RequirePackage{pdfpages} % to include pdf pages
+\RequirePackage{longtable}
+\RequirePackage{tabu}
 \RequirePackage{comment}
 % \RequirePackage{showframe} %showframe
 
@@ -65,7 +67,7 @@
 \RequirePackage[noindentafter]{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage[nottoc]{tocbibind}
-\RequirePackage{xcolor}
+\RequirePackage[table]{xcolor}
 
 %% If the document is not compiled with XeLaTeX, we need to use the native
 %% fonts.
