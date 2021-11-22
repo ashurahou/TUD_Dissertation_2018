@@ -37,6 +37,7 @@
 \RequirePackage{longtable}
 \RequirePackage{tabu}
 \RequirePackage{comment}
+\RequirePackage[euler]{textgreek}
 % \RequirePackage{showframe} %showframe
 
 \ifxetex

@@ -1,4 +1,4 @@
-\chapter{Applying Saddle Point Construction in Complex Systems} %% change
+\chapter{Applying SPC in Complex Systems} %% change
 \label{chapter_4_complex_system_exploration} %% change
 \graphicspath{ {./chapter-4/figures/} }  %% change
 \captionsetup[figure]{labelfont=bf}
@@ -14,14 +14,11 @@
 % published as a paper.
 \blfootnote{Parts of this chapter have been presented in the SPIE conference Optical Systems Design (2018, Frankfurt) and published in Proc. SPIE \textbf{10690}, Optical Design and Engineering VII, 1069007 (2018) \cite{ZheHOU2018OSD}.}
 
-%% It is only necessary to list the authors if multiple people contributed
-%% significantly to the chapter.
-%\authors{Albert {\titleshape Einstein}}
-
 %% The '0pt' option ensures that no extra vertical space follows this epigraph,
 %% since there is another epigraph after it.
-% \epigraph[0pt]{
-%   The proof of the pudding is in the eating.}
+\epigraph[0pt]{
+If you cannot measure it, you cannot improve it\footnote{The quote is popularly rephrased from the original quote "When you can measure what you are speaking about, and express it in numbers, you know something about it; but when you cannot measure it, when you cannot express it in numbers, your knowledge is of a meagre and unsatisfactory kind: it may be the beginning of knowledge, but you have scarcely, in your thoughts, advanced to the stage of science, whatever the matter may be."}.
+}{Lord Kelvin}
 
 % \epigraph{
 %     Sample quotes
@@ -32,7 +29,8 @@
 % \end{abstract}
 
 % %% Start the actual chapter on a new page.
-% \newpage
+%newpage
+\vspace{2em}
 
 In Chapter \ref{chapter_SPC_method_reccomendation}  and \ref{chapter_SPC_simple_system_landscape}, suggestions have been given on how to apply SPC to simple design problems. In this chapter, SPC is applied to in some more complicated practical design problems.
 
@@ -47,7 +45,7 @@ In this chapter, we derive recommendations for how to apply SPC to several pract
 
 
 \section{Investigation of a Wide-angle Lens with Six Elements}
-Wide-angle lenses are broadly used in various applications, including photographic cameras, surveillance cameras and projectors. To increase the field of view of an optical system and while maintaining an image of good quality, a certain amount of complexity of the system is necessary. We consider here a wide-angle lens with a moderate complexity to study the performance of SPC as an approach to switch between solutions with the same number of variables. The system consists of six lenses including one cemented surface. There are eleven surfaces, hence eleven variables in terms of curvatures. The design specifications of the lens are shown in Table \ref{table: sysspecWAL} and the surface specification is available in Appendix \ref{apdx: wide-angle-specs_6_elements}. The maximum field of view is 120°. The overall length of the system is 38.75mm, which is small enough for integration into surveillance systems. The MTF curve shows that the modulation stays above 0.4 for 100 cycles/mm at full field of view (\ref{fig:wideanglelensPerformance}). The system is not optimized for distortion, which can be corrected with image processing afterwards (e.g. digital dewarping \cite{Sahin:18DisCorrec}).
+Wide-angle lenses are broadly used in various applications, including photographic cameras, surveillance cameras and projectors. To increase the field of view of an optical system and while maintaining an image of good quality, a certain amount of complexity of the system is necessary. We consider here a wide-angle lens with a moderate complexity to study the performance of SPC as an approach to switch between solutions with the same number of variables. The system consists of six lenses including one cemented surface. There are eleven surfaces, hence eleven variables in terms of curvatures. The design specifications of the lens are shown in Table \ref{table: sysspecWAL} and the surface specification is available in Appendix \ref{apdx: wide-angle-specs_6_elements}. The maximum field of view is 120°. The overall length of the system is 38.75mm, which is small enough for integration into surveillance systems. The Modulated Transfer Function (MTF) curve shows that the modulation stays above 0.4 for 100 cycles/mm at full field of view (\ref{fig:wideanglelensPerformance}). The system is not optimized for distortion, which can be corrected with image processing afterwards (e.g. digital dewarping \cite{Sahin:18DisCorrec}).
 
 
 
@@ -62,18 +60,18 @@ Wide-angle lenses are broadly used in various applications, including photograph
     \vspace{-1em}
     \begin{tabular}{ p{20em} c }
     \hline 
-    Full field of view (FOV, °) & 120\\
-    Effective focal length (EFL, mm) & 3.0\\
+    Full Field Of View (°) & 120\\
+    Effective Focal Length (mm) & 3.0\\
     F Number & 2.0\\
     Overall Length (mm) & 38.75\\
-    Wavelength (nm) & 644, 546, 480 (e, F', C')\\
+    Wavelength (nm) & 644, 546, 480\\ %(e, F', C')\\
     \hline
     \end{tabular}
 \end{table}
 
 \subsection{Design a Wide-angle Lens with SPC}
 
-The wide-angle lens was first designed with a conventional method by using surfaces with special properties (concentric and aplanatic) \cite{LivshitsQA2013}. Surfaces at which the chief ray is everywhere normally incident are free from coma and astigmatism. In what follows we will call such an optical surface a concentric surface. The aplanatic surfaces in the system do not introduce spherical aberration and coma. In the system plot of Figure \ref{fig:wideanglelensPerformance}, it is shown that the six lenses are divided into two groups. A front group with three lenses is responsible for expanding the field of view. A rear group containing a cemented element is the focusing group. The two parts of the system were first designed separately and then combined to form the complete lens system. To combine the two parts, the front group has the stop at the end of the lens group, and the rear group has the stop in front of it.  The front group is designed as an afocal system with an angle reduction ratio of 0.3. The field of view on the object side is designed to be 120° and the field of view on the image side is 40°. The rear group is designed as a focusing system with a field of view of the same 40°. The diameter of the common stop of the two parts, which is the aperture stop of the whole system is 4.5mm. 
+The wide-angle lens was first designed with a conventional method by using surfaces with special properties (concentric and aplanatic) \cite{LivshitsQA2013}. Surfaces at which the chief ray is everywhere normally incident are free from coma and astigmatism. In what follows we will call such an optical surface a concentric surface. The aplanatic surfaces in the system do not introduce spherical aberration and coma. In the system plot of Figure \ref{fig:wideanglelensPerformance}, it is shown that the six lenses are divided into two groups. A front group with three lenses is responsible for expanding the field of view. A rear group containing a cemented element is the focusing group. The two parts of the system were first designed separately and then combined to form the complete lens system. To combine the two parts, the front group has the stop at the end of the lens group, and the rear group has the stop in front of it.  The front group is designed as an afocal system with an angle reduction ratio of 0.3. The field of view on the object side is designed to be 120° and the field of view on the image side is 40°. The rear group is designed as a focusing system with a field of view of the same 40°. The diameter of the common stop of the two parts, which is the aperture stop of the whole system is 4.5 mm. 
 
 \begin{figure}[h!]
     \centering
@@ -91,13 +89,13 @@ After applying SPC to the front group and rear group alone, we obtain one soluti
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{chapter-4/figures/WAL_combine.png}
-    \caption{Combinations of the front part (conventional approach) and the three rear parts (conventional with SPC). All converged to one solution. }
+    \caption{Combinations of the front part (conventional approach) and the three rear parts (conventional with SPC). All converged to one solution. Merit Function (MF) values of the systems are provided. }
     \label{fig:WAL_combine}
 \end{figure}
 
-Once the combined system was obtained, SPC was performed to search for alternative solutions with the same amount of variables. As explained in Chapter 2, the first step is to extract lenses from the original system. Because the first lens is responsible for collecting the large angle rays, extracting it from the system while keeping the large field of view is not possible. The only possible lenses to extract and perform SPC scans are the second, third and last elements. The current SPC cannot be performed on cemented elements for switching to a different solution. It is because that a cemented lens requires the two sub-elements to be in contact (having a shared surface). A null element cannot be created in such a situation while varying the curvatures for the SPC scan. The merit function based on transverse aberration in CODE V is used in this example. It is a composite value, scaled so that it is the mean square of the weighted image radius (unit: $\mu m^2$). We kept the paraxial marginal ray exit angle as $-0.25$ rad on the last surface to ensure that the effective focal length is equivalent to $3.0$ mm (the entrance pupil diameter is 1.5 mm). Ten curvatures were used as variables. Six different minima were found in the design network illustrated in Figure \ref{fig:WAL_network}. A global optimization run (Global Synthesis of CODE V) was also performed. No additional local minima was found compared to the result of SPC. From Figure \ref{fig:WAL_network}, it is noticed that the major difference of the systems are in the front group. The system shape stays the same for the rear group in all six solutions.
+Once the combined system was obtained, SPC was performed to search for alternative solutions with the same amount of variables. As explained in Chapter 2, the first step is to extract lenses from the original system. Because the first lens is responsible for collecting the large angle rays, extracting it from the system while keeping the large field of view is not possible. The only possible lenses to extract and perform SPC scans are the second, third and last elements. The current SPC cannot be performed on cemented elements for switching to a different solution. It is because that a cemented lens requires the two sub-elements to be in contact (having a shared surface). A null element cannot be created in such a situation while varying the curvatures for the SPC scan. The merit function based on transverse aberration in CODE V is used in this example. It is a composite value, scaled so that it is the mean square of the weighted image radius (unit: \textmu m$^2$). We kept the paraxial marginal ray exit angle as $-0.25$ rad on the last surface to ensure that the effective focal length is equivalent to $3.0$ mm (the entrance pupil diameter is 1.5 mm). Ten curvatures were used as variables. Six different minima were found in the design network illustrated in Figure \ref{fig:WAL_network}. A global optimization run (Global Synthesis of CODE V) was also performed. No additional local minima was found compared to the result of SPC. From Figure \ref{fig:WAL_network}, it is noticed that the major difference of the systems are in the front group. The system shape stays the same for the rear group in all six solutions.
 
-The relationship between different systems is indicated by arrows in Figure \ref{fig:WAL_network}. Black arrows show that via SPC, two systems are connected in both ways. If M1 and M2 are connected in both ways, it means that by using SPC, M2 can be found starting from M1, and vice versa. Blue arrows indicate a one-way connection. For example, starting from M2, it is possible to find M3 via SPC. However, M3 does not lead to M2 by using SPC. Normally, the expected situation is a two-way connection. However, a one-way connection can appear in two scenarios: In the first scenario, a system with high stress and higher value of merit function (MF) is unstable (e.g. M6). The stability indicates the size of the basins of attraction. An unstable local minimum has a relative smaller basin of attraction compared to others. Therefore, it is easy to get out of this kind of poor local minimum with SPC. However, it is not easy (and not necessary for practical purposes) to reach them. The second scenario happens when two minima are very close to each other in the design space (e.g. M1 and M2). The landscape has relative smaller variation in this region around the two close minima. In Figure \ref{fig:WAL_network}, systems M1 and M2 that are the best two systems have similar system shapes and close values of MF. Another system, such as M3 or M4, obtained by switching from M2, can easily, when switched back, go to M1. 
+The relationship between different systems is indicated by arrows in Figure \ref{fig:WAL_network}. Black arrows show that via SPC, two systems are connected in both ways. If M1 and M2 are connected in both ways, it means that by using SPC, M2 can be found starting from M1, and vice versa. Blue arrows indicate a one-way connection. For example, starting from M2, it is possible to find M3 via SPC. However, M3 does not lead to M2 by using SPC. Normally, the expected situation is a two-way connection. However, a one-way connection can appear in two scenarios: In the first scenario, a system with high stress and higher value of merit function is unstable (e.g. M6). The stability indicates the size of the basins of attraction. An unstable local minimum has a relative smaller basin of attraction compared to others. Therefore, it is easy to get out of this kind of poor local minimum with SPC. However, it is not easy (and not necessary for practical purposes) to reach them. The second scenario happens when two minima are very close to each other in the design space (e.g. M1 and M2). The landscape has relative smaller variation in this region around the two close minima. In Figure \ref{fig:WAL_network}, systems M1 and M2 that are the best two systems have similar system shapes and close values of the merit function. Another system, such as M3 or M4, obtained by switching from M2, can easily, when switched back, go to M1. 
 
 As shown in Figure \ref{fig:WAL_network}, all minima are connected within one network. It means that starting from any of the minima in the network, there is always a route to reach any other system. It can also be observed that the less good solutions (M3, M4, M5, and M6) are all directly connected with the best two systems (M1 and M2). This implies that if the design process was trapped in one of the poor solutions, applying SPC once would be sufficient to switch to one of the best two systems.  
 
@@ -110,17 +108,17 @@ As shown in Figure \ref{fig:WAL_network}, all minima are connected within one ne
 
 \subsection{Stepwise Analysis of SPC for a Wide-angle System}
 \subsubsection{Visualization of the Saddle Point }
-In Chapter 2, recommendations have been given for applying SPC in steps. Examples are presented in this section to demonstrate how SPC is applied to the wide-angle system. The system M3 in Figure \ref{fig:WAL_network} is selected to demonstrate how SPC is practically performed. First, by extracting (details are described in Chapter \ref{cp2-switching}) the second element from M3, a minimum with one lens less was obtained. Then, a null element is inserted at the the same position where the lens was extracted and an SPC scan \ref{para: performing SPC scan} was performed on the null element. This null element is not in contact with the existing lens elements in front of or behind it.  With the SPC scan, curvatures of the null-element are chosen such that saddle point systems are obtained. Figure \ref{fig:WAL_demo_sp} shows the SPC scan curve (Figure \ref{fig:WAL_demo_sp}-B) and the corresponding saddle point system (Figure \ref{fig:WAL_demo_sp}-A) which was found by the scan. In an SPC scan curve, the crossing of the curve and the horizontal axis indicates the curvature of the saddle point system (the black dot in Figure \ref{fig:WAL_demo_sp}-B). In this case, only one saddle point system is found via the scan and the curvature of the saddle point system is -0.170 $mm^{-1}$. 
+In Chapter 2, recommendations have been given for applying SPC in steps. Examples are presented in this section to demonstrate how SPC is applied to the wide-angle system. The system M3 in Figure \ref{fig:WAL_network} is selected to demonstrate how SPC is practically performed. First, by extracting (details are described in Chapter \ref{cp2-switching}) the second element from M3, a minimum with one lens less was obtained. Then, a null element is inserted at the the same position where the lens was extracted and an SPC scan \ref{para: performing SPC scan} was performed on the null element. This null element is not in contact with the existing lens elements in front of or behind it.  With the SPC scan, curvatures of the null-element are chosen such that saddle point systems are obtained. Figure \ref{fig:WAL_demo_sp} shows the SPC scan curve (Figure \ref{fig:WAL_demo_sp}(b)) and the corresponding saddle point system (Figure \ref{fig:WAL_demo_sp}(a)) which was found by the scan. In an SPC scan curve, the crossing of the curve and the horizontal axis indicates the curvature of the saddle point system (the black dot in Figure \ref{fig:WAL_demo_sp}(b)). In this case, only one saddle point system is found via the scan and the curvature of the saddle point system is -0.170 $mm^{-1}$. 
 
-The saddle point system obtained using SPC scan is usually a saddle point with a Moss Index of 1. This means that there exists a 2-D plane in the high-dimensional design space, where from the obtained saddle point, along one direction the value of merit function decreases, and along another (orthogonal to the previous one) the value increases. Given this 2-D plane, the saddle point can be be visualized (Figure \ref{fig:WAL_demo_sp}-C). 
+The saddle point system obtained using SPC scan is usually a saddle point with a Moss Index of 1. This means that there exists a 2D plane in the high-dimensional design space, where from the obtained saddle point, along one direction the value of merit function decreases, and along another (orthogonal to the previous one) the value increases. Given this 2D plane, the saddle point can be be visualized (Figure \ref{fig:WAL_demo_sp}(c)). 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{chapter-4/figures/WAL_demo_sp_2.png}
-    \caption{A): the system we have chosen for the SPC scan. B): the SPC scan curve. C): the saddle point visualized in the chosen 2-D plane (Figure \ref{fig:hyperplane}. D): the descending and ascending direction around the saddle point in the same 2-D plane. The saddle point is marked with a black dot.}
+    \includegraphics[width=\textwidth]{chapter-4/figures/WAL_demo_sp.png}
+    \caption{a): the system we have chosen for the SPC scan. b): the SPC scan curve. c): the saddle point visualized in the chosen 2D plane (Figure \ref{fig:hyperplane}. d): the descending and ascending direction around the saddle point in the same 2D plane. The saddle point is marked with a black dot.}
     \label{fig:WAL_demo_sp}
 \end{figure}
 
-The value of the merit function for the saddle point equals the value of the merit function at the minimum before adding the extra two variables. If the direction where the merit function decreases can be determined, then the 2-D plane to visualize the saddle point can be easily chosen. Numerically, this direction can be determined by minimizing on a hyperplane, which is orthogonal to the SPC scan line along which the MF value is constant. In Figure \ref{fig:hyperplane} - a), we use a 3-D case to demonstrate how such a hyperplane is found. The 3-D space has the coordinates $(x_1, \eta, \xi)$. The variables are explained in Figure \ref{fig:hyperplane} - b): $x_1 = c_1$, where $c_1$ is the curvature variable which does not belong to the null element; $\eta = c_2 + c_3$, $\xi = c_2 - c_3$, where $c_2$ and $c_3$ are the curvatures of the null element.  Point $S (x_{1,m}, \eta_{s}, 0)$ is the saddle point system containing the null element. Point $A$ is a point on the equal MF line where the value of the MF is the same as Point $S$. An example of the MF landscape in the $x_1, \eta$  plane is given in Figure \ref{fig:hyperplane} - c). Along the line $SA$, the value of the MF is constant, hence to find the direction of descent in a $N$ dimensional space, we have to move in the $N-1$ dimensional hyperplane which is perpendicular to the line $SA$. It is the 2-D plane $P1$ as shown in Figure \ref{fig:hyperplane} -a).  On this plane, $B$ is a point where the MF value is minimized. We will have $MF_{B}$ < $MF_{S}$. With points $A$, $B$ and $S$, a 2-D plane $P2$ can be determined in which we can plot both the directions of ascent and descent . Given the two vectors on the 2-D plane, $\overrightarrow{SA}$ and $\overrightarrow{SB}$, an orthogonal base can be calculated with the Gram-Schmidt process:
+The value of the merit function for the saddle point equals the value of the merit function at the minimum before adding the extra two variables. If the direction where the merit function decreases can be determined, then the 2D plane to visualize the saddle point can be easily chosen. Numerically, this direction can be determined by minimizing on a hyperplane, which is orthogonal to the SPC scan line along which the merit function value is constant. In Figure \ref{fig:hyperplane}(a), we use a 3D case to demonstrate how such a hyperplane is found. The 3D space has the coordinates $(x_1, \eta, \xi)$. The variables are explained in Figure \ref{fig:hyperplane}(b): $x_1 = c_1$, where $c_1$ is the curvature variable which does not belong to the null element; $\eta = c_2 + c_3$, $\xi = c_2(c)_3$, where $c_2$ and $c_3$ are the curvatures of the null element.  Point $S (x_{1,m}, \eta_{s}, 0)$ is the saddle point system containing the null element. Point $A$ is a point on the line where the merit function value is constant. And the value of the merit function is the same as Point $S$. An example of the merit function landscape in the $x_1, \eta$ plane is given in Figure \ref{fig:hyperplane}(c). Along the line $SA$, the value of the merit function is constant, hence to find the direction of descent in a $N$-dimensional space, we have to move in the $(N-1)$-dimensional hyperplane which is perpendicular to the line $SA$. It is the 2D plane $P1$ as shown in Figure \ref{fig:hyperplane}(a). On this plane, $B$ is a point where the merit function value is minimized. We will have $MF_{B}$ < $MF_{S}$. With points $A$, $B$ and $S$, a 2D plane $P2$ can be determined in which we can plot both the directions of ascent and descent . Given the two vectors on the 2D plane, $\overrightarrow{SA}$ and $\overrightarrow{SB}$, an orthogonal base can be calculated with the Gram-Schmidt process:
 
 \setlength{\belowdisplayshortskip}{5pt}
 \setlength{\abovedisplayshortskip}{5pt}
@@ -132,20 +130,20 @@ The value of the merit function for the saddle point equals the value of the mer
 \pmb{\beta_{2}} = \overrightarrow{SB}, \;\; 
 \hat{u}_{2} =\frac{\pmb{\beta_{2}}}{\left\|\ \pmb{\beta_{2}}\right\|} ,
 \end{equation}
- $\hat{u}_{1}$ and $\hat{u}_{2}$  are the two orthogonal unit vectors of the 2-D plane. The 2-D plane with the visualized saddle point can be plotted as shown in Figure \ref{fig:WAL_demo_sp}-C.
+ $\hat{u}_{1}$ and $\hat{u}_{2}$  are the two orthogonal unit vectors of the 2D plane. The 2D plane with the visualized saddle point can be plotted as shown in Figure \ref{fig:WAL_demo_sp}(c).
 
 The system T2-M1 and T2-M4 in Table \ref{table: scanline} are situated in different basins of attraction (\ref{label: basinOfattrac}).  
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.985\textwidth]{chapter-4/figures/hyperplane.png}
-    \caption{ a) The construction of a 2-D plane(P2) to visualize the saddle point(S) in a 3-D dimensional example. Point A is a point on the SPC scan line. P1 is a hyperplane perpendicular to line SA. Point B is where the MF value is minimized on P1. b) Explanation about variables and coordinates. When $\xi = 0$, the $x_1, \eta$ plane includes all the null element systems. c) Example of a MF landscape on  $x_1, \eta$  plane. $x_1,m$ indicates the original minimum values before insertion of the null element.}
+    \caption{ a) The construction of a 2D plane(P2) to visualize the saddle point(S) in a 3D dimensional example. Point A is a point on the SPC scan line. P1 is a hyperplane perpendicular to line SA. Point B is where the merit function value is minimized on P1. b) Explanation about variables and coordinates. When $\xi = 0$, the $x_1, \eta$ plane includes all the null element systems. c) Example of a merit function landscape on  $x_1, \eta$  plane. $x_1,m$ indicates the original minimum values before insertion of the null element.}
     \label{fig:hyperplane}
 \end{figure}
-In Figure \ref{fig:WAL_demo_sp}-D, the plots along the X and the Y direction show that the value of the MF is increasing in one direction and decreasing in the other direction. Optimization routes following the descending directions on both sides of the saddle (on the Y-axis shown in Figure \ref{fig:WAL_demo_sp}-D) lead to two distinct local minima.
+In Figure \ref{fig:WAL_demo_sp}(d), the plots along the X and the Y direction show that the value of the merit function is increasing in one direction and decreasing in the other direction. Optimization routes following the descending directions on both sides of the saddle (on the Y-axis shown in Figure \ref{fig:WAL_demo_sp}(d)) lead to two distinct local minima.
 
 \subsubsection{Choices of Starting Point of Local Optimization near the Saddle Point}
-Visualizing a saddle point in the 2-D plane is good for demonstration and helps to choose the optimization direction, however, in practice, it is computationally expensive to look for the 2-D plane for each saddle point. As mentioned previously, a common practice is to change the system along the SPC scan line, which means changing the curvatures of the inserted null-element with a small positive and negative value (this value is chosen empirically). The modified systems are the starting points for optimization. The optimization includes two curvature variables in additional to the variables where the minimum (without the null element) is obtained. In the experiment, choosing different values for the curvature change may lead to different minima. This is demonstrated in Figure \ref{fig: scanning_line}, where different values were chosen for the null-element curvature as a starting point to find  the corresponding local minimum. In order to better illustrate the phenomenon, the scan range chosen here (from -0.2 to 0.2) was larger than the curvature changes normally used in practice. From Figure \ref{fig: scanning_line}, it is observed that four different minima were obtained with different values chosen as the starting curvature. The corresponding system shapes and MF value are shown in Table \ref{table: scanline}. 
+Visualizing a saddle point in the 2D plane is good for demonstration and helps to choose the optimization direction, however, in practice, it is computationally expensive to look for the 2D plane for each saddle point. As mentioned previously, a common practice is to change the system along the SPC scan line, which means changing the curvatures of the inserted null-element with a small positive and negative value (this value is chosen empirically). The modified systems are the starting points for optimization. The optimization includes two curvature variables in additional to the variables where the minimum (without the null element) is obtained. In the experiment, choosing different values for the curvature change may lead to different minima. This is demonstrated in Figure \ref{fig: scanning_line}, where different values were chosen for the null-element curvature as a starting point to find  the corresponding local minimum. In order to better illustrate the phenomenon, the scan range chosen here (from -0.2 to 0.2) was larger than the curvature changes normally used in practice. From Figure \ref{fig: scanning_line}, it is observed that four different minima were obtained with different values chosen as the starting curvature. The corresponding system shapes and merit function values are shown in Table \ref{table: scanline}. 
 \begin{table}[h!]
     \centering
     \captionsetup{justification=centering}
@@ -164,14 +162,14 @@ Visualizing a saddle point in the 2-D plane is good for demonstration and helps 
     \label{fig: scanning_line}
 \end{figure}
 
-The curvature differences for getting a different local minimum can be as small as 0.05 (on the left side of Figure \ref{fig: scanning_line}. It indicates that near the saddle point, the local optimization is still sensitive to the choice of the starting point. To better understand the basin of attractions near the saddle point, we have also investigated the cases where the starting point is selected on a 2-D plane instead of the 1-D scanning line. The constructed saddle point is located in this 2-D plane. We have used two different approaches to determine such 2-D planes. The first method is to find the plane defined by Equation \ref{eq:u1} and \ref{eq:u2}. On this plane the saddle point can be visualized and in principle selecting starting point on the opposite side of the saddle point leads to two different local minima. The second method is to construct a plane directly using the two newly inserted variables (two curvatures of the null element). The first method serves as the reference since it clearly captures the ascending and descending directions around the saddle point. However, computing such a plane needs additional effort. The second method is a computation-wise simple way. By comparing the two, we would like to study if a simple approach is sufficient to get reliable starting point around the saddle point. 
+The curvature differences for getting a different local minimum can be as small as 0.05 (on the left side of Figure \ref{fig: scanning_line}. It indicates that near the saddle point, the local optimization is still sensitive to the choice of the starting point. To better understand the basin of attractions near the saddle point, we have also investigated the cases where the starting point is selected on a 2D plane instead of the one-dimensional scanning line. The constructed saddle point is located in this 2D plane. We have used two different approaches to determine such 2D planes. The first method is to find the plane defined by Equation \ref{eq:u1} and \ref{eq:u2}. On this plane the saddle point can be visualized and in principle selecting starting point on the opposite side of the saddle point leads to two different local minima. The second method is to construct a plane directly using the two newly inserted variables (two curvatures of the null element). The first method serves as the reference since it clearly captures the ascending and descending directions around the saddle point. However, computing such a plane needs additional effort. The second method is a computation-wise simple way. By comparing the two, we would like to study if a simple approach is sufficient to get reliable starting point around the saddle point. 
 
-As shown in Figure \ref{fig:basins}, the plot of the optimization results can also be called the plot of the basins of attraction. The same colour indicates that all starting points from that region (basin) end in the same local minimum after local optimization. The left side of Figure \ref{fig:basins} shows the basins of attraction in a relatively large region, from which the complexity of the optimization landscape can be observed. On the right side of the plot, the region around the saddle point is shown enlarged. In both plots, the scan line divides the basins into two parts: the green part converging to the minimum with a MF value of 8.12 (T2-M4 in Talbe \ref{table: scanline}) and the red part converging to the minimum with a MF value of 5.30 (T2-M1 in Talbe \ref{table: scanline}). In both cases, we also observe that if the starting points are chosen on the scan line, the optimization may converge to the minimum with a MF value of 17.08 (yellow color) or the minimum with a MF value of 10.40 (navy blue color). The red and green regions represent the two basins on both sides of the saddle point. However, in this case, choosing starting points on the scan line may lead to unwanted local minima. Practically, it is still recommended to choose the starting points on the 2-D plane defined by the two inserted variables since constructing the hyperplane needs additional steps of constrained optimization. From the plots in Figure \ref{fig:basins}, it is evident that a better way to choose the starting points is to avoid the scan line, for example, by choosing a point on a line that is perpendicular to the scan line. It is also seen that the starting points should not be too far away from the saddle point. Otherwise, the two basins around the saddle point will be missed. In Figure \ref{fig:basins}-B, the saddle point has coordinates $(-0.1702,-0.1702)$. The closest starting point where the optimization converges to an unwanted minimum is $(-0.1713, -0.1675)$. The distance between this starting point and the SP is $0.0029$, which is $1.7\%$ of the absolute value of the curvature at the saddle point. It indicates in this example that even with a small step of move, optimization can go to a local minimum which is not expected. Practically, it suggests that more than two starting points around the saddle point are needed such that the minima connected to this saddle point is obtained. 
+As shown in Figure \ref{fig:basins}, the plot of the optimization results can also be called the plot of the basins of attraction. The same colour indicates that all starting points from that region (basin) end in the same local minimum after local optimization. The left side of Figure \ref{fig:basins} shows the basins of attraction in a relatively large region, from which the complexity of the optimization landscape can be observed. On the right side of the plot, the region around the saddle point is shown enlarged. In both plots, the scan line divides the basins into two parts: the green part converging to the minimum with a merit function value of 8.12 (T2-M4 in Talbe \ref{table: scanline}) and the red part converging to the minimum with a merit function value of 5.30 (T2-M1 in Talbe \ref{table: scanline}). In both cases, we also observe that if the starting points are chosen on the scan line, the optimization may converge to the minimum with a merit function value of 17.08 (yellow color) or the minimum with a merit function value of 10.40 (navy blue color). The red and green regions represent the two basins on both sides of the saddle point. However, in this case, choosing starting points on the scan line may lead to unwanted local minima. Practically, it is still recommended to choose the starting points on the 2D plane defined by the two inserted variables since constructing the hyperplane needs additional steps of constrained optimization. From the plots in Figure \ref{fig:basins}, it is evident that a better way to choose the starting points is to avoid the scan line, for example, by choosing a point on a line that is perpendicular to the scan line. It is also seen that the starting points should not be too far away from the saddle point. Otherwise, the two basins around the saddle point will be missed. In Figure \ref{fig:basins}(b), the saddle point has coordinates $(-0.1702,-0.1702)$. The closest starting point where the optimization converges to an unwanted minimum is $(-0.1713, -0.1675)$. The distance between this starting point and the SP is $0.0029$, which is $1.7\%$ of the absolute value of the curvature at the saddle point. It indicates in this example that even with a small step of move, optimization can go to a local minimum which is not expected. Practically, it suggests that more than two starting points around the saddle point are needed such that the minima connected to this saddle point is obtained. 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{chapter-4/figures/Basins_two_situations.png}
-    \caption{Basins of attraction around the saddle point in 2-D planes. A) Computed 2-D plane where x and y are the variables defined by equation \ref{eq:u1} and \ref{eq:u2}; B) 2-D plane given by the two newly inserted variables. The saddle points (SP) are marked by black dots.}
+    \caption{Basins of attraction around the saddle point in 2D planes. a) Computed 2D plane where x and y are the variables defined by equation \ref{eq:u1} and \ref{eq:u2}; b) 2D plane given by the two newly inserted variables. The saddle points (SP) are marked by black dots.}
     \label{fig:basins}
 \end{figure}
 
@@ -181,7 +179,7 @@ It follows that by using a different position for extraction of a lens and subse
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{chapter-4/figures/M3-S5_basins.png}
-    \caption{Basins of attraction on the 2-D plane defined by the inserted variables at a different scanning position compared to Figure \ref{fig:basins}. Along the scan line (diagonal line in the plot) around the saddle point, there are no starting points for which local optimization leads to minima other than the two next to the saddle point.}
+    \caption{Basins of attraction on the 2D plane defined by the inserted variables at a different scanning position compared to Figure \ref{fig:basins}. Along the scan line (diagonal line in the plot) around the saddle point, there are no starting points for which local optimization leads to minima other than the two next to the saddle point.}
     \label{fig:basins_WAL_M3_S5}
 \end{figure}
 \subsubsection{Discussion on Local Minima and the Thickness of the Inserted Element}
@@ -199,7 +197,7 @@ With a step by step analysis of applying SPC in this example, it is seen that, f
     \label{fig:thickness_increase}
 \end{figure}
 
-\section{Combining Designer Knowledge and SPC}
+\section{Combining Designers' Knowledge and SPC to Improve Design Efficiency}
 In lens design practice, it is common that multiple design techniques are applied to effectively obtain an optimal solution. The technique can be using a cemented doublet to reduce chromatic aberration, controlling the exit marginal ray angle to keep EFL constant, using a certain optimization method to find better local minima, etc. The SPC method provides a systematic approach to rapid obtain local minima. However, it does not tell you where the SPC should be applied in an optical system. A straightforward way is to apply many SPCs in a system to generate all the possible local minima. However, this is not always preferred because at certain phase of the design process, the designer does not really expect a drastic change of the system. In this section, we explore the option of combining designer knowledge and SPC. A UV dry microscope objective is used to show what can be achieved with this approach. 
 %I have somehow an established system, where no big change is preferred to be made.  Only local/small adjustment is wanted in order to gain performance improvement. The "localness" depends on each design scenario. The knowledge of the designer is rather "converged" at that point, and deviation from the current system drastically would distract the designer from the current "flow" of thought. On the level of user experience, the global optimizer is not preferred at such a fine and delicate phase of the designing. It might be a good tool at the very beginning to provide ideas for the starting point of the whole design process. 
 % In this sense, the SPC shows its advantage since it could help the designer at different stage of the design. It could be used as a tool to navigate a local region of the current design snapshot. The designer can keep her/his sense of control as well as getting acceptable deviations of the design. 
@@ -220,16 +218,16 @@ An ultra-violet (UV) microscope objective is chosen as a starting configuration.
     \vspace{-1em}
     \begin{tabular}{ p{15em}  c }
     \hline 
-    Effective focal length (EFL, mm) & 2.5\\ 
+    Effective Focal Length (mm) & 2.5\\ 
     Field (real image height, mm) & 0.1\\ 
-    Numerical aperture (NA) & 0.90\\ 
-    Operating wavelength (nm) & 325\\ 
-    Working distance (WD, mm) & 0.6\\ 
-    Overall length (mm) & 25\\
+    Numerical Aperture (NA) & 0.90\\ 
+    Operating Wavelength (nm) & 325\\ 
+    Working Distance (WD, mm) & 0.6\\ 
+    Overall Length (mm) & 25\\
     \midrule
-    RMS wave front error (m$\lambda$) & 49\\ 
-    Strehl ratio at 0 mm & 0.976\\ 
-    Strehl ratio at 0.1mm & 0.849\\
+    RMS Wave Front Error (m\textlambda) & 49\\ 
+    Strehl Ratio at 0 mm & 0.976\\ 
+    Strehl Ratio at 0.1mm & 0.849\\
     \hline
     \end{tabular}
 \end{table}
@@ -246,7 +244,7 @@ The current system already has a good performance and a compact size, its specif
 In contrast to a simple design problem, a complex system often needs several constraints to fulfill the design requirements. Before showing the design examples, the handling of constraints in SPC is first discussed in the following section.
 
 \subsection{Constraints in Optical Design Software} \label{Constraints in optical design software}
-The wide-angle lens shown in the previous section is a moderately complex system where SPC can be used in a limited number of positions. The system only has one requirement on the specifications needs to be controlled, namely the effective focal length (EFL). It was controlled by setting the value of the exit angle $\alpha$  of the marginal ray on the last optical surface. Given the entrance pupil diameter (EPD) and the EFL, the exit marginal ray angle $\alpha$ on the last optical surface can be set in CODE V as:
+The wide-angle lens shown in the previous section is a moderately complex system where SPC can be used in a limited number of positions. The system only has one requirement on the specifications needs to be controlled, namely the EFL. It was controlled by setting the value of the exit angle $\alpha$  of the marginal ray on the last optical surface. Given the EPD and the EFL, the exit marginal ray angle $\alpha$ on the last optical surface can be set in CODE V as:
 \setlength{\belowdisplayshortskip}{5pt}
 \setlength{\abovedisplayshortskip}{5pt}
 \begin{equation} \label{eq:EFLsolve}
@@ -337,7 +335,7 @@ where the summation indicates that multiple weight functions can be added, $wt$ 
 P = wt*(\frac{\Delta C}{half \, width})^{\frac{exponent}{2}},
 \end{equation}where ${half \, width}$ and $exponent$ are two additional variables for tuning the penalty function. If the ${half \, width}$ is set to $1$ and the $exponent$ is set to $4$, the penalty function in Equation \ref{eq: PTC} is the same as the weight function in Equation \ref{eq: WTC}. The two approaches for implementing the constraints are essentially identical. They both provide a less rigid control compared to the Lagrange multiplier method. The penalty function mode is ideal for the "soft constraints", which are constraints that have an acceptable range of values \cite{codevmanual}. In the next section, where the complex UV microscope objective is investigated, the constraints are implemented with the weighted function.
 
-\subsection{Saddle Point Construction and Structural Change}
+\subsection{Applying SPC to Induce Structural Changes in Lens}
 %add some text to elaborate the title
 When trapped in a local minimum, structural change is necessary to be introduced in order to obtain different local minima with significant changes in the values of the merit function. The structural change refers to changes such as using a lens with positive power instead of negative ones, adding a new element into the system, etc. In this section, we focus on two cases where structural changes are needed for the systems to meet a higher requirement. In the first case, the NA of the system is further increased from 0.90 to 0.95. In the second case, the working distance of the system is increased from 0.6 mm to 2.5 mm. We show how SPC can be effectively applied to obtain new local minima. 
 %We demonstrate that SPC
@@ -364,11 +362,11 @@ For a high-resolution microscope objective, high NA is always preferred. The fir
     \vspace{-1em}
     \begin{tabular}{ c c c }
     \hline 
-     Numerical aperture (NA) & 0.90 & 0.95\\ 
+     Numerical Aperture & 0.90 & 0.95\\ 
      \cmidrule{2-3}
-    RMS wavefront error (m$\lambda$) & 49 & 111  \\ 
-    Strehl ratio at 0 mm & 0.976 & 0.833\\
-    Strehl ratio at 0.1 mm & 0.849 & 0.386\\
+    RMS Wavefront Error (m\textlambda) & 49 & 111  \\ 
+    Strehl Ratio at 0 mm & 0.976 & 0.833\\
+    Strehl Ratio at 0.1 mm & 0.849 & 0.386\\
     \hline
     \end{tabular}
 \end{table}
@@ -397,21 +395,21 @@ With the separation of the system into different function groups, it is possible
     \hline 
      No. & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4}\\ 
      \midrule
-    RMS wavefront error (m$\lambda$) & 119 & 117 & 99 & 41 \\ 
-    Strehl ratio at 0 mm & 0.736 & 0.769 & 0.832 & 0.985\\
-    Strehl ratio at 0.1 mm & 0.428 & 0.453 & 0.548 & 0.882\\
+    RMS Wavefront Error (m\textlambda) & 119 & 117 & 99 & 41 \\ 
+    Strehl Ratio at 0 mm & 0.736 & 0.769 & 0.832 & 0.985\\
+    Strehl Ratio at 0.1 mm & 0.428 & 0.453 & 0.548 & 0.882\\
     \hline
     \end{tabular}
     \end{adjustbox}
 \end{table}
 
-Based on the insight on where the change should be introduced in the system, SPC scans were performed at four positions in the system. Figure \ref{fig: VollrathSPCcaseNA} presents the results from saddle point construction scans. From four scans, a total number of eighteen solutions were obtained. Besides four solutions which are identical to the ones obtained with the traditional method, fourteen extra solutions were obtained. Their performance is listed in Table \ref{table: vollratSPCcaseNA}. Out of the eighteen solutions, nine reach satisfactory results. Among all the solutions, \circled{1}A and \circled{2}B have very close system shapes. One is the result from the left bending of the glass lens, and the other is the result of the right bending of the air lens. As explained in Chapter \ref{chapter_SPC_method_reccomendation}, there are two different ways to apply SPC, which lead to the same solution in this case.
+Based on the insight on where the change should be introduced in the system, SPC scans were performed at four positions in the system. Figure \ref{fig: VollrathSPCcaseNA} presents the results from SPC scans. From four scans, a total number of eighteen solutions were obtained. Besides four solutions which are identical to the ones obtained with the traditional method, fourteen extra solutions were obtained. Their performance is listed in Table \ref{table: vollratSPCcaseNA}. Out of the eighteen solutions, nine reach satisfactory results. Among all the solutions, \circled{1}A and \circled{2}B have very close system shapes. One is the result from the left bending of the glass lens, and the other is the result of the right bending of the air lens. As explained in Chapter \ref{chapter_SPC_method_reccomendation}, there are two different ways to apply SPC, which lead to the same solution in this case.
 
 \begin{figure}
   \begin{adjustbox}{addcode={
     \begin{minipage}{\width}}{
     \captionsetup{margin=0em}
-    \caption{Eighteen solutions from four saddle point construction scans. The dashed line indicates constructing an air lens inside a lens element (equivalent to splitting lens). The solid line indicates constructing a glass element in the air space (equivalent to add lens). In comparison with Figure \ref{fig: vollrathNAtrad}, solution \textcircled{\scriptsize{1}}C, \textcircled{\scriptsize{2}}D, \textcircled{\scriptsize{3}}C, and \textcircled{\scriptsize{4}}D are the ones obtained with conventional approach.}\label{fig: VollrathSPCcaseNA}
+    \caption{Eighteen solutions from four SPC scans. The dashed line indicates constructing an air lens inside a lens element (equivalent to splitting lens). The solid line indicates constructing a glass element in the air space (equivalent to add lens). In comparison with Figure \ref{fig: vollrathNAtrad}, solution \textcircled{\scriptsize{1}}C, \textcircled{\scriptsize{2}}D, \textcircled{\scriptsize{3}}C, and \textcircled{\scriptsize{4}}D are the ones obtained with conventional approach.}\label{fig: VollrathSPCcaseNA}
     \end{minipage}},rotate=90,center}
     \includegraphics[width=0.96\textheight]{chapter-4/figures/vollrathSPCcaseNA.png}
   \end{adjustbox}
@@ -452,7 +450,7 @@ Based on the insight on where the change should be introduced in the system, SPC
     SR(0) &  & 0.982 &  & 0.789\\
     SR(0.1) &  & 0.853 &  & 0.251\\
     \hline
-    \multicolumn{6}{c}{\textit{\footnotesize{RMS WFR = RMS wavefront error (m$\lambda$); SR(0) = Strehl ratio at 0 mm; SR(0.1) = Strehl ratio at 0.1 mm.}}}\\
+    \multicolumn{6}{c}{\textit{\footnotesize{RMS WFR = RMS Wavefront Error (m\textlambda); SR(0) = Strehl Ratio at 0 mm; SR(0.1) = Strehl Ratio at 0.1 mm.}}}\\
     % \vspace{-1em}
     % \multicolumn{6}{c}{\textit{\footnotesize{SR(0) = Strehl ratio at 0 mm; SR(0.1) = Strehl ratio at 0.1 mm.}}}
     \end{tabular}
@@ -463,7 +461,7 @@ Compared to the traditional method, more than 4 times as many systems are obtain
 
 \newpage
 \subsubsection{Increasing the Working Distance of the Objective}
-A second structural change introduced is an increase of the working distance of the original system ( the system on the left in Figure \ref{fig: vollrathNA90295}), from 0.6 mm to 2.5 mm. This requires that the first lens element on the right is aplanatic-concentric instead of plano-concentric, causing a necessary decrease of power of the first element. In order to maintain the performance, this decrease of optical power need to be compensated. This is done by increasing the optical power of the lens element after the first one and those in the middle group. With the limited number of degrees of freedom, the performance of the system strongly deteriorates. Figure \ref{fig: vollrathWD06to25} shows how the system changed after increasing the working distance from 0.6 mm to 2.5 mm. The overall length (OAL) of the system increases from 25 mm to 76 mm. The diameter of the maximum element increases from 6.6 mm to 17 mm. A longer air gap emerges after the first element on the left caused by the increase of the size (diameter) of the lens elements. The third lens element from the left is compressed into a thinner element. The bending of each element still remains close to that of the original system. Table \ref{table: vollrathWDchange} gives the change of the performance with the increase of the working distance. 
+A second structural change introduced is an increase of the working distance of the original system ( the system on the left in Figure \ref{fig: vollrathNA90295}), from 0.6 mm to 2.5 mm. This requires that the first lens element on the right is aplanatic-concentric instead of plano-concentric, causing a necessary decrease of power of the first element. In order to maintain the performance, this decrease of optical power need to be compensated. This is done by increasing the optical power of the lens element after the first one and those in the middle group. With the limited number of degrees of freedom, the performance of the system strongly deteriorates. Figure \ref{fig: vollrathWD06to25} shows how the system changed after increasing the working distance from 0.6 mm to 2.5 mm. The OverAll Length (OAL) of the system increases from 25 mm to 76 mm. The diameter of the maximum element increases from 6.6 mm to 17 mm. A longer air gap emerges after the first element on the left caused by the increase of the size (diameter) of the lens elements. The third lens element from the left is compressed into a thinner element. The bending of each element still remains close to that of the original system. Table \ref{table: vollrathWDchange} gives the change of the performance with the increase of the working distance. 
 
 \begin{figure}[h!]
     \centering
@@ -486,7 +484,7 @@ A second structural change introduced is an increase of the working distance of 
     \hline 
      Working distance (WD, mm) & 0.6 & 2.5\\ 
      \cmidrule{2-3}
-    RMS wavefront error (m$\lambda$) & 49 & 135  \\ 
+    RMS wavefront error (m\textlambda) & 49 & 135  \\ 
     Strehl ratio at 0 mm & 0.976 & 0.254\\
     Strehl ratio at 0.1 mm & 0.849 & 0.019\\
     \hline
@@ -510,9 +508,9 @@ To compensate for the decreased optical power of the first element, a common pra
     \hline 
      No. & \textbf{1 \& 2} & \textbf{3}  \\ 
      \midrule
-    RMS wavefront error (m$\lambda$) & 100 & 41 \\ 
-    Strehl ratio at 0 mm & 0.833 & 0.975 \\
-    Strehl ratio at 0.1 mm & 0.507 & 0.902 \\
+    RMS Wavefront Error (m\textlambda) & 100 & 41 \\ 
+    Strehl Ratio at 0 mm & 0.833 & 0.975 \\
+    Strehl Ratio at 0.1 mm & 0.507 & 0.902 \\
     \hline
     \end{tabular}
     \end{adjustbox}
@@ -528,7 +526,7 @@ To compensate for the decreased optical power of the first element, a common pra
 \end{figure}
 SPC scans were applied at the same positions where a lens was added or splitted. The result is shown in Figure \ref{fig: vollrathWDSPC}. From three operations of SPC, ten systems were obtained. The performance of these 10 systems is listed in Table \ref{table: vollrathWDTrad}. Out of the ten systems, six have low wavefront RMS value and Strehl ratio above 0.8 for both fields. By carefully examing the system plots in Figure \ref{fig: vollrathWDSPC}, it is seen that some systems have similar system shapes. For example, system \circled{1}B, \circled{2}B, and \circled{3}B have very close bending for each lens element. The differences among the three are in the lens thickness and air space variations. System \circled{2}A and system \circled{3}A also are very similar. When compared with the results from the conventional approach, system \circled{3}D in Figure \ref{fig: vollrathWDSPC} and system \circled{3} in Figure \ref{fig: vollrathWDTrad} are comparable solutions (especially with respect to the front group on the right). Both system have Strehl ratio above 0.9 and have close wavefront RMS (39 and 41 $m\lambda$).
 
-In this example where the working distance is increased, with the conventional approach two systems were obtained with three operations. One out of three (33\%) has good performance. Using saddle point construction, ten systems were obtained with the same amount of operations as needed in the traditional approach. Six out of ten (60\%) give satisfactory performance. 
+In this example where the working distance is increased, with the conventional approach two systems were obtained with three operations. One out of three (33\%) has good performance. Using SPC, ten systems were obtained with the same amount of operations as needed in the traditional approach. Six out of ten (60\%) give satisfactory performance. 
 
 \begin{figure}[h!]
     \centering
@@ -568,7 +566,7 @@ In this example where the working distance is increased, with the conventional a
     SR(0) &  &  & 0.978 \\
     SR(0.1) &  &  & 0.910 \\
     \hline
-    \multicolumn{5}{c}{\textit{\footnotesize{RMS WFR = RMS wavefront error (m$\lambda$); SR(0) = Strehl ratio at 0 mm; SR(0.1) = Strehl ratio at 0.1 mm.}}}\\
+    \multicolumn{5}{c}{\textit{\footnotesize{RMS WFR = RMS Wavefront Error (m\textlambda); SR(0) = Strehl Ratio at 0 mm; SR(0.1) = Strehl Ratio at 0.1 mm.}}}\\
     \end{tabular}
     \end{adjustbox}
 \end{table}
@@ -615,7 +613,7 @@ Although the system shapes are similar, the complex topography of the design lan
 
 In addition to the number of constraints used, the choice of the weight also affects the SPC scan curve. An example is given in Figure \ref{fig: vollrath_wt_change}, where different scan positions were chosen using the same system from the previous example. Only the EFL constraint is applied here with different weight number from 0.001 to 10. In Figure \ref{fig: vollrath_wt_change}, it is shown that when the weight is 0.001 or 10, the SPC scans produce curves that differ from those in the other three cases. Weight 0.001 gives four saddle points, weight 10 gives two saddle points, and the other three cases give three saddle points. The target value of the EFL is 2.50 mm. When a weight of 0.001 is used, the optimized system has an EFL of 2.65 mm. For a weight of 0.01, the EFL is stabilized around 2.53 mm. When the weight is larger than 0.1, the optimized system has an intended EFL of 2.50 mm. 
 
-According to the derivation of the special case of SPC \cite{BociortSPCSexplained}, when the space between the constructed surface and another optical surface is zero (or close to zero), a saddle point can be found with the curvatures of the constructed surface identical (or similar) to that optical surface. In this example, when the weight is 0.01, 0.1 and 1, the most left and most right saddle points represent the special case saddle points. However, when the weight is too big or too small, the design landscape is altered in a way that the special case of saddle point cannot be obtained via the scan (weight 10 case missed the left one). One of the hypotheses is that there are some numerical inaccuracy when computing the local minima and saddle points with these extreme weights. More investigations are needed to understand these situation. For practicing the SPC, we would suggest to avoid using extreme weight values based on the obeservations in this example. 
+According to the derivation of the special case of SPC \cite{BociortSPCSexplained}, when the space between the constructed surface and another optical surface is zero (or close to zero), a saddle point can be found with the curvatures of the constructed surface identical (or similar) to that optical surface. In this example, when the weight is 0.01, 0.1 and 1, the most left and most right saddle points represent the special case saddle points. However, when the weight is too big or too small, the design landscape is altered in a way that the special case of saddle point cannot be obtained via the scan (weight 10 case missed the left one). One of the hypotheses is that there are some numerical inaccuracy when computing the local minima and saddle points with these extreme weights. More investigations are needed to understand these situation. For practicing the SPC, we would suggest to avoid using extreme weight values based on the observations in this example. 
 
 From the two examples, it is seen that the way to implement the constraints affects the number of saddle points acquired from SPC. This will lead to differences in the obtained minima. Regarding the constraints applied, the example shows that starting with a simple constraint generates more saddle points than applying several constraints at the same time. It is consistent with the design rule that constraints are usually added progressively. If all constraints are added at the same time, using Lagrange multiplier method adds multiple new variables to the optimization problem, therefore can generate more local minima and make the global optimization more difficult.  When using the weight function, there is lack of systematic knowledge on how to adjust multiple weights in one merit function. Both scenarios leave the practice of putting multiple constraints at once a not preferred option. We recommend to avoid extreme values of weight when using SPC with a merit function containing weight constraints. In general the weights should be adapted during the design process, depending on the problem. When applying SPC, it is necessary to keep the weights the same during the application of SPC and the following local optimizations. After obtaining the local minima, the weights can be adapted when the design process is continued. 
 
@@ -632,7 +630,7 @@ Lithographic systems represent one of the most sophisticated optical systems now
 
 For this kind of complicated optical systems with a large amount of variables, the number of possible solutions increases drastically. These systems suffer more easily from ray failures. Varying variables in the system can easily cause failures in ray tracing. Normally, a new design starts from an existing one, where the system specification is close to the design requirement. The system is then modified by the designer based on certain design guidelines \cite{LivshitsQA2013}\cite{Shafer1995_moreless}\cite{Cao2017_GroupDesign} or his/her own experience. Trial and error always evolves before obtaining a good solution. 
 
-A Deep-Ultra-Violet (DUV) lens from an existing patent \cite{patentZeissDUV} is selected. We choose the design from the embodiment described in Figure 5 of this patent. The system parameters are given in Table 5 in the patent. We use this DUV objective as an example to demonstrate how SPC can be applied in a complex case. The DUV objective is designed to work at 193 nm wavelength. The numerical aperture is 0.85, the image height is 14.02 mm and the magnification is -0.25. The system is optimized for distortion and telecentricity. The wavefront RMS error is 3.26 $m\lambda$. The objective consists of twenty-three lens elements, where eight surfaces are aspheric. The system plot is presented in Figure \ref{fig: litho_DUV_plot}. 
+A Deep Ultra Violet (DUV) lens from an existing patent \cite{patentZeissDUV} is selected. We choose the design from the embodiment described in Figure 5 of this patent. The system parameters are given in Table 5 in the patent. We use this DUV objective as an example to demonstrate how SPC can be applied in a complex case. The DUV objective is designed to work at 193 nm wavelength. The numerical aperture is 0.85, the image height is 14.02 mm and the magnification is -0.25. The system is optimized for distortion and telecentricity. The wavefront RMS error is 3.26 $m\lambda$. The objective consists of twenty-three lens elements, where eight surfaces are aspheric. The system plot is presented in Figure \ref{fig: litho_DUV_plot}. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{chapter-4/figures/Litho_DUV_plot.png}
@@ -644,7 +642,7 @@ This objective has been previously studied with the special version of SPC. In t
 
 The sixth lens (from the left) is chosen to be replaced using SPC following the example in Marinescu's thesis (where she chose to add a null-element next to it). The first step was to remove the chosen lens by gradually reducing the thickness of the lens while optimizing the system at the same time to keep the system staying at the same basin of attraction. Once the thickness was reduced to zero, constraints were applied to make the element a meniscus null-element (equal curvature with zero-thickness). In this way, the element could be removed without affecting the system. In practise, the element does not need to be physically removed, since the next step is to perform an SPC scan at the same location. 
 
-As demonstrated in the previous section, the choice of constraints in the merit function may affect the obtained result. The recommendation is to start with a relative simple merit function. The complexity of the merit function can be increased after the SPC process. A default unconstrained merit function based on wavefront aberration \footnote{In CODE V, the merit function is based on wavefront variance. It comes from the weighted combination of the optical path difference (OPD) and the X and Y wavefront slope values.} was used for the phase of the SPC scan: the variables used were only the curvatures of the spherical surfaces (thirty six variables, the last element is a plane-parallel plate). Since the air spaces and lens thicknesses were not varied and the system was already very "tight", an unconstrained optimization did not drastically change the system. With the default wavefront aberration merit function, the original system had a merit function value of 0.002915, and a wavefront aberration of 3.26 $m\lambda$. After unconstrained optimization, the merit function value became 0.002391, and the wavefront aberration increased to 3.53 $m\lambda$. The merit function is calculated assuming that the best focus is determined by the paraxial calculation (ideal focus plane). The wavefront aberration are given by the wavefront analysis in CODE V, which traces the real rays and determines best focus plane using the real rays. Therefore, the difference on the computation results in this case that a decreasing merit function brings the wavefront aberration increased. The computation technique used in the merit function is aimed for facilitating the optimization. When the sixth lens element was extracted, the merit function deteriorated to 0.013822, and the wavefront aberration increased to 12.39 $m\lambda$.
+As demonstrated in the previous section, the choice of constraints in the merit function may affect the obtained result. The recommendation is to start with a relative simple merit function. The complexity of the merit function can be increased after the SPC process. A default unconstrained merit function based on wavefront aberration \footnote{In CODE V, the merit function is based on wavefront variance. It comes from the weighted combination of the optical path difference (OPD) and the X and Y wavefront slope values.} was used for the phase of the SPC scan: the variables used were only the curvatures of the spherical surfaces (thirty six variables, the last element is a plane-parallel plate). Since the air spaces and lens thicknesses were not varied and the system was already very "tight", an unconstrained optimization did not drastically change the system. With the default wavefront aberration merit function, the original system had a merit function value of 0.002915, and a wavefront aberration of 3.26 $m\lambda$. After unconstrained optimization, the merit function value became 0.002391, and the wavefront aberration increased to 3.53 $m\lambda$. The merit function is calculated assuming that the best focus is determined by the paraxial calculation (ideal focus plane). The wavefront aberration are given by the wavefront analysis in CODE V, which traces the real rays and determines best focus plane using the real rays. Therefore, the difference on the computation results in this case that a decreasing merit function brings the wavefront aberration increased. The computation technique used in the merit function is aimed for facilitating the optimization. When the sixth lens element was extracted, the merit function deteriorated to 0.013822, and the wavefront aberration increased to 12.39 m\textlambda.
 
 Performing an SPC scan at the position where the sixth lens was extracted yielded six saddle points. These six saddle points led to twelve minima with a zero-thickness element. After increasing the thickness the twelve systems converged into four solutions. The reason for the convergence of the solutions is that when the thicknesses increase, local minima can encounter ray failure or merge with other local minima. An example of ray failure caused by thickness increase is explained in Figure \ref{fig:thickness_increase}. In Figure \ref{fig: litho_step1_2}, the first two steps of performing an SPC scan on the lithographic objective are illustrated.
 
@@ -665,7 +663,7 @@ The system plots of the four new systems are shown on the left of Figure \ref{fi
     \label{fig: litho_Step3}
 \end{figure}
 
-In Table \ref{table: Litho_final_solution}, the performances of the four optimized solutions are listed. While minimizing the wavefront aberration (RMS), the distortion and the telecentricity are controlled at the same time. Among the four new solutions, DUV-M3' shows better wavefront RMS (29$\%$ better than the orignal), distortion (16\text{\%}), and telecentricity at the image side (94$\%$). The telecentricity at the object side is worse than the original one (15$\%$). The other three new solutions show some mixed performances, with some properties better than the original system, but others worse. For a practical case, more properties have to be considered in designing a lithographic system, e.g. thermal sensitivity, manufacturability and cost. In our example, the assessing criteria have been limited to those mentioned above. The results show that with SPC and the design flow used, new solutions in a complex lithographic system can be systematically found. In the example discussed, systems with better and worse performance as compared to the original, are obtained. 
+In Table \ref{table: Litho_final_solution}, the performances of the four optimized solutions are listed. While minimizing the wavefront aberration (in RMS), the distortion and the telecentricity are controlled at the same time. Among the four new solutions, DUV-M3' shows better wavefront RMS (29$\%$ better than the orignal), distortion (16\text{\%}), and telecentricity at the image side (94$\%$). The telecentricity at the object side is worse than the original one (15$\%$). The other three new solutions show some mixed performances, with some properties better than the original system, but others worse. For a practical case, more properties have to be considered in designing a lithographic system, e.g. thermal sensitivity, manufacturability and cost. In our example, the assessing criteria have been limited to those mentioned above. The results show that with SPC and the design flow used, new solutions in a complex lithographic system can be systematically found. In the example discussed, systems with better and worse performance as compared to the original, are obtained. 
 
 \setlength{\arrayrulewidth}{.5mm}
 \setlength{\tabcolsep}{18pt}
@@ -680,7 +678,7 @@ In Table \ref{table: Litho_final_solution}, the performances of the four optimiz
     \begin{adjustbox}{max width=\textwidth, center}
     \begin{tabular}{c c c c c}
     \hline 
-       & \textbf{Wavefront RMS (m$\lambda$)} & \textbf{Distortion (nm)} & \textbf{Object side telecentricity (mrad)} & \textbf{Image side telecentricity (mrad)} \\ 
+       & \textbf{Wavefront RMS (m\textlambda)} & \textbf{Distortion (nm)} & \textbf{Object Side Telecentricity (mrad)} & \textbf{Image Side Telecentricity (mrad)} \\ 
      \midrule
     Original & 3.26 & <1.00 & <14.36 & <19.18 \\ 
     \midrule

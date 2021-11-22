@@ -10,7 +10,7 @@ Successful design will require the application of individual creativity as well 
 }{R. R. Shannon}
 
 
-In this chapter, we start with a simple example of how a magnifying glass can be designed on paper. This section is added since nowadays the design is mostly done with professional software and story on how a lens can be designed from scratch based on theories is less clear. After that, we explain the modern optical approach with an emphasis on optimization techniques. The SPC method is briefly mentioned at the end of the chapter in comparison with other design/optimization techniques and it is elaborated in the next chapter. 
+In this chapter, we start with a simple example of how a magnifying glass can be designed on paper (instead of on a computer). This section is added since nowadays the design is mostly done with professional software and story on how a lens can be designed from scratch based on theories is less clear. After that, we explain the modern optical approach with an emphasis on optimization techniques. The SPC method is briefly mentioned at the end of the chapter in comparison with other design/optimization techniques and it is elaborated in the next chapter. 
 
 %%Definition of optical design
 \section{Designing a Magnifying Glass}
@@ -39,7 +39,7 @@ In this thesis, we use the following convention for the geometrical optics formu
 The subtended angle $\theta_o$ of the object to the eye writes 
 \begin{equation}
 \label{eq: magnifier object angle}
-\theta_o = \frac{h_o}{250 \; mm},
+\theta_o = \frac{h_o}{250 \; \text{mm}},
 \end{equation}where $h_o$ stands for the height of the object.
 The subtended angle $\theta_i$ of  the magnified image writes
 \begin{equation}
@@ -55,29 +55,29 @@ The subtended angle $\theta_i$ of  the magnified image writes
 \end{equation}With Equation \ref{eq: magnifier object angle} and Equation \ref{eq: magnifier image angle reform}, the magnification $m_{mag}$ of the magnifier is 
 \begin{equation}
 \label{eq: magnifier magnification}
-m_{mag} = \frac{\theta_i}{\theta_o} = (1-\frac{l'}{f'})\cdot\frac{250 \; mm}{l_e-l'}.
-\end{equation}The distance between the image and the eye $l_e-l'$ can be set as $250 \;mm$. For the maximum $m_{mag}$, we have $l' = -250 \; mm, l_e \approx 0$. It means that when the eye is observing close to the magnifier, the maximum magnification of the image is achieved. This magnification is
+m_{mag} = \frac{\theta_i}{\theta_o} = (1-\frac{l'}{f'})\cdot\frac{250 \; \text{mm}}{l_e-l'}.
+\end{equation}The distance between the image and the eye $l_e-l'$ can be set as $250 $ mm. For the maximum $m_{mag}$, we have $l' = -250 \; \text{mm}, l_e \approx 0$. It means that when the eye is observing close to the magnifier, the maximum magnification of the image is achieved. This magnification is
 \begin{equation}
 \label{eq: magnifier magnification simplified}
-m_{mag}  = 1+\frac{250 \; mm}{f'}.
-\end{equation}Now we substitute $m_{mag}$ with $6$, then we have $f' = 50 \; mm$. As a result, we need a magnifying glass with a focal length of $50 \;mm$ to achieve a magnification of  $6\times$.
+m_{mag}  = 1+\frac{250 \; \text{mm}}{f'}.
+\end{equation}Now we substitute $m_{mag}$ with $6$, then we have $f' = 50 $ mm. As a result, we need a magnifying glass with a focal length of $50 $ mm to achieve a magnification of  $6\times$.
 %% use the following equation to derive lens shape 2021-09-28 [done]
-Now we know the focal length  $f' = 50 \; mm$ and the image distance $l' = -250 \; mm$. Given Equation \ref{eq: thinlensformula}, the object distance is calculated to be $41.67 \;mm$.  
+Now we know the focal length  $f' = 50 $ mm and the image distance $l' = -250 $ mm. Given Equation \ref{eq: thinlensformula}, the object distance is calculated to be $41.67 $ mm.  
 
 For a spherical lens, the radii of the two spherical surfaces of the lens can be calculated using Lensmaker's equation 
 \begin{equation} \label{eq: lensmaker_r}
     (n-1)(\frac{1}{R_1} - \frac{1}{R_2}) = \frac{1}{f^\prime},
 \end{equation}
-where $n$ stands for the refractive index of the lens material. $R_1$ and $R_2$ are the radii of the two spherical surfaces. The focal length $f^\prime$ is $50 \; mm$. Let us use a common optical material such as BK7 glass. It has a refractive index ($n$) of approximately $1.5$ in the visible spectrum. For simplicity, we use $1.5$ as our refractive index value.
+where $n$ stands for the refractive index of the lens material. $R_1$ and $R_2$ are the radii of the two spherical surfaces. The focal length $f^\prime$ is $50 $ mm. Let us use a common optical material such as BK7 glass. It has a refractive index ($n$) of approximately $1.5$ in the visible spectrum. For simplicity, we use $1.5$ as our refractive index value.
 
-Now in Equation \ref{eq: lensmaker_r}, the two radii can still vary and we do not have a unique set of values to satisfy the equation. We can choose to have a double-convex lens by forcing the absolute radii to be identical, where $R_1 = 50 \; mm$, and $R_2 = -50 \; mm$. 
+Now in Equation \ref{eq: lensmaker_r}, the two radii can still vary and we do not have a unique set of values to satisfy the equation. We can choose to have a double-convex lens by forcing the absolute radii to be identical, where $R_1 = 50 $ mm, and $R_2 = -50 $ mm. 
 
 Equation \ref{eq: lensmaker_r} assumes the thickness of the lens is very small compared to the radius of the two surfaces (a thin lens scenario). There is also the equation when the thickness $d$ of the lens is considered:
 \begin{equation} \label{eq: lensmaker_r_thick}
     (n-1)\left( \frac{1}{R_1} - \frac{1}{R_2} + \frac{(n-1)d}{nR_1R_2} \right) = \frac{1}{f^\prime}  .
 \end{equation}
-With a thickness $d$ of $3 \; mm$, the radii can be now calculated using Equation \ref{eq: lensmaker_r_thick} to be$R_1 =  49.50 \; mm$ and $R_2 = -49.50 \; mm$. These values are very close to the case when using thin lens approximation ($50 \; mm$ and $-50 \; mm$). 
-At this phase, the above derivation shows that based on first order (Gaussian) optics, the following specification can achieve a magnification factor of $6\times$, given that the object locates $41.67 \; mm$ from the lens:
+With a thickness $d$ of $3 $ mm, the radii can be now calculated using Equation \ref{eq: lensmaker_r_thick} to be$R_1 =  49.50 $ mm and $R_2 = -49.50 $ mm. These values are very close to the case when using thin lens approximation ($50 $ mm and $-50 $ mm). 
+At this phase, the above derivation shows that based on first order (Gaussian) optics, the following specification can achieve a magnification factor of $6\times$, given that the object locates $41.67 $ mm from the lens:
 
 \begin{table}[h!]
     \centering
@@ -89,11 +89,11 @@ At this phase, the above derivation shows that based on first order (Gaussian) o
     \hline 
     Magnification & $6\times$\\ 
     Number of lens & $1$\\ 
-    Diameter $(mm)$ & $20$ \\ 
+    Diameter (mm) & $20$ \\ 
     Refractive index & $1.5$\\ 
-    Thickness $(mm)$& $3$\\ 
-    Radii $(mm)$ & $49.50$, $-49.50$\\
-    Effective focal length $(mm)$ & $50$\\
+    Thickness (mm)& $3$\\ 
+    Radii (mm) & $49.50$, $-49.50$\\
+    Effective Focal Length (EFL, mm) & $50$\\
     \hline
     \end{tabular}
 \end{table}
@@ -117,14 +117,14 @@ X = \frac{R_1+R_2}{R_2-R_1},
 M = \frac{1+m}{1-m},
 \end{equation}$m$ is the magnification factor and it is $6$ as defined previously. In this case, $M=-\frac{7}{5}$. In Equation \ref{eq: Si_spherical}, for a chosen ray, parameter $f^\prime$, $M$, and $n$ are all given. Therefore, $S_I$ becomes a quadratic function for the bending factor $X$. There is a value of $X$ that minimize the value of $S_I$. In this case, when $X = -1$ , the minimum value of $S_I $ is $ 8.16(\frac{h^4}{4(f^\prime)^3})$. The spherical aberration of each ray is proportional to its ray height given the fixed lens configuration. 
 
-Now if we consider both the Lensmaker's Equation \ref{eq: lensmaker_r} and the spherical term in Equation \ref{eq: Si_spherical}, the two radii of the lens can be solved as $R_1 = \infty, R_2 = -25\ mm$. These two values are very different from the values ($50 \ mm$ and $-50 \ mm$) calculated based on first-order optics. It is worth mentioning that Equation \ref{eq: Si_spherical} assumes a thin lens, hence the comparison of the radii is done between thin lens models. It is also observed that in our magnifier example, considering a $3 \;mm$ lens thickness in Lensmaker's formula does not alter the radii significantly.  
+Now if we consider both the Lensmaker's Equation \ref{eq: lensmaker_r} and the spherical term in Equation \ref{eq: Si_spherical}, the two radii of the lens can be solved as $R_1 = \infty, R_2 = -25$ mm. These two values are very different from the values ($50$ mm and $-50$ mm) calculated based on first-order optics. It is worth mentioning that Equation \ref{eq: Si_spherical} assumes a thin lens, hence the comparison of the radii is done between thin lens models. It is also observed that in our magnifier example, considering a $3$ mm lens thickness in Lensmaker's formula does not alter the radii significantly.  
 
 When more aberration terms are considered, the number of variables in this example is not enough to analytically solve the values for the minimal values of each aberration term. Normally, new degrees of freedom will be introduced to the system (e.g. adding new lenses). However, more number of variables also implies an increasing complexity of the formulae. Modern optical design handles it by using computer-aided design techniques. Numerical optimization and rapid ray tracing are done by computers, which improves the efficiency of optical design.  
 
 
 \section{Modern Optical Design}
 \vspace{1em}
-Prior to the development of digital computers, lens optimization was a hand-calculation task using trigonometric and logarithmic tables to plot 2-D cuts through the multi-dime-nsional space. As the development of the digital computer in the 20th century, it drastically shapes the way how optical design is being practised. The burden of calculation is tremendously reduced by using computers. Instead of calculating each ray path on paper,  optical systems are parameterized into different variables representing the physical construction of an optical system (a physical model). For example, a simple two-element air-spaced spherical lens can be represented with nine variables (four radii of curvature, two thickness one airspace, and two glass types). With increasing complexity (number of elements, type of surfaces) of the system, the number of variable can reach hundreds. Using modern computers allows rapid ray tracing calculation by which the performance of the lens system can be quickly modelled and evaluated. 
+Prior to the development of digital computers, lens optimization was a hand-calculation task using trigonometric and logarithmic tables to plot Two-Dimensional (2D) cuts through the multi-dimensional space. As the development of the digital computer in the 20th century, it drastically shapes the way how optical design is being practised. The burden of calculation is tremendously reduced by using computers. Instead of calculating each ray path on paper,  optical systems are parameterized into different variables representing the physical construction of an optical system (a physical model). For example, a simple two-element air-spaced spherical lens can be represented with nine variables (four radii of curvature, two thickness one airspace, and two glass types). With increasing complexity (number of elements, type of surfaces) of the system, the number of variable can reach hundreds. Using modern computers allows rapid ray tracing calculation by which the performance of the lens system can be quickly modelled and evaluated. 
 
 Helped by the technique of numerical optimization, the vast high-dimensional design space can be searched to look for the set of variables providing the optimal performance of the system. Lens optimization has been studied as early as the 1940s \cite{wikilensdesign}. The earliest attempt for optimizing a doublet using computer dates back to 1950s, when James G. Baker used the \textit{Harvard Card Programmed Calculators} \cite{ThompsonOpticalDesignHistory}.  A good description of the starting of computer-aided optical design is given in a 1963 paper by Feder \cite{Feder:63}. In order to optimize an optical system using the computer, a merit function is necessary to be constructed. The value of this merit function predicts the performance of the system. Normally, the smaller the value of the merit function, the better the performance should be. For an imaging system, such a merit function can be the sum of the aberrations, the size of the focused spot, etc.  The merit function in optical design is commonly defined as \cite{GrossHBOvol3}:
 \setlength{\belowdisplayshortskip}{5pt}
@@ -154,11 +154,11 @@ We applied optimization for the previous magnifier example in optical design sof
 % to do: 1) to add the merit function in the table[done].  2) good to have, to have the plot of the systems [not necessary to do]
 % the magnification of the magnifier is the defined typically as the angular magnification, so the model need recalcualtion, but the process should be the same !!!!!!! 09/23. Need further continuation on the topic after fix the magnification definition [done] 
 
-In CODE V, the object distance is set as $41.67 \; mm$ and the image distance is at $250 \;mm$. An effective focal length of $50 \;mm$ is used as a constraint of the system. Only one wavelength is used and the material refractive index is set as $1.5$. An entrance pupil diameter of $20 \;mm$ is used and the fields are defined with three object heights: $0$, $3$, and $5 \;mm$.  The merit function used here is the default transverse-ray function in CODE V. It is a composite value, scaled so that it is the mean square of the weighted image radius.
+In CODE V, the object distance is set as $41.67 $ mm and the image distance is at $250 $ mm. An EFL of $50 $ mm is used as a constraint of the system. Only one wavelength is used and the material refractive index is set as $1.5$. An entrance pupil diameter of $20 $ mm is used and the fields are defined with three object heights: $0$, $3$, and $5 $ mm.  The merit function used here is the default transverse-ray function in CODE V. It is a composite value, scaled so that it is the mean square of the weighted image radius.
 
-When optimized directly with the input setting, the starting points of both thin lens approximation using paraxial optics and the one optimized for spherical aberration converge to the same local minimum (radii are given in the "Optimized thin" column in Table \ref{tb: magnifier optimization}). We also notice that the starting point for the thin lens which is optimized for spherical aberration already has very similar radii comparing to the CODE V optimized system. It indicates that for such a configuration, the image quality is dominated by the spherical aberration and the theoretical calculation predicts the image quality well. However, it is also noticed that the merit function value of these systems are very big ($9.06E5 \;\mu m^{2}$). Here we use this example only to demonstrate how a simple lens design and optimization flow works. In practical design, the merit function value needs to be further brought it down and additional degrees of freedoms (such as new lenses) are required. 
+When optimized directly with the input setting, the starting points of both thin lens approximation using paraxial optics and the one optimized for spherical aberration converge to the same local minimum (radii are given in the "Optimized thin" column in Table \ref{tb: magnifier optimization}). We also notice that the starting point for the thin lens which is optimized for spherical aberration already has very similar radii comparing to the CODE V optimized system. It indicates that for such a configuration, the image quality is dominated by the spherical aberration and the theoretical calculation predicts the image quality well. However, it is also noticed that the merit function value of these systems are very big ($9.06E5$ \textmu m$^{2}$). Here we use this example only to demonstrate how a simple lens design and optimization flow works. In practical design, the merit function value needs to be further brought it down and additional degrees of freedoms (such as new lenses) are required. 
 
-We also optimized the system with a lens thickness constrained at $3 \;mm$. Three starting points all converge to the same local minimum. It indicates that there is no difference which starting configuration we choose. We will show later in the thesis that it is not the cases for more complicated optical system (e.g. with more lenses). 
+We also optimized the system with a lens thickness constrained at $3 $ mm. Three starting points all converge to the same local minimum. It indicates that there is no difference which starting configuration we choose. We will show later in the thesis that it is not the cases for more complicated optical system (e.g. with more lenses). 
 % what I want to show 1) how a flow of modern design is 2) it is a simple case.
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \begin{table}[h!]
@@ -171,7 +171,7 @@ We also optimized the system with a lens thickness constrained at $3 \;mm$. Thre
     \begin{tabular}{|M{2cm}|M{0.9cm}|M{0.6cm}|M{0.8cm}|M{0.8cm}|M{0.6cm}|M{0.8cm}|M{0.8cm}|M{0.6cm}|M{0.8cm}|}
     \hline
   &\multicolumn{3}{c|}{\textbf{Starting point}} & \multicolumn{3}{c|}{\textbf{Optimized thin}} & \multicolumn{3}{c|}{\textbf{Optimized thick}}\\ \cline{2-10}
-  &  Radii (mm) & THK (mm) & MF ($\mu m^{2}$)&  Radii (mm) & THK (mm) & MF ($\mu m^{2}$) &  Radii (mm) & THK (mm) & MF ($\mu m^{2}$)     \\  \hline
+  &  Radii (mm) & THK (mm) & MF (\textmu m$^{2}$)&  Radii (mm) & THK (mm) & MF (\textmu m$^{2}$) &  Radii (mm) & THK (mm) & MF (\textmu m$^{2}$)     \\  \hline
    \textbf{Thin lens }  & 50, -50 & 0 & 3.56E6 & 2247, -25 & 0& 9.06E5&&&\\ \cline{1-7}
     \textbf{Thick lens} & 49.50, -49.50& 3 & 6.45E6 & /&/&/&  \multirow{3}{*}{108, \newline -32} & \multirow{3}{*}{3} &\multirow{3}{*}{4.98E6}\\ \cline{1-7}
     \textbf{Thin lens optimized for SA} & $\infty, -25$ & 0 & 9.07E5 & 2247, -25&0&9.06E5&&&\\ 
@@ -212,7 +212,7 @@ The most straightforward method to search for the global minimum is to systemati
 \subsection{Getting the Starting Point}
 When multiple minima presented in the optical design space, the result of the local optimization is sensitive to its choice of the starting point. In the conventional optical design practice, large effort is spent on obtaining a good starting point. 
 
-As demonstrated in the beginning of this chapter, simple systems such as the Magnifier can be computed using first-order optics and third-order aberration model to obtain a relative good starting point. For more complicated systems which contain more optical elements and difficult requirement, there are design strategies summarized by lens designers based on their in-depth knowledge and extensive experience \cite{LivshitsQA2013}\cite{Shafer1995_moreless}. However, mastering these design methods can require year of practice.   
+As demonstrated in the beginning of this chapter, simple systems such as the Magnifier can be computed using first-order optics and third-order aberration model to obtain a relative good starting point. For more complicated systems which contain more optical elements and difficult requirement, there are design strategies summarized by lens designers based on their in-depth knowledge and extensive experience \cite{LivshitsQA2013}\cite{Shafer1995_moreless}. However, mastering these design methods can require years of practice.   
 
 A common practice is that optical designers scan through the existing catalog of the available designs. This can be via patent search or by looking up examples in the optical design books \cite{smith1992modern} \cite{book:SmithModernOpticalEngineering}.  The one has the closest specification with respect to the design requirement is chosen to serve as the  starting point of the design. The assumption is that this chosen system is already in the basin of attraction where good system performance is expected. By doing some fine adjustment, the preferred system should be achievable. 
 
@@ -220,7 +220,7 @@ Methods such as Simultaneous Multiple Surface (SMS) method \cite{MinanoOE09}, wh
 
 \subsection{Local Optimization}
 \vspace{1em}
-Given the starting point and the merit function, the local optimizer aims to find a local minimum (minimization problem) where the value of the merit function does not increase anymore. Numerically, this is achieved by iterative steps. In the \textit{N} dimensional space, the local optimization process consists of moving from the starting point towards the minimum in several steps. The value of merit function reduces after each step, until a minimum is reached. When close enough to a minimum, further iteration will not produce any significant changes in  the system parameters and the process is called convergent. \newline
+Given the starting point and the merit function, the local optimizer aims to find a local minimum (minimization problem) where the value of the merit function does not increase anymore. Numerically, this is achieved by iterative steps. In the \textit{N}-dimensional space, the local optimization process consists of moving from the starting point towards the minimum in several steps. The value of merit function reduces after each step, until a minimum is reached. When close enough to a minimum, further iteration will not produce any significant changes in  the system parameters and the process is called convergent. \newline
 
 \subsubsection{General Problem Statement}
 
@@ -326,10 +326,10 @@ f_{E} = \sqrt{H} \cdot exp \Bigg\{ - \frac{1}{2W^{2}}\sum_{j} \left[\mu_{j}(x_j 
 \begin{figure}
     \centering
     \includegraphics[scale=0.58]{chapter-1/figures/EscapeFunction_explained.png}
-    \caption{Explanation of the method of escape function. (a) a 2-D escape function illustration, where $H$ modifies the height and $W$ modifies the width of the function. (b) $P_0$ is a minimum for the original 1-D merit function (solid line). By applying escape function (dotted line), $P_0$ is lifted to $P_1$. However, it cannot help the optimizer to escape to a new basin of attraction. When applying a different escape function (dashed line), $P_0$ is lifted to $P_2$. The optimizer escapes to the next basin of attraction.}
+    \caption{Explanation of the method of escape function. (a) a 2D escape function illustration, where $H$ modifies the height and $W$ modifies the width of the function. (b) $P_0$ is a minimum for the original 1-D merit function (solid line). By applying escape function (dotted line), $P_0$ is lifted to $P_1$. However, it cannot help the optimizer to escape to a new basin of attraction. When applying a different escape function (dashed line), $P_0$ is lifted to $P_2$. The optimizer escapes to the next basin of attraction.}
     \label{fig: Escape_function_explained}
 \end{figure}
-Figure \ref{fig: Escape_function_explained} -(b) uses a 1-D case to illustrate the escape function with two different settings. The solid line represents the original 1-D merit function. After local optimization routine, the minimum $P_0$ is obtained. In order to escape from the current basin of attraction, the first escape function setting lifts $P_0$ to $P_1$, as indicated by the dotted line. However, the optimizer remains in the same basin of attraction due to a insufficient modification of the local landscape. The second escape function setting lifts $P_0$ to $P_2$. When local optimization routine applied for $P_2$, the optimizer escapes from the original basin of attraction. In practice, an automatic feedback loop is designed to adjust the escape function settings to increase the efficiency for minimum searching \cite{Isshiki1998}.
+Figure \ref{fig: Escape_function_explained}(b) uses a one-dimensional case to illustrate the escape function with two different settings. The solid line represents the original one-dimensional merit function. After local optimization routine, the minimum $P_0$ is obtained. In order to escape from the current basin of attraction, the first escape function setting lifts $P_0$ to $P_1$, as indicated by the dotted line. However, the optimizer remains in the same basin of attraction due to a insufficient modification of the local landscape. The second escape function setting lifts $P_0$ to $P_2$. When local optimization routine applied for $P_2$, the optimizer escapes from the original basin of attraction. In practice, an automatic feedback loop is designed to adjust the escape function settings to increase the efficiency for minimum searching \cite{Isshiki1998}.
 
 
 \subsubsection{Generic Algorithm}
@@ -350,22 +350,22 @@ Similar to the genetic algorithm, particle swarm optimization starts with initia
 As for optical design, each system configuration represents a particle in the optimization space. Particle swarm optimization has been demonstrated in several design cases and it is especially helpful in handling large number of variables such as freeform systems \cite{MenkeParticleSwarm}. On the other hand, hybrid algorithm of combing particle swarm optimization with local optimizer has been proposed \cite{Guo:sParticleSwarm}: particle swarm optimization is used for the discrete optimization of the optical material choices, while the local optimizer is applied to obtain the minimum given the selected material choice.  
 
 \subsection{Saddle Point Method}
-In additional to minimum and maximum, saddle point is also a type of stationary points existing in the optimization landscape. Gradient vanishes at all stationary points. When computing the eigenvalues of the Hessian matrix of these stationary point, a minimum has its signs of the eigenvalues all positive, a maximum has its signs of the eigenvalues all negative, and the saddle point has both positive and negative signs of its eigenvalues. Morse Index is defined as the number of the negative signs of the eigenvalues, and the Morse Index of a saddle point is always bigger than \textit{1}. For example, if there is one negative eigenvalue of the Hessian matrix for a stationary point, it is then a saddle point with a Morse Index value of \textit{1}. For a \textit{N}-dimensional optimization landscape, the Morse Index value of its saddle points can vary from \textit{1} to \textit{N-1}.  The value of the Morse Index indicates the number of directions, following the eigenvectors, from which the merit function value decreases. An example of a saddle point in the \textit{2}-dimensional landscape is given in Figure \ref{fig: saddle_illustration}-a. 
+In additional to minimum and maximum, saddle point is also a type of stationary points existing in the optimization landscape. Gradient vanishes at all stationary points. When computing the eigenvalues of the Hessian matrix of these stationary point, a minimum has its signs of the eigenvalues all positive, a maximum has its signs of the eigenvalues all negative, and the saddle point has both positive and negative signs of its eigenvalues. Morse Index is defined as the number of the negative signs of the eigenvalues, and the Morse Index of a saddle point is always bigger than \textit{1}. For example, if there is one negative eigenvalue of the Hessian matrix for a stationary point, it is then a saddle point with a Morse Index value of \textit{1}. For a \textit{N}-dimensional optimization landscape, the Morse Index value of its saddle points can vary from \textit{1} to \textit{N-1}.  The value of the Morse Index indicates the number of directions, following the eigenvectors, from which the merit function value decreases. An example of a saddle point in the \textit{2}-dimensional landscape is given in Figure \ref{fig: saddle_illustration}(a). 
 
-Figure \ref{fig: saddle_illustration}-b shows an example of a \textit{2}-dimensional landscape. If we use an analogue of a mountain view scenario, minima are the \textit{bottom} of the valleys and maxima are the \textit{top} of the hills. Saddle points are located on the passes between the valleys. 
+Figure \ref{fig: saddle_illustration}(b) shows an example of a \textit{2}-dimensional landscape. If we use an analogue of a mountain view scenario, minima are the \textit{bottom} of the valleys and maxima are the \textit{top} of the hills. Saddle points are located on the passes between the valleys. 
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.58]{chapter-1/figures/saddle_point_plotted.png}
-    \caption{Illustration of the 2-D saddle points. (a) A 2-D saddle point (horse saddle, with a Morse Index value of 1). It s a maximum in one direction and a minimum along the other direction. (b) Example of a 2-D landscape where minima are connected via saddle points. }
+    \caption{Illustration of the 2D saddle points. (a) A 2D saddle point (horse saddle, with a Morse Index value of 1). It s a maximum in one direction and a minimum along the other direction. (b) Example of a 2D landscape where minima are connected via saddle points. }
     \label{fig: saddle_illustration}
 \end{figure} 
 
-The aforementioned global optimization methods treat the optimization landscape as difference basins of attraction. When a larger number of basins are covered, the chance of obtaining a global solution increases. Methods such as simulated annealing and escape function apply strategies to switch basins of attraction when a local minimum is encountered. Methods such as genetic algorithm and particle swarm start with a population distributed in the optimization space. Strategies were applied to search for the basin with the best fit minimum. As a result, the task of searching for local minima can be then replaced by the task of searching for basins of attraction. Saddle point is of special interest when the task is to search for different basins of attraction. As indicated in Figure \ref{fig: saddle_illustration}-b, saddle points with a Morse Index of \textit{1} are located at the boundaries between different basins. Once such a saddle point is found, two basins of attraction can be reached afterwards.
+The aforementioned global optimization methods treat the optimization landscape as difference basins of attraction. When a larger number of basins are covered, the chance of obtaining a global solution increases. Methods such as simulated annealing and escape function apply strategies to switch basins of attraction when a local minimum is encountered. Methods such as genetic algorithm and particle swarm start with a population distributed in the optimization space. Strategies were applied to search for the basin with the best fit minimum. As a result, the task of searching for local minima can be then replaced by the task of searching for basins of attraction. Saddle point is of special interest when the task is to search for different basins of attraction. As indicated in Figure \ref{fig: saddle_illustration}(b), saddle points with a Morse Index of \textit{1} are located at the boundaries between different basins. Once such a saddle point is found, two basins of attraction can be reached afterwards.
 
 \subsubsection{Saddle Point Detection \label{method: spd}}
 
-Network of Local Minima (NETMIN), a tool developed in Delft University of Technology, detects saddle points with Morse Index 1 in the optimization landscape. NETMIN uses constrained local minimization to search saddle points starting from a local minimum. As illustrated in Figure \ref{fig: spd_illustration}, a set of directions is defined around a local minimum. These directions can be determined by the eigenvectors of the Hessian matrix, which are computed at the local minimum. Around the local minimum, the surfaces along which the merit function is constant have the shape of ellipsoids \cite{MarinescuSPD07}. The eigenvectors of the Hessian matrix correspond to the directions of the half-axes of the ellipsoids. Along each direction, a set of hyperplanes which orthogonal to the direction vector can be defined. For $N$ -dimensional space, these hyperplanes have a dimension of $N-1$. The distance between the local minimum and the hyperplane is indicated by $t$. On each hyperplane, a constrained minimization can be performed. The positions of the constrained minima as a function of  $t$ is symbolically shown in Figure \ref{fig: spd_illustration}-(a). The merit function value ($MF$) as a function of $t$ is shown in Figure \ref{fig: spd_illustration}-(b). When $t$ is sufficiently small, the merit function value of the constrained minimum on the hyperplane increases. At a certain $t = t_{max}$, the merit function value reaches its maximum value (point $s$ in Figure \ref{fig: spd_illustration}-(a)). This point is a maximum along the vector direction and a minimum on the $N-1$ dimensional hyperplane, hence a saddle point with Morse Index 1.  
+NETwork of Local MINima (NETMIN), a tool developed in Delft University of Technology, detects saddle points with Morse Index 1 in the optimization landscape. NETMIN uses constrained local minimization to search saddle points starting from a local minimum. As illustrated in Figure \ref{fig: spd_illustration}, a set of directions is defined around a local minimum. These directions can be determined by the eigenvectors of the Hessian matrix, which are computed at the local minimum. Around the local minimum, the surfaces along which the merit function is constant have the shape of ellipsoids \cite{MarinescuSPD07}. The eigenvectors of the Hessian matrix correspond to the directions of the half-axes of the ellipsoids. Along each direction, a set of hyperplanes which orthogonal to the direction vector can be defined. For $N$-dimensional space, these hyperplanes have a dimension of $N-1$. The distance between the local minimum and the hyperplane is indicated by $t$. On each hyperplane, a constrained minimization can be performed. The positions of the constrained minima as a function of  $t$ is symbolically shown in Figure \ref{fig: spd_illustration}(a). The merit function value ($MF$) as a function of $t$ is shown in Figure \ref{fig: spd_illustration}(b). When $t$ is sufficiently small, the merit function value of the constrained minimum on the hyperplane increases. At a certain $t = t_{max}$, the merit function value reaches its maximum value (point $s$ in Figure \ref{fig: spd_illustration}(a)). This point is a maximum along the vector direction and a minimum on the $(N-1)$-dimensional hyperplane, hence a saddle point with Morse Index 1.  
 
 \begin{figure}
     \centering
@@ -397,7 +397,7 @@ An illustration of the saddle point construction is given in Figure \ref{fig: sp
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% SECTION 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
-In this chapter, we use the example of a magnifying glass to demonstrate how a lens can be designed on paper. However, nowadays the optical systems are getting too complicated to perform such analysis and design a lens from scratch. 
+In this chapter, we use the example of a magnifying glass to demonstrate how a lens can be designed on paper. However, nowadays the optical systems are getting too complicated to perform such analysis and be designed from scratch. 
 
 The major concept such as basins of attraction, starting point, local and global optimization are explained for the optimization part of lens design. We show that the optimization algorithms reply almost exclusively on generally applicable mathematical models and uses little or no specific knowledge about the optical system (and its design landscape). We briefly mentioned SPC at the end and the special structure of the lens design landscape it reveals. In the following three chapters, we will focus on the SPC method and its effectiveness in different design scenarios. 
 
