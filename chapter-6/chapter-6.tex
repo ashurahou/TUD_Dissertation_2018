@@ -28,9 +28,16 @@ where the right path was lost.
 \section{Conclusion}
 In this thesis, we mainly explore the practicality of applying  Saddle Point Construction (SPC) as a lens design strategy and reveal the dynamic nature and the complexity of the lens design (optimization) landscape.  As explained in the thesis, SPC provides a way to systematically obtain new solutions for lens design. SPC requires searching for saddle points with one-dimensional scans and it does not increase the computation effort significantly. 
 
-SPC can be used as a global search tool when combined with local optimizers. This is demonstrated in Chapter \ref{chapter_SPC_simple_system_landscape} and togther with the first wide-angle lens example in Chapter \ref{chapter_4_complex_system_exploration}. It can also be used as a tool to effectively provide a small pool of solution candidates without drastic modification of the system configuration (UV microscope objective and photo-lithographic objective in Chapter \ref{chapter_4_complex_system_exploration}). 
+SPC can be used as a global search tool when combined with local optimization routines. This is demonstrated in Chapter \ref{chapter_SPC_simple_system_landscape} and togther with the first wide-angle lens example in Chapter \ref{chapter_4_complex_system_exploration}. It can also be used as a tool to effectively provide a small pool of solution candidates without drastic modification of the system configuration (UV microscope objective and photo-lithographic objective in Chapter \ref{chapter_4_complex_system_exploration}). 
 
-To use SPC as a global search tool, we show that for systems containing a relatively small number (e.g. less than six) of lens elements, it is possible to start from an existing local minimum to search through the saddle points - minima network for a better solution. Given the studied cases, we try to answer the following research questions in order to speculate on the effectiveness of SPC as a global search tool for complex systems. 
+% related to Q1, SPC cannot construct all saddle points
+To use SPC as a global search tool, we show that for systems containing a relatively small number (e.g. less than six) of lens elements, it is possible to start from an existing local minimum to search through the saddle points - minima network for a better solution (Figure \ref{fig:tripletnetwork}). An original global optimization problem in a five-dimensional space is reduced to six one-dimensional scans and several local optimization routines. We observe that not all the saddle points can be constructed using SPC. Nevertheless, because of the redundancies in the saddle points - minima network, all minima can still be reached with SPC in this example. 
+
+% relate to Q2 & Q3, SPC constructed network does not link to all the minima; It also mentions that the relevant minima are found
+When the design requirements (e.g. wavelength requirements, FOV) changes, the design landscape changes accordingly. It results as a changed number of saddle points and minima as well as changed links in the network. At the latter part of Chapter \ref{chapter_SPC_simple_system_landscape}, we elaborate how the FOV change would affect the saddle points and minima. One of the observations is that new minima can appear through this process, and SPC may miss these minima. However, these minima are usually solutions with high merit function values (worse performance). In the design cases we have investigated, using SPC can always obtain the best solution(s). Therefore, we argue that missing solutions with high merit function values is practically acceptable. 
+
+\begin{comment}
+Given the studied cases, we try to answer the following research questions in order to speculate on the effectiveness of SPC as a global search tool for complex systems. 
 
 \vspace{1em}
 
@@ -62,6 +69,7 @@ We cannot answer this question within our research. It is a difficult task to pr
 To better verify these hypotheses, a deeper understanding of the lens design landscape is necessary. We propose some possible research directions in the next section. 
 
 \vspace{1em}
+\end{comment}
 
 What is always valid for SPC is that, given a known local minimum, using SPC is effective to provide several other local minima. These new local minima can be compared with the original local minimum to search for better solutions. This is especially useful when considering a dynamic design landscape. 
 

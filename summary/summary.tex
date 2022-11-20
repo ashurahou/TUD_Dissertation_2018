@@ -2,25 +2,43 @@
 \addcontentsline{toc}{chapter}{Summary}
 \setheader{Summary}
 
-In this thesis, we explore how lens design and optimization techniques can adapt to the design (optimization) space in order to increase the lens design efficiency. 
+% summarizing the thesis essence 
+In this thesis, we explore how lens design and optimization techniques can adapt to the design (optimization) space in order to increase the lens design efficiency. We extensively discuss the Saddle Point Construction (SPC), a method that can systematically search for new solutions, as well as replace high-dimensional searches with a discrete number of one-dimensional searches to increase efficiency. 
 
-The optical lens design space is known to be very complicated. This is a high-dimensional space defined by the degrees of freedom and the quantified performance of a parameterized optical system. This space is also nonlinear which means there are multiple local minima (you can think of the bottom of a crater in the geological landscape) with different values. In modern optical lens design, the task can be described as searching for the global minimal value in the high-dimensional space. For sophisticated lens designs, the number of the degrees of freedom increases in order to gain more control of the design. It brings two major difficulties:  
+% the lens design problem essence 
+The optical lens design space is known to be very complicated. This is a high-dimensional space defined by the degrees of freedom and the quantified performance of a parameterized optical system. This high-dimensional space is also nonlinear which means there are multiple local minima (one can think of the bottom of a crater in the geological landscape) with different values (deep and shallow craters). In modern optical lens design, the task of obtaining a useful design solution can be described as searching for the global minimal value in the high-dimensional space. 
+% challenges: classic for high-dimensional non-linear problem
+For sophisticated lens designs, the number of the degrees of freedom increases in order to gain more control of the design. However, for the search of solutions, it brings two major challenges:  
 \begin{enumerate}[nosep]
 \item The size of the high dimensional space increases according to the power law which means a brute force search is practically impossible. 
 \item The number of local minima increases with the number of the degrees of freedom used. It indicates the number of undesired local minima becomes larger. Hence, the difficulty of finding best minima also increases.  
-
-
 \end{enumerate}
+
+% challenges: dynamic aspect 
+We demonstrate in this thesis that, considering an actual lens design process, the design space is not only statically complicated, but also dynamically changes through the design process. As a consequence of the dynamic aspect, the number of local minima varies and the effectiveness of the optimization techniques can be impacted. In Chapter \ref{chapter_5_SMS}, a study using Simultaneous Multiple Surface (SMS) method as one of the design strategies, compares the effectiveness of different strategies under static and dynamic design landscape. Our recommendation is to structurally work with the static “snapshot" of the design landscape to keep the complexity under control. In Chapter \ref{chapter_4_complex_system_exploration}, we explain how to use SPC to achieve this by improving a deep ultra-violet photo-lithographic objective.
 
 % technique has been developed 
 Over the past decades, different design and optimization techniques have been examined on their effectiveness of obtaining a global optimal solution. Some of the techniques have been integrated into commercial lens design software. However, these algorithms are based almost exclusively on generally applicable mathematical models and use little or no specific knowledge about the optical system (and its design landscape). As a result, little information is available on how these techniques should be used in a practical design task instead of implementing them as a lottery draw. 
 
-We emphasize in this thesis that, considering an actual lens design process, the design space is not only statically complicated, but also dynamically changes through the design process. The dynamic aspect affects the design landscape. As a consequence, the number of local minima and the effectiveness of the optimization techniques can be impacted. In Chapter \ref{chapter_5_SMS}, a study using Simultaneous Multiple Surface (SMS) method as one of the design strategies, compares the effectiveness of different strategies under static and dynamic design landscape.
+% how SPC is different from other techniques 
+Saddle Point Construction is a design method which can rapidly construct saddle points with Morse Index 1 in a design space. These saddle points serve as agents to guide the local optimization to obtain new minima. Different from other optimization techniques, it also reveals a special structure in the lens design landscape: certain saddle points existing in the landscape are reducible to minima of simpler systems plus one additional lens element. By exploiting this property, searching for minima in a high-dimensional lens design landscape can be simplified to several one-dimensional scans combining with standard local optimization routines. The effort for obtaining a satisfactory lens design solution is therefore reduced.   
 
-Saddle Point Construction (SPC) is a design method which can rapidly construct saddle points with Morse Index 1 in a design space. These saddle points serve as agents to guide the local optimization to obtain new minima. Different from other optimization techniques, it also reveals a special structure in the lens design landscape: certain saddle points existing in the landscape are reducible to minima of simpler systems plus one additional lens element.
+% what this thesis is focused on in terms of SPC usage assessment/study
+Previous research shows potentials of SPC as a systematic lens design technique. In this thesis, we further examine the practicality of SPC as a global optimization or semi-global optimization (to generate a small pool of solutions) technique. The dynamic aspect of the design space is particularly of interest since it is relevant to an actual design practice. 
 
-Previous research shows potentials of SPC as a systematic lens design technique. In this thesis, we further examine the practicality of SPC as a global optimization and semi-global optimization (to generate a small pool of solutions) tool. The dynamic aspect of the design space is particularly of interest since it is relevant to an actual design practice. 
+%% emphasize on the achievement in this thesis
+Different design examples are investigated in this thesis. They range from relative simple triplet design to complex photo-lithographic objective consisting of more than twenty lens elements. We demonstrate in Chapter \ref{chapter_SPC_simple_system_landscape} that for a simple triplet system, the method of SPC can obtain all the minima found by alternative methods. We also discover that some of the saddle points cannot be constructed using SPC. Nevertheless, the redundancy in the solution network makes it possible to still obtain the minima without identifying each saddle points. 
 
+When the configuration of the system changes (e.g. from polychromatic to monochromatic), we observe that not all the minima found by alternative methods can be easily obtained using SPC. We also observe that these minima, which are not found by SPC, are solutions having high merit function values (worse performance) compared to the best system. In the designs that we investigated, using SPC can obtain the best performing system(s). The systems with high value of merit functions are usually not stable. It means that they are more likely to change (occur ray failure or merge with an existing solution) when the system configuration changes. These phenomenons are explained in details in the latter part of Chapter \ref{chapter_SPC_simple_system_landscape}. We also argue that in practice these minima with high merit function values are not likely to be considered, therefore, they are less important.   
+
+Given the demonstrated effectiveness of SPC in relative simple systems, Chapter \ref{chapter_4_complex_system_exploration} provides study cases with more complexity and practical relevancy. We argue that at a certain stage of the lens design process, having a whole-landscape search is not preferred. Instead, a better strategy would be searching in a confined landscape guided by designer's experience. We demonstrate that SPC can be particularly effective for this purpose. For complicated systems consisting many lens elements, SPC can rapidly provide a small pool of solution candidates, while keeping system configuration not drastically changed. In the same chapter, we have provided some guidelines on how to use SPC in practical design tasks. Given the demonstrated effectiveness, we believe SPC can certainly be a useful tool in the lens designer's toolbox. 
+
+% 1) we study multiple scenarios 
+% 2) what we achieve: demonstrate a network connectivity in simple systems 
+% 3) what we achieve: demonstrate the network connectivity can be extended to relative complex system
+% 4) what we achieve: demonstrate a process of combining traditional techniques with SPC to provide solutions candidate for the designer to assess 
+% 5) for dynamic system, we provide a process to systematically obtain local minimum, explain the impact of the constraint implementation, shows positive results 
+\begin{comment}
 To assess the robustness of SPC as a global optimization method, we examine the solution network of saddle points and minima for several scenarios. We formulate three falsifiable research questions and have falsified two of them based on the observations:
 \begin{enumerate}[nosep]
 \item In a lens design landscape, are all the saddle points able to be constructed using SPC? The answer to this question is no. The detail of the analysis is given in Chapter \ref{chapter_SPC_simple_system_landscape}.
@@ -29,8 +47,7 @@ To assess the robustness of SPC as a global optimization method, we examine the 
 \end{enumerate}
 
 Despite the fact that using SPC does not guarantee capturing all the local minima in the design space, we observe that the good minima are always captured in our examples. Given its systematic way of obtaining local minima, we consider it as a useful global search technique for lens design. 
-
-In addition, in Chapter \ref{chapter_4_complex_system_exploration}, we demonstrate that SPC can be particularly effective for complicated systems when the goal is to get a small pool of solution candidates while the system configuration is not drastically changed. 
+\end{comment}
 
 \begin{comment}
 At last, we provide our thoughts on how the lens design landscape can be further studied. However, it is not straightforward how it can be related to an everyday design task. We believe that a tool gets improved during its practice, therefore, suggestions on further making SPC as a practical lens design tool are also given at the end. 
