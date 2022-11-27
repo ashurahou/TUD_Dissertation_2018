@@ -75,15 +75,7 @@ What is always valid for SPC is that, given a known local minimum, using SPC is 
 
 The dynamic aspect of the lens design landscape comes from the nature of the design activity - it is an interactive and continuous process between the design subject and the evaluator (designer). In Chapter \ref{chapter_5_SMS}, we show that for an ideal case where the design landscape can be constructed statically (using SMS to directly generate a starting point with all aspheric surfaces), the chance of arriving at a global minimum is high. The rest of the optimization strategies which involve gradually following a changing design landscape, are less effective: they either cannot find a satisfactory minimum or require a large amount of optimization cycles compared to SMS. In Chapter \ref{chapter_SPC_simple_system_landscape}, we dedicate a section to discuss how a changing FOV can affect the number of solutions (and saddle points). In the example of the UV microscope objective (Chapter \ref{chapter_4_complex_system_exploration}), we demonstrate how the use of the constraints could affect the design landscape by altering the number of saddle points which can be constructed. The rule of thumb is that a less constrained system has a higher chance of producing more solution candidates. 
 
-In the example of the photo-lithographic objective in Chapter \ref{chapter_4_complex_system_exploration}, we demonstrate a strategy to effectively obtain solution candidates:
-
-\begin{enumerate}[nosep]
-\item Apply the least possible number of constraints in the design;
-\item Perform SPC scan at desired positions;
-\item Restore all necessary constraints to further optimize the candidates for evaluation; 
-\item Repeat the above steps when the designer intends to escape from a local minimum.
-\end{enumerate}
-
+In the example of the photo-lithographic objective in Chapter \ref{chapter_4_complex_system_exploration}, we demonstrate a strategy to effectively obtain solution candidates. It can be summarized as the following steps: Step one, apply the least possible number of constraints in the design; Step two, perform SPC scan at desired positions; Step three, restore all necessary constraints to further optimize the candidates for evaluation; Step four, repeat the above steps when the designer intends to escape from a local minimum.
 
 Lens design is a science as well as an art of using and combining different design strategies and tools to obtain a satisfactory design. It is always with the good understanding of the design problem and the characteristics of tools, that a designer will be able to improve the efficiency of the design. Given the described systematic and adaptive aspects of SPC, we believe it can certainly be a useful tool in the lens designer's toolbox.  
 
