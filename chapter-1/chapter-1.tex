@@ -375,7 +375,7 @@ NETwork of Local MINima (NETMIN), a tool developed in Delft University of Techno
     \label{fig: spd_illustration}
 \end{figure} 
 
-When a saddle point with Morse Index 1 is detected, a point "on the other side" of the saddle point can be chosen to start a local optimization routine. The optimizer searches in a different basin of attraction to find a new local minimum. NETMIN combines local optimizer and saddle point detection algorithms to reveal the network of local minima and saddle points in the optimization landscape. NETMIN has been used to study triplet network (\cite{PascalTriplet2009}) and six-mirror systems (\cite{MarinescuSPD07}). In Chapter \ref{chapter_SPC_simple_system_landscape} of this thesis, we also use NETMIN obtained results as a reference. 
+When a saddle point with Morse Index 1 is detected, a point "on the other side" of the saddle point can be chosen to start a local optimization routine. The optimizer searches in a different basin of attraction to find a new local minimum. NETMIN combines local optimizer and saddle point detection algorithms to reveal the network of local minima and saddle points in the optimization landscape. NETMIN has been used to study triplet network (\cite{PascalTriplet2009}) and six-mirror systems (\cite{MarinescuSPD07}). In Chapter \ref{chapter_SPC_simple_system_landscape} of this dissertation, we also use NETMIN obtained results as a reference. 
 
 The computation of NETMIN is expensive. For each step along the chosen direction, a constrained optimization has to be performed. In practice, multiple directions have to be searched to find all saddle points around a local minimum. Parallel processing can be enabled to facilitate the search.  
 

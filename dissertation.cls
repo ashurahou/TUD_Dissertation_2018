@@ -38,6 +38,7 @@
 \RequirePackage{tabu}
 \RequirePackage{comment}
 \RequirePackage[euler]{textgreek}
+\RequirePackage{setspace}
 % \RequirePackage{showframe} %showframe
 
 \ifxetex

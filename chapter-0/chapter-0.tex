@@ -7,7 +7,7 @@
 
 
 %%Definition of optical design
-Optical design, generally speaking, can refer to the activities that manipulate light to achieve a certain purpose. This can be designing a telescope to observe remote celestial bodies, designing a concentrator to maximally harvest the solar energy, or designing optical fibre to maximize efficiency for information transmission. In the community of optical engineering, optical design is commonly associated with optical lens design. That means using optical lenses as the manipulator of light. The focus of this thesis will also be the design of optical lenses. However, the insights summarized in this thesis can also be extended to the design with other optical manipulators (e.g. mirrors).
+Optical design, generally speaking, can refer to the activities that manipulate light to achieve a certain purpose. This can be designing a telescope to observe remote celestial bodies, designing a concentrator to maximally harvest the solar energy, or designing optical fibre to maximize efficiency for information transmission. In the community of optical engineering, optical design is commonly associated with optical lens design. That means using optical lenses as the manipulator of light. The focus of this dissertation will also be the design of optical lenses. However, the insights summarized in this dissertation can also be extended to the design with other optical manipulators (e.g. mirrors).
 
 In lens design, the light is usually modeled with its geometrical model(or ray model). The light propagation is described in terms of light rays. When the wavelength of the light is very small compared to the size of the structures with which light interacts, it is an excellent approximation. That also indicates the wave property of light such as interference and diffraction, is not captured by the geometrical model. The utilization of the simpler geometric model is mostly driven by the practicality of optical design: with geometrical optics where light is simplified as rays pointing towards the traveling direction of radiation energy, billion of rays can be traced in seconds for a standard modern personal computer. The performance of the system can be quickly determined for subsequent analysis or optimization. On the other side, with the more rigorous wave model, designing and analyzing a common optical system is computationally expensive, hence very time consuming and inconvenient to rapidly compute and optimize the system performance. 
 
@@ -16,7 +16,7 @@ In lens design, the light is usually modeled with its geometrical model(or ray m
 %what I want to emphazie is the use of both models, but the description is not well polished.
  % wave model: diffraction limited field analysis - diffraction, interference analysis (highly coherent beams), polarization
  
-In some occasions, a wave model is necessary to be applied to understand the system performance. For instance, when an imaging system is only limited by diffraction, analyzing the intensity distribution of a focused beam at the focal plane requires a wave model. A geometrical model will only predict an extreme small spot without the information about the intensity distribution. As a result, depending on the performance requirements, practice for optical system design may involve both geometrical and wave models. A geometrical model is usually used to rapidly obtain a system solution that is good enough in terms of its performance predicted by the geometrical model. When approximation with the geometrical model is no longer accurate, the wave model helps to provide further analysis which gives feedback to fine-tune the system performance. The later part is usually involved in systems with a demanding performance requirement such as microscopic objectives or photo-lithographic projection systems. In this thesis, the discussion is focused on designing optical systems based on the principles of geometrical optics. The wave model related analysis is not in scope.  
+In some occasions, a wave model is necessary to be applied to understand the system performance. For instance, when an imaging system is only limited by diffraction, analyzing the intensity distribution of a focused beam at the focal plane requires a wave model. A geometrical model will only predict an extreme small spot without the information about the intensity distribution. As a result, depending on the performance requirements, practice for optical system design may involve both geometrical and wave models. A geometrical model is usually used to rapidly obtain a system solution that is good enough in terms of its performance predicted by the geometrical model. When approximation with the geometrical model is no longer accurate, the wave model helps to provide further analysis which gives feedback to fine-tune the system performance. The later part is usually involved in systems with a demanding performance requirement such as microscopic objectives or photo-lithographic projection systems. In this dissertation, the discussion is focused on designing optical systems based on the principles of geometrical optics. The wave model related analysis is not in scope.  
 
 
 In geometrical optics, one of most important laws would be the law of refraction (also know as the Snell's law). It describes how a light ray travels at the interface of two different media:
@@ -51,14 +51,14 @@ The exploration of various global optimization techniques (elaborated in the nex
 % the gap and how to handle it 
 One fact is that these global optimization algorithms rely almost exclusively on generally applicable mathematical models and use little or no specific knowledge about the optical system (and its design landscape). As a result, setting up the proper configurations (similar to the step-size of a local optimizer) of these global optimizer becomes another task of trial and error. 
 
-In this thesis, we particularly focus on the Saddle Point Construction (SPC) method which uses a special property in the lens design landscape: certain saddle points existing in the landscape are reducible to minima of simpler systems plus one additional element. By investigating how SPC behaves in different design scenarios, we provide insights for systematically design optical systems using SPC. 
+In this dissertation, we particularly focus on the Saddle Point Construction (SPC) method which uses a special property in the lens design landscape: certain saddle points existing in the landscape are reducible to minima of simpler systems plus one additional element. By investigating how SPC behaves in different design scenarios, we provide insights for systematically design optical systems using SPC. 
 
 % understanding the characteristics of the design landscape is important
 % knowing spc and its property to this landscape in order to design is beneficial 
 
-% introducing the thesis content 
+% introducing the dissertation content 
 
-\subsubsection{Outline of the thesis}
+\subsubsection{Outline of the dissertation}
 In Chapter \ref{chapter_LensDesign}, we provide some background regarding modern lens design. To better explain a design process, a simple example of designing a magnifying glass is used. We also discuss some of the major optimization techniques available either in commercial design software or publications. 
 
 Chapter \ref{chapter_SPC_method_reccomendation} is dedicated to SPC where we give the mathematical proof for the general version of SPC and explain in detail how SPC could be used in practical lens design. 
@@ -69,7 +69,7 @@ Lenses with more complexities are used as study examples in Chapter \ref{chapter
 
 Chapters \ref{chapter_SPC_simple_system_landscape} and \ref{chapter_4_complex_system_exploration} describe the dynamic aspect of the lens design landscape - instead of remaining static, the design landscape changes continuously through the design process via modifying system specifications, applying constraints, etc. This adds the uncertainty of successfully obtaining a good solution.  In Chapter \ref{chapter_5_SMS}, we deviate from SPC and compare different design strategies for simple aspheric lenses. It is observed that if a good starting configuration including all the constraints and necessary degrees of design freedom can be determined, reaching a global optimal solution can be very efficient. We use Simultaneous Multiple Surface (SMS) method in this chapter to construct such good starting configurations. 
 
-At last, conclusions of the thesis and some future outlooks are given in Chapter \ref{chapter_Conclusion}.
+At last, conclusions of the dissertation and some future outlooks are given in Chapter \ref{chapter_Conclusion}.
 
 \references{dissertation}
 
@@ -95,7 +95,7 @@ When mentioning optical design, the term is not specified enough. It should be i
 
 Optical design components, polarizer, diffractive components, multiple aperture (light field camera, cell-phone camera).
 
-The design case mainly handled in this thesis is the imaging system design, in particular with optical lens design. In this case, the used components are mainly 
+The design case mainly handled in this dissertation is the imaging system design, in particular with optical lens design. In this case, the used components are mainly 
 
 \end{comment}
 

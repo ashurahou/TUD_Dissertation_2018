@@ -26,7 +26,7 @@ where the right path was lost.
 %% Start the actual chapter on a new page.
 %\newpage
 \section{Conclusion}
-In this thesis, we mainly explore the practicality of applying  Saddle Point Construction (SPC) as a lens design strategy and reveal the dynamic nature and the complexity of the lens design (optimization) landscape.  As explained in the thesis, SPC provides a way to systematically obtain new solutions for lens design. SPC requires searching for saddle points with one-dimensional scans and it does not increase the computation effort significantly. 
+In this dissertation, we mainly explore the practicality of applying  Saddle Point Construction (SPC) as a lens design strategy and reveal the dynamic nature and the complexity of the lens design (optimization) landscape.  As explained in the dissertation, SPC provides a way to systematically obtain new solutions for lens design. SPC requires searching for saddle points with one-dimensional scans and it does not increase the computation effort significantly. 
 
 SPC can be used as a global search tool when combined with local optimization routines. This is demonstrated in Chapter \ref{chapter_SPC_simple_system_landscape} and togther with the first wide-angle lens example in Chapter \ref{chapter_4_complex_system_exploration}. It can also be used as a tool to effectively provide a small pool of solution candidates without drastic modification of the system configuration (UV microscope objective and photo-lithographic objective in Chapter \ref{chapter_4_complex_system_exploration}). 
 
@@ -88,7 +88,7 @@ Lens design is a science as well as an art of using and combining different desi
 
 % Saddle point as a local property holds 
 % 1) how this method can be applied in different way
-The focus of this thesis is on the saddle-point construction (SPC) method. By adding two curvature variables which do not alter the system performance, one can construct saddle points with Morse Index $1$ and optimize from them to obtain new local minima. It reveals such a connection in the lens design landscape: the minima with $N+2$ curvature variables are connected to the minima with $N$ curvature variables via the saddle points. In Chapter \ref{chapter_SPC_method_reccomendation}, we have provided practical recommendation on how such feature can be used to get new local minima. This can either be switching to a new solution given the current number of lenses or finding new solutions with extra number of lenses.  
+The focus of this dissertation is on the saddle-point construction (SPC) method. By adding two curvature variables which do not alter the system performance, one can construct saddle points with Morse Index $1$ and optimize from them to obtain new local minima. It reveals such a connection in the lens design landscape: the minima with $N+2$ curvature variables are connected to the minima with $N$ curvature variables via the saddle points. In Chapter \ref{chapter_SPC_method_reccomendation}, we have provided practical recommendation on how such feature can be used to get new local minima. This can either be switching to a new solution given the current number of lenses or finding new solutions with extra number of lenses.  
 
 % To look at optimization for actual use cases 
 % 1) in a simple landscape, it shows that systems are connected by the saddle point - minima links
@@ -131,9 +131,9 @@ In this section, we summarize our recommendations for further activities in the 
 
 \subsubsection{I. Make the SPC method more available to the design community}
 
-One of the purposes of this thesis is to depict better how SPC can be practically used in lens design. Given the presented insights in this thesis, it is important for SPC to be used more frequently in practical assignments to make it useful for lens design. In the commercial lens design software SYNOPSYS\texttrademark \cite{SYNOPSYSSW}, the special version of SPC is already implemented. It would be valuable if the general version of SPC and the recommendations in this thesis could also be integrated in such a commercially available software. Following are some of the engineering aspects which need to be clarified before making SPC a robust lens design and optimization tool:
+One of the purposes of this dissertation is to depict better how SPC can be practically used in lens design. Given the presented insights in this dissertation, it is important for SPC to be used more frequently in practical assignments to make it useful for lens design. In the commercial lens design software SYNOPSYS\texttrademark \cite{SYNOPSYSSW}, the special version of SPC is already implemented. It would be valuable if the general version of SPC and the recommendations in this dissertation could also be integrated in such a commercially available software. Following are some of the engineering aspects which need to be clarified before making SPC a robust lens design and optimization tool:
 \begin{enumerate}[nosep]
-\item To use SPC as a global search method, a strategy to determine the number and position of the SPC scans is necessary. In this thesis, we look at simple examples and used trial and error to determine the SPC scan positions. However, for an automated global search SPC algorithm, it should be done automatically to ensure the maximum number of saddle points;
+\item To use SPC as a global search method, a strategy to determine the number and position of the SPC scans is necessary. In this dissertation, we look at simple examples and used trial and error to determine the SPC scan positions. However, for an automated global search SPC algorithm, it should be done automatically to ensure the maximum number of saddle points;
 \item When optimizing from a constructed saddle point, the neighbourhood around the saddle point should be carefully evaluated to choose the starting points for consecutive local optimization. This is related to the observation that there can be more than two basins of attraction around a constructed saddle point (Figure \ref{fig:basins});
 \item Before performing a SPC scan, the local minimum should be sufficiently optimized (minimized); 
 \item When restoring the thickness of a zero-thickness element, the thickness should be changed in sufficient small steps such that the system will not suddenly switch to a different basin of attraction; 
@@ -160,7 +160,7 @@ Given the complexity of the design landscape, it is an interesting direction to 
 In the examples we have examined so far, if use SPC as a global optimization tool, it should be OK to start from any of the existing solution to obtain the global optimum (or arrive at the region of the global optimia). 
 
 To prove that the SPC network can always capture the good solutions given a design landscape. That is to say, for the region of the good solutions, the design landscape is structured in a way that SPC network is mapping the saddle point - minima network. 
-It requires a deeper investigation of the design landscape. To start with, I would suggest to use a certain type of system and to characterize its landscape (in the thesis, we have been looking at wide-angle and microscope objectives). 
+It requires a deeper investigation of the design landscape. To start with, I would suggest to use a certain type of system and to characterize its landscape (in the dissertation, we have been looking at wide-angle and microscope objectives). 
 
 It is a difficult task.
 
